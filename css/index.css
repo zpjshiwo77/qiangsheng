@@ -1,58 +1,1222 @@
 /* ---------------------------------------- 默认css针对16:9标准比例屏幕微信----------------------------------------*/
-html,body,article{
+
+html, body, article {
 	position: fixed;
 	padding: 0;
 	margin: 0;
 	height: 100%!important;
-    width: 100%;
+	width: 100%;
 	overflow: hidden;
-	-webkit-text-size-adjust:100%!important;
+	-webkit-text-size-adjust: 100%!important;
+	background-color: #f0afd2;
 }
-.none{
+
+article {
+	background: url("../images/public/bg.jpg") no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.none {
 	display: none;
 }
-.hide{
+
+.hide {
 	opacity: 0;
 }
-a{
-	cursor: pointer;
-}
-a, a:visited{
-	color: #fff;
-}
-section{
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: fixed;
-    top:0;
-    left: 0;
-    z-index: 3;
-}
-aside{
-	position: fixed;
-	top:0;
+
+.full {
+	position: absolute;
+	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-    z-index: 19;
-    background-color: rgba(0,0,0,0.85);
 }
-img{
+
+a {
+	cursor: pointer;
+}
+
+a, a:visited {
+	color: #fff;
+}
+
+section {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 3;
+}
+
+aside {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 19;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+img {
 	/* pointer-events: none; */
+}
+
+.logo {
+	position: absolute;
+	top: 0.4rem;
+	left: 50%;
+	width: 6.09rem;
+	height: 0.58rem;
+	margin-left: -3.045rem;
+	z-index: 9;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+	color: #ca3867;
+}
+
+.iScrollVerticalScrollbar {
+	background-color: #fff;
+	border-radius: 10px;
+	left: 1px!important;
+	right: none;
+}
+
+.iScrollIndicator {
+	border-color: #8b8b8b!important;
+	background-color: #8b8b8b!important;
+	width: 101% !important;
+}
+
+.ruleBtn{
+	position: absolute;
+	top: -0.3rem;
+	right: 0.7rem;
+	width: 1.19rem;
+	height: 1.01rem;
+	background-image: url(../images/public/ruleBtn.png);
+	z-index: 9;
 }
 /* public end */
 
-.lighting{
-	-webkit-animation: lighting 3s ease infinite;
+.lighting {
+	-webkit-animation: lighting 2s ease infinite;
 }
-@-webkit-keyframes lighting{
-	0%{opacity: 0.3;}
-	50%{opacity: 1;}
-	100%{opacity: 0.3;}
+
+@-webkit-keyframes lighting {
+	0% {
+		opacity: 0.3;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0.3;
+	}
 }
+
+.updowning {
+	-webkit-animation: updowning 2s ease infinite;
+}
+
+@-webkit-keyframes updowning {
+	0% {
+		transform: translate(0, 0);
+	}
+	50% {
+		transform: translate(0, 0.2rem);
+	}
+	100% {
+		transform: translate(0, 0);
+	}
+}
+
+.riseing0 {
+	-webkit-animation: riseing 4s ease infinite;
+}
+
+.riseing1 {
+	-webkit-animation: riseing 3s 0.7s ease infinite;
+}
+
+.riseing2 {
+	-webkit-animation: riseing 2.5s 1s ease infinite;
+}
+
+.riseing3 {
+	-webkit-animation: riseing 2s 0.5s ease infinite;
+}
+
+.riseing4 {
+	-webkit-animation: riseing 3s 1.2s ease infinite;
+}
+
+.riseing5 {
+	-webkit-animation: riseing 2.5s 1.5s ease infinite;
+}
+
+@-webkit-keyframes riseing {
+	0% {
+		transform: translate(0, 0);
+		opacity: 0;
+	}
+	20% {
+		opacity: 1;
+	}
+	80% {
+		opacity: 1;
+	}
+	100% {
+		transform: translate(0, -2rem);
+		opacity: 0;
+	}
+}
+
 /* anime end */
 
+#loadingBox .cont {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 7.5rem;
+	height: 9.6rem;
+	margin-top: -4.7rem;
+}
+
+#loadingBox .cont .titleBox {
+	position: absolute;
+	top: -0.2rem;
+	left: 0;
+	width: 7.5rem;
+	height: 6.8rem;
+	text-align: center;
+}
+
+#loadingBox .cont .titleBox .title {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 6.73rem;
+	height: 6.27rem;
+	margin-left: -3.6rem;
+}
+
+#loadingBox .cont .titleBox .left {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 2rem;
+	height: 2.7rem;
+}
+
+#loadingBox .cont .titleBox .right {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 2rem;
+	height: 2.7rem;
+}
+
+#loadingBox .cont .titleBox .bottom {
+	position: absolute;
+	bottom: 0;
+	left: 2rem;
+	width: 2.5rem;
+	height: 2.7rem;
+}
+
+#loadingBox .cont .titleBox .bubble {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0.3rem;
+	opacity: 0;
+}
+
+#loadingBox .cont .loadBarBox {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 5.46rem;
+	height: 1.1rem;
+	margin-left: -2.73rem;
+}
+
+#loadingBox .cont .loadBarBox .mask {
+	-webkit-mask: url(../images/loadingBox/mask.png);
+	-webkit-mask-size: 100%;
+}
+
+#loadingBox .cont .loadBarBox .bar {
+	background-color: #f753ad;
+	left: -97%;
+}
+
+#loadingBox .cont .formBox {
+	position: absolute;
+	bottom: 1.35rem;
+	left: 50%;
+	width: 4.9rem;
+	height: 1.94rem;
+	margin-left: -2.45rem;
+	background-image: url(../images/indexBox/form.png);
+}
+
+#loadingBox .cont .formBox input {
+	position: absolute;
+	top: 0;
+	left: 0.4rem;
+	width: 4.1rem;
+	height: 0.6rem;
+	line-height: 0.56rem;
+	font-size: 0.25rem;
+	text-align: center;
+}
+
+#loadingBox .cont .formBox #index_code {
+	top: 0.72rem;
+	width: 2.75rem;
+}
+
+#loadingBox .cont .formBox #codeBtn {
+	position: absolute;
+	top: 0.72rem;
+	right: 0.3rem;
+	width: 1.3rem;
+	height: 0.6rem;
+	line-height: 0.6rem;
+	font-size: 0.22rem;
+	text-align: center;
+}
+
+#loadingBox .cont .formBox .readRule {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 0.45rem;
+	cursor: pointer;
+}
+
+#loadingBox .cont .formBox .readed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0.45rem;
+	color: #ca3867;
+	cursor: pointer;
+	padding: 0 0 0 0.93rem;
+}
+
+#loadingBox .cont #startBtn {
+	position: absolute;
+	bottom: 0rem;
+	left: 50%;
+	width: 4.79rem;
+	height: 1.17rem;
+	margin-left: -2.395rem;
+	background-image: url(../images/indexBox/btn.png);
+}
+
+/* loadingBox end */
+
+#ruleBox .cont {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 6.75rem;
+	height: 10.33rem;
+	transform: translate(-50%, -50%);
+	background-image: url(../images/ruleBox/rule.png);
+}
+
+#ruleBox .cont .scrollBox {
+	position: absolute;
+	top: 0.5rem;
+	left: 0.125rem;
+	width: 6.5rem;
+	height: 8.2rem;
+	overflow: hidden;
+}
+
+#ruleBox .cont .scrollBox .scroll {
+	width: 100%;
+	height: auto;
+	text-align: center;
+}
+
+#ruleBox .cont .scrollBox .scroll .word {
+	width: 6.3rem;
+}
+
+#ruleBox .cont .close {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 1rem;
+	height: 1rem;
+	margin-left: -0.5rem;
+}
+
+/* ruleBox end */
+
+#makeBox .bg {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 7.5rem;
+	height: 13.3rem;
+	transform: translate(0, -50%);
+}
+
+#makeBox .cont {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 7.5rem;
+	height: 10rem;
+	margin-top: -5rem;
+}
+
+#makeBox .cont .battle, #makeBox .cont .liquid, #makeBox .cont .light {
+	position: absolute;
+	bottom: -0.2rem;
+	left: 0.5rem;
+	width: 6.75rem;
+	height: 8.51rem;
+}
+.color1{
+	transform: translate(-1.4rem, 1rem);
+}
+.color2{
+	transform: translate(1.2rem, 1rem);
+}
+.color3{
+	transform: translate(-1rem, 1rem);
+}
+
+#makeBox .cont .liquid {
+	-webkit-mask: url(../images/makeBox/mask.png);
+	-webkit-mask-size: 100%;
+}
+
+#makeBox .cont .btn {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 4rem;
+	height: 1rem;
+	margin-left: -2rem;
+}
+
+#makeBox .cont .bubbleBox {
+	position: absolute;
+	top: 0;
+	left: 0.5rem;
+	width: 6.75rem;
+	height: 5rem;
+}
+
+#makeBox .cont .bubbleBox .bubble {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1.22rem;
+	height: 1.31rem;
+	text-align: center;
+}
+
+#makeBox .cont .bubbleBox .bubble .bubbleImg {
+	background-image: url(../images/public/bubble.png);
+}
+
+#makeBox .cont .bubbleBox .bubble img {
+	width: 1.1rem;
+	margin-top: 0.42rem;
+}
+
+#makeBox .cont .bubbleBox .bubble.ml {
+	transform: translate(0, 1.5rem);
+}
+
+#makeBox .cont .bubbleBox .bubble.sj {
+	transform: translate(1.1rem, 0.2rem);
+}
+
+#makeBox .cont .bubbleBox .bubble.hqx {
+	transform: translate(2.9rem, 0);
+}
+
+#makeBox .cont .bubbleBox .bubble.jq {
+	transform: translate(2rem, 1.2rem);
+}
+
+#makeBox .cont .bubbleBox .bubble.lg {
+	transform: translate(4.2rem, 1.9rem);
+}
+
+#makeBox .cont .bubbleBox .bubble.mm {
+	transform: translate(5.2rem, 0.8rem);
+}
+
+/* makeBox end */
+
+#resultBox .bg {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 7.38rem;
+	height: 10.57rem;
+	transform: translate(0, -60%);
+}
+
+#resultBox .cont {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 6.44rem;
+	height: 9.12rem;
+	transform: translate(-50%, -50%);
+	background-image: url(../images/resultBox/kuang.png);
+}
+
+#resultBox .btn {
+	position: absolute;
+	top: 50%;
+	left: 1.1rem;
+	width: 5.61rem;
+	height: 1.02rem;
+	margin-top: 4.8rem;
+	background-image: url(../images/resultBox/btn.png);
+}
+
+#resultBox .word {
+	position: absolute;
+	top: 0.15rem;
+	left: 50%;
+	width: 5.79rem;
+	margin-left: -2.9rem;
+}
+
+#resultBox .bowl {
+	position: absolute;
+	top: 3.25rem;
+	left: 50%;
+	width: 2.9rem;
+	margin-left: -1.45rem;
+}
+
+#resultBox .powder {
+	position: absolute;
+	top: 1.95rem;
+	left: 50%;
+	width: 2.08rem;
+	margin-left: -1.2rem;
+}
+
+#resultBox .spoon1 {
+	position: absolute;
+	top: 1.8rem;
+	left: 0.3rem;
+	width: 1.69rem;
+}
+
+#resultBox .spoon2 {
+	position: absolute;
+	top: 0.85rem;
+	left: 4.1rem;
+	width: 1.47rem;
+}
+
+/* resultBox end */
+
+#lotteryBox .cont {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 6.43rem;
+	height: 9.11rem;
+	transform: translate(-50%, -50%);
+	background-image: url(../images/lotteryBox/k.png);
+}
+
+#lotteryBox .close {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 1rem;
+	height: 1rem;
+	background-image: url(../images/lotteryBox/close.png);
+	transform: translate(-50%, 4.7rem);
+}
+
+#lotteryBox .bubbleBox {
+	overflow: hidden;
+}
+
+#lotteryBox .bubbleBox .bubble {
+	position: absolute;
+	bottom: -3.5rem;
+	left: 0;
+	width: 3rem;
+}
+
+#lotteryBox .award, #lotteryBox .toy {
+	text-align: center;
+	color: #fff;
+}
+
+#lotteryBox .award .title {
+	width: 3.45rem;
+	margin: 0.1rem 0 0.1rem;
+}
+
+#lotteryBox .award p.giftname {
+	line-height: 1.7;
+	font-size: 0.22rem;
+	letter-spacing: 0.05rem;
+}
+
+#lotteryBox .award p.giftname span {
+	font-size: 0.3rem;
+}
+
+#lotteryBox .award .gift {
+	text-align: center;
+	width: 4.86rem;
+	margin: 0.1rem 0 0.1rem;
+}
+
+#lotteryBox .award .tips {
+	font-size: 0.22rem;
+	line-height: 1.5;
+}
+
+#lotteryBox .award .tips span {
+	font-size: 0.16rem;
+	line-height: 2;
+}
+
+#lotteryBox .award .ckoulin {
+	width: 3.45rem;
+	height: 0.92rem;
+	margin: 0 auto;
+	background-image: url(../images/lotteryBox/c.png);
+	font-size: 0.22rem;
+	line-height: 1.5;
+	padding-top: 0.1rem;
+}
+
+#lotteryBox .award.toy .title {
+	margin: 0.4rem 0 0.3rem;
+}
+
+#lotteryBox .award.toy .giftname {
+	padding-bottom: 0.6rem;
+}
+
+#lotteryBox .award.toy .tips {
+	padding-top: 0.3rem;
+}
+
+/* lotteryBox end */
+
+#tipsBox .cont {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 6.28rem;
+	height: 8.69rem;
+	transform: translate(-50%, -50%);
+	background-image: url(../images/tipsBox/tips.png);
+}
+
+#tipsBox .cont p {
+	text-align: center;
+	line-height: 1.6;
+	font-size: 0.35rem;
+	letter-spacing: 0.05rem;
+	padding-top: 2.7rem;
+	color: #fff;
+	text-shadow: 0px 0px 10px #fdbbff;
+}
+
+#tipsBox .cont .close {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 1rem;
+	height: 1rem;
+	margin-left: -0.5rem;
+}
+
+/* tipsBox end */
+
+#choseBox .cont {
+	position: absolute;
+	top: 1.85rem;
+	left: 50%;
+	width: 6.44rem;
+	height: 9.12rem;
+	margin-left: -3.22rem;
+	background-image: url(../images/choseBox/cont.png);
+}
+
+#choseBox .cont .name {
+	position: absolute;
+	top: 0.15rem;
+	left: 50%;
+	margin-left: -1.91rem;
+	width: 3.82rem;
+	height: 0.72rem;
+	background-image: url(../images/choseBox/name.png);
+}
+
+#choseBox .cont .name input {
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	text-align: center;
+}
+
+#choseBox .cont .name input::-webkit-input-placeholder {
+	color: #fff;
+}
+
+#choseBox .cont .bg {
+	position: absolute;
+	top: 1.27rem;
+	left: 0.26rem;
+	width: 5.51rem;
+	height: 4.78rem;
+}
+
+#choseBox .cont .toy {
+	position: absolute;
+	top: 1.22rem;
+	left: 1.9rem;
+	width: 2.39rem;
+	height: 4.8rem;
+}
+
+#choseBox .cont .bottom {
+	position: absolute;
+	top: 5.56rem;
+	left: 0.82rem;
+	width: 4.66rem;
+	height: 1.02rem;
+}
+
+#choseBox .cont .btn {
+	position: absolute;
+	top: 6.32rem;
+	left: 1.27rem;
+	width: 3.96rem;
+	height: 0.84rem;
+	background-image: url(../images/choseBox/btn.png);
+}
+
+#choseBox .penel {
+	position: absolute;
+	top: 9.15rem;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #f5f5f5;
+	overflow: hidden;
+}
+
+#choseBox #penelScroll {
+	position: absolute;
+	top: 0.4rem;
+	left: 0.2rem;
+	bottom: 0.2rem;
+	right: 0;
+}
+
+#choseBox .penel .scrollBox {
+	width: 100%;
+	height: auto;
+}
+
+#choseBox .penel .box {
+	width: 6.57rem;
+	height: 4.5rem;
+	margin-left: 0.3rem;
+}
+
+#choseBox .penel .box .block {
+	width: 6rem;
+	height: 0.9rem;
+	margin-left: 1rem;
+	margin-bottom: 0.36rem;
+}
+
+#choseBox .penel .box .block .btn {
+	float: left;
+	width: 0.95rem;
+	height: 0.95rem;
+	margin-right: 0.17rem;
+	background-color: #e6e6e6;
+	border-radius: 0.1rem;
+	position: relative;
+	top: -0.12rem;
+	left: 0.03rem;
+	cursor: pointer;
+}
+
+#choseBox .penel .box .block .btn.act {
+	box-shadow: 0px 0px 10px rgba(98, 98, 98, 0.6);
+}
+
+/* choseBox end */
+
+#rankBox .cont{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 7.5rem;
+	height: 10rem;
+	transform: translate(0, -50%);
+}
+#rankBox .search{
+	position: absolute;
+	top: 0;
+	left: 0.5rem;
+	width: 3.49rem;
+	height: 0.45rem;
+	background-image: url(../images/rankBox/search.png);
+}
+#rankBox .search #search{
+	position: absolute;
+	top: 0;
+	left: 0.2rem;
+	width: 3rem;
+	height: 100%;
+}
+#rankBox .search .searchBtn{
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 0.7rem;
+	height: 100%;
+}
+
+#rankBox .btnBox{
+	position: absolute;
+	bottom: 0;
+	left: 0.2rem;
+	width: 7.1rem;
+	height: 0.8rem;
+}
+#rankBox .btnBox .btn{
+	position: absolute;
+	top: 0;
+	width: 3.5rem;
+	height: 0.77rem;
+}
+#rankBox .btnBox .addEnergy{
+	left: 0;
+	background-image: url(../images/rankBox/b1.png);
+}
+#rankBox .btnBox .lottery{
+	right: 0;
+	background-image: url(../images/rankBox/b3.png);
+}
+#rankBox .btnBox .makeToy{
+	right: 0;
+	background-image: url(../images/rankBox/b4.png);
+}
+
+#rankBox .rankcont{
+	position: absolute;
+	top: 0.9rem;
+	left: 50%;
+	width: 6.44rem;
+	height: 8.16rem;
+	margin-left: -3.22rem;
+	background-image: url(../images/rankBox/cont.png);
+}
+#rankBox .rankcont .allBtn{
+	position: absolute;
+	top: 0.9rem;
+	right: 0;
+	width: 1.7rem;
+	height: 0.6rem;
+	z-index: 9;
+}
+#rankBox .rankcont .rankList{
+	position: absolute;
+	top: 1.6rem;
+	left: 0.2rem;
+	width: 6.2rem;
+	height: 6rem;
+	overflow: hidden;
+}
+#rankBox .rankcont .rankList .scroll{
+	width: 100%;
+	height: auto;
+}
+#rankBox .rankcont .rankList .scroll .block{
+	width: 5.5rem;
+	height: 1.9rem;
+	margin-left: 0.4rem;
+	position: relative;
+	background-color: #f7c4d9;
+	border-radius: 0.1rem;
+	margin-bottom: 0.1rem;
+}
+#rankBox .rankcont .rankList .scroll .block .toy{
+	position: absolute;
+	top: 0.1rem;
+	left: 0.3rem;
+	height: 1.7rem;
+}
+#rankBox .rankcont .rankList .scroll .block .name{
+	position: absolute;
+	top: 0rem;
+	left: 1.65rem;
+	width: 3.1rem;
+	height: 0.92rem;
+	font-size: 0.2rem;
+	color: #ca3867;
+	line-height: 0.92rem;
+	text-align: center;
+	background-image: url(../images/rankBox/name.png);
+}
+#rankBox .rankcont .rankList .scroll .block .barBox{
+	position: absolute;
+	top: 0.9rem;
+	left: 1.4rem;
+	width: 3.69rem;
+	height: 0.29rem;
+	background-image: url(../images/rankBox/bar.png);
+}
+#rankBox .rankcont .rankList .scroll .block .mask{
+	-webkit-mask: url(../images/rankBox/mask.png);
+	-webkit-mask-size: 100%;
+}
+#rankBox .rankcont .rankList .scroll .block .mask .bar{
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 3.9rem;
+	height: 0.29rem;
+	background-image: url(../images/rankBox/stripe.png);
+}
+#rankBox .rankcont .rankList .scroll .block .barBox .energy{
+	position: absolute;
+	right: 0.3rem;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	font-size: 0.18rem;
+	text-align: right;
+	line-height: 0.27rem;
+}
+#rankBox .rankcont .rankList .scroll .block .btns{
+	position: absolute;
+	top: 1.25rem;
+	left: 1.2rem;
+	width: 4.1rem;
+	height: 0.59rem;
+	text-align: center;
+}
+#rankBox .rankcont .rankList .scroll .block .btns div{
+	display: inline-block;
+	width: 1.97rem;
+	height: 0.59rem;
+}
+#rankBox .rankcont .rankList .scroll .block .btns .add{
+	background-image: url(../images/rankBox/add.png);
+}
+#rankBox .rankcont .rankList .scroll .block .btns .invite{
+	background-image: url(../images/rankBox/invite.png);
+}
+#rankSelf .block{
+	margin-left: 0.27rem!important;
+}
+#rankBox .bg{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 7.5rem;
+}
+/* rankBox end */
+
+#exchangeEnergy{
+	background-color: rgba(0, 0, 0, 0);
+}
+#exchangeEnergy .cont{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 6.44rem;
+	height: 9.17rem;
+	transform: translate(-50%, -50%);
+	background-image: url(../images/codeBox/k.png);
+}
+#exchangeEnergy #EXenergyCode{
+	display: block;
+	width: 5rem;
+	height: 0.66rem;
+	margin: 1.55rem auto 0.3rem;
+	font-size: 0.31rem;
+	text-align: center;
+}
+#exchangeEnergy .confirmBtn{
+	width: 3rem;
+	height: 0.7rem;
+	margin: 0 auto 0.3rem;
+}
+#exchangeEnergy p{
+	font-size: 0.22rem;
+	color: #fff;
+	line-height: 1.2;
+	text-align: center;
+	padding-top: 3.1rem;
+}
+#exchangeEnergy .cont .close{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 1rem;
+	height: 1rem;
+	margin-left: -0.5rem;
+}
+/* exchangeEnergy end */
+
+#addEnergy{
+	background-color: rgba(0, 0, 0, 0);
+}
+#addEnergy .cont{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 6.44rem;
+	height: 9.17rem;
+	transform: translate(-50%, -50%);
+	background-image: url(../images/codeBox/k2.png);
+}
+#addEnergy #addEnergyCode{
+	display: block;
+	width: 5rem;
+	height: 0.66rem;
+	margin: 2.7rem auto 0.2rem;
+	font-size: 0.31rem;
+	text-align: center;
+}
+#addEnergy .confirmBtn{
+	width: 3rem;
+	height: 0.7rem;
+	margin: 0 auto 0.3rem;
+}
+#addEnergy p{
+	font-size: 0.22rem;
+	color: #fff;
+	line-height: 1.2;
+	text-align: center;
+	padding-top: 2.55rem;
+}
+#addEnergy .cont .close{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 1rem;
+	height: 1rem;
+	margin-left: -0.5rem;
+}
+/* addEnergy end */
+
+#codeBox{
+	background-color: rgba(0, 0, 0, 0);
+}
+#codeBox .cont{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 6.44rem;
+	height: 7.9rem;
+	transform: translate(-50%, -50%);
+	background-image: url(../images/codeBox/code.png);
+}
+#codeBox .cont img{
+	display: block;
+	width: 2.3rem;
+	height: 2.3rem;
+	margin: 2.44rem auto;
+	border: 0.2rem solid #fff;
+	border-radius: 0.2rem;
+	background-color: #fff;
+}
+/* codeBox end */
+
+#shareBox .cont{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 6.44rem;
+	height: 10.2rem;
+	transform: translate(-50%,-50%);
+}
+#shareBox .cont .kuang{
+	width: 6.44rem;
+	height: 8.89rem;
+	background-image: url(../images/shareBox/k.png);
+	position: relative;
+}
+#shareBox .cont .toy{
+	position: absolute;
+	top: 2.2rem;
+	left: 50%;
+	width: 2.4rem;
+	margin-left: -1.2rem;
+}
+#shareBox .cont .bottom{
+	position: absolute;
+	top: 6.6rem;
+	left: 50%;
+	width: 4.66rem;
+	margin-left: -2.33rem;
+}
+#shareBox .cont .name{
+	position: absolute;
+	top: 8.1rem;
+	left: 0;
+	width: 100%;
+	font-size: 0.35rem;
+	color: #fff;
+	text-align: center;
+}
+#shareBox .cont .names{
+	position: absolute;
+	top: 8.1rem;
+	left: 0;
+	width: 100%;
+	font-size: 0.35rem;
+	color: #e46694;
+	text-align: center;
+	transform: translate(0,2px);
+}
+
+#shareBox .cont .handBox{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 3.08rem;
+	height: 1.08rem;
+	margin-left: -1.54rem;
+}
+/* shareBox end */
+
+#toyBox{
+	position: absolute;
+	top: -1000px;
+	left: 0;
+	width: 239px;
+	height: 480px;
+}
+/* toyBox end */
+
+#posterBox{
+	position: absolute;
+	top: 0;
+	left: -1000px;
+	width: 750px;
+	height: 1398px;
+	/* z-index: 999;
+	transform: scale(0.4,0.4);
+	transform-origin: top left; */
+}
+#posterBox .mlogo {
+	position: absolute;
+	top: 40px;
+	left: 50%;
+	width: 609px;
+	height: 58px;
+	margin-left: -304.5px;
+	z-index: 9;
+}
+#posterBox .cont {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 644px;
+	height: 1031px;
+	margin-left: -322px;
+	margin-top: -490px;
+}
+#posterBox .cont .toy{
+	position: absolute;
+	top: 220px;
+	left: 50%;
+	width: 230px;
+	margin-left: -115px;
+}
+#posterBox .cont .bottom{
+	position: absolute;
+	top: 640px;
+	left: 50%;
+	width: 466px;
+	margin-left: -233px;
+}
+#posterBox .cont .name{
+	position: absolute;
+	top: 780px;
+	left: 0;
+	width: 100%;
+	font-size: 35px;
+	color: #fff;
+	text-align: center;
+}
+#posterBox .cont .names{
+	position: absolute;
+	top: 782px;
+	left: 0;
+	width: 100%;
+	font-size: 35px;
+	color: #e46694;
+	text-align: center;
+}
+#posterBox .cont .nikeName{
+	position: absolute;
+	top: 46px;
+	left: 137px;
+	width: 500px;
+	font-size: 19px;
+}
+#posterBox .cont .tips{
+	position: absolute;
+	top: 390px;
+	right: 0;
+	width: 282px;
+}
+#posterBox .cont .head{
+	position: absolute;
+	top: 46px;
+	left: 33px;
+	width: 80px;
+	height: 80px;
+	border-radius: 5px;
+}
+#posterBox .cont .code{
+	position: absolute;
+	bottom: 31px;
+	left: 146px;
+	width: 105px;
+	height: 105px;
+}
+/* posterBox end */
 /*---------------------------------------- 15:9 ----------------------*/
 
 /*---------------------------------------- 18:9 ----------------------*/
+
+.screen189 #penelScroll .iScrollVerticalScrollbar {
+	display: none;
+}

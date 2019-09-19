@@ -1,32 +1,315 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>微信竖屏模板页</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,target-densitydpi=device-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="format-detection" content="telephone=no" />
-<meta name="format-detection" content="email=no" />
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-<meta http-equiv="Pragma" content="no-cache" />
-<meta http-equiv="Expires" content="0" />
-<link rel="stylesheet" type="text/css" href="css/common.css" />
-<script src="js/base/base.js"></script>
-<script>
-ibase.init();
-ibase.load('css/index.css');//无缓存加载文件
-</script>
+    <title>强生</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width,target-densitydpi=device-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <script src="js/base/base.js"></script>
+    <script>
+        ibase.init();
+        ibase.load('css/index.css');//无缓存加载文件
+    </script>
 </head>
+
 <body>
-<!--------------------------------------------------------------html区域-------------------------------------------------------------------------------------------->
-<article style="display: none;">
-	
-</article>
-<!--------------------------------------------------------------javascript区域-------------------------------------------------------------------------------------->
-<script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
-<script src="js/base/jquery.js"></script>
-<script src="js/base/framwork.js"></script>
-<script src="js/base/monitor.js"></script>
-<script src="js/base/wxUser.js"></script>
-<script>ibase.load('js/index.js');</script>
+    <!--------------------------------------------------------------html区域-------------------------------------------------------------------------------------------->
+    <article style="display: none;">
+        <img src="images/public/logo.png" class="logo">
+
+        <div id="toyBox">
+            <img src="" class="full body">
+            <img src="" class="full pants">
+            <img src="" class="full head">
+            <img src="" class="full eye">
+        </div>
+
+        <div id="posterBox">
+            <img src="images/public/bg.jpg" class="bg full">
+            <img src="images/public/logo.png" class="mlogo">
+            <div class="cont">
+                <img src="images/posterBox/bg.png" class="kuang full">
+                <img src="images/public/bg.jpg" class="head">
+                <p class="nikeName">啊飒飒的阿萨德</p>
+                <img src="images/choseBox/d.png" class="bottom">
+                <img src="images/choseBox/green/p.png" class="toy">
+                <img src="images/posterBox/gray.png" class="tips">
+                <div class="names">啊啊啊啊啊啊</div>
+                <div class="name">啊啊啊啊啊啊</div>
+                <img src="images/public/bg.jpg" class="code">
+            </div>
+        </div>
+
+        <section id="shareBox" class="none">
+            <div class="cont">
+                <div class="kuang">
+                    <img src="images/choseBox/d.png" class="bottom">
+                    <img src="images/choseBox/purple/p.png" class="toy">
+                    <div class="names">啊啊啊啊啊啊</div>
+                    <div class="name">啊啊啊啊啊啊</div>
+                </div>
+                <div class="handBox">
+                    <img src="images/shareBox/tips.png" class="full">
+                    <img src="images/shareBox/hand.png" class="full updowning">
+                </div>
+            </div>
+        </section>
+
+        <section id="rankBox" class="none">
+            <img src="images/rankBox/bg.png" class="bg">
+            <div class="cont">
+                <div class="search">
+                    <input type="text" id="search" placeholder="搜索潘神昵称">
+                    <div class="searchBtn"></div>
+                </div>
+
+                <div class="ruleBtn"></div>
+
+                <div class="rankcont">
+                    <div class="allBtn"></div>
+                    <div class="rankList" id="rankScroll">
+                        <div class="scroll">
+                            <!-- <div class="block">
+                                <img src="images/choseBox/gray/p.png" class="toy">
+                                <div class="name">NO.1 啊啊啊啊啊啊</div>
+                                <div class="barBox">
+                                    <div class="mask full">
+                                        <div class="bar"></div>
+                                    </div>
+                                    <div class="energy">0能量</div>
+                                </div>
+                                <div class="btns">
+                                    <div class="add"></div>
+                                    <div class="invite"></div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <div class="rankList none" id="rankSelf">
+                        <div class="scroll">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btnBox">
+                    <div class="addEnergy btn"></div>
+                    <div class="lottery btn"></div>
+                    <div class="makeToy btn"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="choseBox" class="none">
+            <div class="cont">
+                <div class="name">
+                    <input type="text" id="toy_name" maxlength="6" placeholder="快给你的专属潘神起个昵称吧~">
+                </div>
+                <img src="images/choseBox/d.png" class="bottom">
+                <img src="images/choseBox/bg/1.png" class="bg none">
+                <img src="images/choseBox/purple/pb.png" class="toy toy_w">
+                <img src="images/choseBox/purple/p.png" class="toy toy_b none">
+                <img src="images/choseBox/purple/head/1.png" class="toy toy_h none">
+                <img src="images/choseBox/purple/pants/1.png" class="toy toy_p none">
+                <img src="images/choseBox/purple/eye/1.png" class="toy toy_e none">
+                <div class="btn"></div>
+            </div>
+            <div class="penel">
+                <div id="penelScroll">
+                    <div class="scrollBox">
+                        <div class="box">
+                            <div class="btns"></div>
+                            <img src="images/choseBox/control.png" class="control full noPointer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="lotteryBox" class="none">
+            <div class="cont">
+                <div class="bubbleBox full none">
+                    <!-- <img src="images/lotteryBox/b.png" class="bubble"> -->
+                </div>
+
+                <div class="award coupon full none">
+                    <img src="images/lotteryBox/t.png" class="title">
+                    <p class="giftname">获得啵啵实验室彩色月抛软性隐形眼镜<br><span>10元优惠券</span></p>
+                    <img src="images/lotteryBox/a1.png" class="gift">
+                    <p class="tips">复制一下淘口令</p>
+                    <div class="ckoulin">
+                        xxxxxxxxxx<br>
+                        打开淘宝，即可领取！
+                    </div>
+                    <p class="tips">
+                        *啵啵小提示：<br><span>购买啵啵实验室™彩色隐形眼镜限时送泡泡玛特潘神甜品系列盲盒<br>优惠券淘口令最长的有效时间是30天,记得及时领取并在有效截至日期之前使用~</span>
+                    </p>
+                </div>
+
+                <div class="award toy full none">
+                    <img src="images/lotteryBox/t.png" class="title">
+                    <p class="giftname">获得泡泡玛特<br><span>潘神甜品系列盲盒一只</span></p>
+                    <img src="images/lotteryBox/a2.png" class="gift">
+                    <p class="tips">
+                        *啵啵小提示：<br><span>购买啵啵实验室™彩色隐形眼镜限时送泡泡玛特潘神甜品系列盲盒<br>*客服将在一周内通过电话形式联系您,核对身份信息并安排寄送奖品,请保持手机畅通</span>
+                    </p>
+                </div>
+            </div>
+            <div class="close"></div>
+        </section>
+
+        <section id="resultBox" class="none">
+            <img src="images/resultBox/bg.png" class="bg">
+            <div class="cont">
+                <img src="images/resultBox/word/hqx.png" class="word">
+                <img src="images/resultBox/bowl/gray.png" class="bowl">
+                <img src="images/resultBox/powder/gray.png" class="powder">
+                <img src="images/resultBox/spoon1/gray.png" class="spoon1">
+                <img src="images/resultBox/spoon2/gray.png" class="spoon2">
+            </div>
+            <div class="btn"></div>
+        </section>
+
+        <section id="makeBox" class="none">
+            <img src="images/makeBox/bg.png" class="bg">
+            <div class="cont">
+                <div class="bubbleBox">
+                    <div class="bubble hqx" data-val="hqx">
+                        <div class="bubbleImg full">
+                            <img src="images/makeBox/hqx.png">
+                        </div>
+                    </div>
+                    <div class="bubble jq" data-val="jq">
+                        <div class="bubbleImg full">
+                            <img src="images/makeBox/jq.png">
+                        </div>
+                    </div>
+                    <div class="bubble lg" data-val="lg">
+                        <div class="bubbleImg full">
+                            <img src="images/makeBox/lg.png">
+                        </div>
+                    </div>
+                    <div class="bubble ml" data-val="ml">
+                        <div class="bubbleImg full">
+                            <img src="images/makeBox/ml.png">
+                        </div>
+                    </div>
+                    <div class="bubble mm" data-val="mm">
+                        <div class="bubbleImg full">
+                            <img src="images/makeBox/mm.png">
+                        </div>
+                    </div>
+                    <div class="bubble sj" data-val="sj">
+                        <div class="bubbleImg full">
+                            <img src="images/makeBox/sj.png">
+                        </div>
+                    </div>
+                </div>
+                <img src="images/makeBox/light.png" class="light">
+                <div class="liquid">
+                    <img src="images/makeBox/c1.png" class="full color1">
+                    <img src="images/makeBox/c2.png" class="full color2">
+                    <img src="images/makeBox/c3.png" class="full color3">
+                </div>
+                <img src="images/makeBox/battle.png" class="battle">
+                <div class="btn"></div>
+            </div>
+        </section>
+
+        <section id="loadingBox" class="none">
+            <div class="cont">
+                <div class="ruleBtn"></div>
+
+                <div class="titleBox">
+                    <img src="images/loadingBox/title.png" class="title">
+                    <div class="bubbles full">
+                        <div class="left">
+                            <!-- <img src="images/public/bubble.png" class="bubble"> -->
+                        </div>
+                        <div class="right"></div>
+                        <div class="bottom"></div>
+                    </div>
+                </div>
+
+                <div class="loadBarBox none">
+                    <div class="mask full">
+                        <div class="bar full"></div>
+                    </div>
+                    <img src="images/loadingBox/k.png" class="kuang full">
+                    <img src="images/loadingBox/w.png" class="word full lighting">
+                </div>
+
+                <div class="formBox">
+                    <input type="text" id="index_phone" placeholder="请输入您的手机号码" maxlength="11">
+                    <input type="text" id="index_code" maxlength="10">
+                    <div id="codeBtn">发送验证码</div>
+                    <div class="readRule">
+                        <div class="readed">√</div>
+                    </div>
+                </div>
+
+                <div class="btn" id="startBtn"></div>
+            </div>
+        </section>
+
+        <aside id="ruleBox" class="none">
+            <div class="cont">
+                <div class="scrollBox" id="ruleScroll">
+                    <div class="scroll">
+                        <img src="images/ruleBox/word.jpg" class="word">
+                    </div>
+                </div>
+                <a class="close"></a>
+            </div>
+        </aside>
+
+        <aside id="tipsBox" class="none">
+            <div class="cont">
+                <p>欢迎回到啵啵实验室<br>点击查看我的潘神排名<br>查看排名</p>
+                <a class="close"></a>
+            </div>
+        </aside>
+
+        <aside id="exchangeEnergy" class="none">
+            <div class="cont">
+                <input type="text" id="EXenergyCode" placeholder="请输入能量兑换码">
+                <div class="confirmBtn"></div>
+                <p>前方指路，复制以下淘口令<br>×××××××××<br>打开淘宝，下单冲鸭！</p>
+                <a class="close"></a>
+            </div>
+        </aside>
+
+        <aside id="addEnergy" class="none">
+            <div class="cont">
+                <p>前方指路，复制以下淘口令<br>×××××××××<br>打开淘宝，下单冲鸭！</p>
+                <input type="text" id="addEnergyCode" placeholder="请输入能量兑换码">
+                <div class="confirmBtn"></div>
+                <a class="close"></a>
+            </div>
+        </aside>
+
+        <aside id="codeBox" class="none">
+            <div class="cont">
+                <img src="" class="code">
+            </div>
+        </aside>
+    </article>
+    <!--------------------------------------------------------------javascript区域-------------------------------------------------------------------------------------->
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <script src="js/base/jquery.js"></script>
+    <script src="js/base/framwork.js"></script>
+    <script src="js/base/monitor.js"></script>
+    <script src="js/base/wxUser.js"></script>
+    <script src="js/plugs/iscroll.js"></script>
+    <script>ibase.load('js/index.js');</script>
 </body>
+
 </html>
