@@ -49,6 +49,9 @@ section {
 	top: 0;
 	left: 0;
 	z-index: 3;
+	background: url("../images/public/bg.jpg") no-repeat;
+	background-size: cover;
+	background-position: center;
 }
 
 aside {
@@ -62,7 +65,7 @@ aside {
 }
 
 img {
-	/* pointer-events: none; */
+	pointer-events: none;
 }
 
 .logo {
@@ -306,11 +309,20 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
+	width: 50%;
 	height: 0.45rem;
 	color: #ca3867;
 	cursor: pointer;
 	padding: 0 0 0 0.93rem;
+	opacity: 0;
+}
+#loadingBox .cont .formBox .privacy {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50%;
+	height: 0.45rem;
+	cursor: pointer;
 }
 
 #loadingBox .cont #startBtn {
@@ -434,6 +446,9 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 #makeBox .cont .bubbleBox .bubble .bubbleImg {
 	background-image: url(../images/public/bubble.png);
 }
+#makeBox .cont .bubbleBox .bubble.act .bubbleImg {
+	-webkit-animation: updowning 2s ease infinite;
+}
 
 #makeBox .cont .bubbleBox .bubble img {
 	width: 1.1rem;
@@ -493,6 +508,10 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	height: 1.02rem;
 	margin-top: 4.8rem;
 	background-image: url(../images/resultBox/btn.png);
+}
+
+#resultBox .showList {
+	background-image: url(../images/resultBox/btn2.png);
 }
 
 #resultBox .word {
@@ -712,7 +731,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	height: 1.02rem;
 }
 
-#choseBox .cont .btn {
+#choseBox .cont .submitbtn {
 	position: absolute;
 	top: 6.32rem;
 	left: 1.27rem;
@@ -951,7 +970,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 /* rankBox end */
 
 #exchangeEnergy{
-	background-color: rgba(0, 0, 0, 0);
+
 }
 #exchangeEnergy .cont{
 	position: absolute;
@@ -980,7 +999,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	color: #fff;
 	line-height: 1.2;
 	text-align: center;
-	padding-top: 3.1rem;
+	padding-top: 5.85rem;
 }
 #exchangeEnergy .cont .close{
 	position: absolute;
@@ -992,9 +1011,6 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 }
 /* exchangeEnergy end */
 
-#addEnergy{
-	background-color: rgba(0, 0, 0, 0);
-}
 #addEnergy .cont{
 	position: absolute;
 	top: 50%;
@@ -1035,7 +1051,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 /* addEnergy end */
 
 #codeBox{
-	background-color: rgba(0, 0, 0, 0);
+
 }
 #codeBox .cont{
 	position: absolute;
@@ -1054,9 +1070,14 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	border: 0.2rem solid #fff;
 	border-radius: 0.2rem;
 	background-color: #fff;
+	pointer-events: auto;
 }
 /* codeBox end */
 
+#shareBox .poster{
+	pointer-events: auto;
+	opacity: 0;
+}
 #shareBox .cont{
 	position: absolute;
 	top: 50%;
@@ -1121,6 +1142,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	left: 0;
 	width: 239px;
 	height: 480px;
+	background-color: transparent;
 }
 /* toyBox end */
 

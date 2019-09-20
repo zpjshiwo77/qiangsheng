@@ -5,7 +5,46 @@ $(document).ready(function () {
 	var articleBox = $('article');
 	var windowScale = window.innerWidth / 750;
 	var loadingBox = $("#loadingBox");
+	var loadingBox = $("#loadingBox");
 	var loadPer = $("#loadingBox .bar");
+	var hrefs = window.location.href.split('?');
+	var dominUrl = hrefs[0].substr(0, hrefs[0].lastIndexOf('/') + 1);
+
+	var userInfo = {
+		userName: "测试",
+		userHead: "https://www.seventh77.com/view/food/img/head.jpg",
+		userId: "",
+		userStatus: 2,		//用户状态 0完成潘神，2未注册手机，3未制作潘神，4未选择属性
+		toyUrl: "http://cdn.be-xx.com/test/79e77b44-82fc-4daf-ae12-fa276ab90935.png",
+		choseAttr: [],
+		choseColor: "",
+		hmsr: "default",
+		toyInfo: {
+			eye: "",
+			pants: "",
+			head: "",
+			bg: "",
+			name: ""
+		}
+	};
+
+	var choseUserInfo = {
+		userName: "测试",
+		userHead: "https://www.seventh77.com/view/food/img/head.jpg",
+		userId: "",
+		userStatus: 4,		//用户状态 0完成潘神，2未注册手机，3未制作潘神，4未选择属性
+		toyUrl: "http://cdn.be-xx.com/test/79e77b44-82fc-4daf-ae12-fa276ab90935.png",
+		choseAttr: ['mm'],
+		choseColor: "gray",
+		hmsr: "default",
+		toyInfo: {
+			eye: "1",
+			pants: "1",
+			head: "1",
+			bg: "1",
+			name: "sssss"
+		}
+	};
 
 	//----------------------------------------页面初始化----------------------------------------
 	icom.init(init);//初始化
@@ -16,15 +55,16 @@ $(document).ready(function () {
 			if (os.screenProp < 0.54) articleBox.addClass("screen189");
 			if (os.screenProp > 0.64) articleBox.addClass("screen159");
 			load_handler();
-			bubbleInit($("#loadingBox .left"),6);
+			bubbleInit($("#loadingBox .left"), 6);
 			setTimeout(function () {
-				bubbleInit($("#loadingBox .right"),5);
+				bubbleInit($("#loadingBox .right"), 5);
 			}, 1000)
 			setTimeout(function () {
 				bubbleInit($("#loadingBox .bottom"), 3);
 			}, 1500);
 		});
 		wxUser.init();
+		getUserInfo();
 	}//edn func
 
 	//----------------------------------------加载页面图片----------------------------------------
@@ -73,6 +113,17 @@ $(document).ready(function () {
 	var lotteryBox = $("#lotteryBox");
 	var choseBox = $("#choseBox");
 	var makeBox = $("#makeBox");
+	var resultBox = $("#resultBox");
+	var lotteryBox = $("#lotteryBox");
+	var rankBox = $("#rankBox");
+	var shareBox = $("#shareBox");
+	var posterBox = $("#posterBox");
+	var toyBox = $("#toyBox");
+	var ruleBox = $("#ruleBox");
+	var tipsBox = $("#tipsBox");
+	var exchangeEnergy = $("#exchangeEnergy");
+	var addEnergy = $("#addEnergy");
+	var codeBox = $("#codeBox");
 
 	var ruleScroll = new IScroll('#ruleScroll', {
 		bounce: false,
@@ -92,6 +143,42 @@ $(document).ready(function () {
 		click: true
 	});
 
+	var readed = false;
+	var toyWhite = true;
+	var lotteryFlag = false;
+
+	var attrColor = {
+		"ml": {
+			color: "gray",
+			name: "魅力",
+			colorName: "粉灰"
+		},
+		"jq": {
+			color: "gray",
+			name: "坚强",
+			colorName: "粉灰"
+		},
+		"lg": {
+			color: "green",
+			name: "乐观",
+			colorName: "粉绿"
+		},
+		"hqx": {
+			color: "green",
+			name: "好奇心",
+			colorName: "粉绿"
+		},
+		"sj": {
+			color: "purple",
+			name: "撒娇",
+			colorName: "粉紫"
+		},
+		"mm": {
+			color: "purple",
+			name: "美貌",
+			colorName: "粉紫"
+		}
+	};
 
 	/**
 	 * 页面初始化
@@ -100,21 +187,22 @@ $(document).ready(function () {
 		eventInit();
 		DevelopTest();
 		monitor_handler();
+		// judgeUserSource();
 	}//end func
 
 	/**
 	 * 开发测试使用
 	 */
 	function DevelopTest() {
-		// loadingBox.hide();
+		loadingBox.hide();
 		// QABox.show();
 
-		ruleScroll.refresh();
-		penelScroll.refresh();
-		rankScroll.refresh();
-		penelInit();
+		// penelScroll.refresh();
+		// rankScroll.refresh();
 		// lotteryAnime();
-		liquidAnime();
+		// liquidAnime();
+		// showChoseBox();
+		makeInvitePeople();
 	}
 
 	/**
@@ -122,20 +210,711 @@ $(document).ready(function () {
 	 */
 	function eventInit() {
 		$(".limitBtn").on("touchend", limitClick);
+
+		$(".ruleBtn").on("touchend", showRuleBox);
+
+		loadingBox.find(".readed").on("touchend", readPrivacy);
+		loadingBox.find(".privacy").on("touchend", gotoPrivacy);
+		loadingBox.find("#codeBtn").on("touchend", getCode);
+		loadingBox.find("#startBtn").on("touchend", submitPhone);
+
+		makeBox.find(".bubble").on("touchend", choseAttr);
+		makeBox.find(".btn").on("touchend", makeAttr);
+
+		resultBox.find(".makeToy").on("touchend", showChoseBox);
+		resultBox.find(".showList").on("touchend", showMyRankList);
+
+		choseBox.on("click", ".btn", changeToyImg);
+		choseBox.find(".submitbtn").on("touchend", makeMyToyImg);
+
+		rankBox.find(".addEnergy").on("touchend", showAddEnergy);
+		rankBox.find(".lottery").on("touchend", lottery);
+		rankBox.find(".makeToy").on("touchend", reloadPage);
+		rankBox.find(".allBtn").on("touchend", requestAllRankList);
+		rankBox.find(".searchBtn").on("touchend", searchRankName);
+		rankBox.on("touchend", ".add", function () {
+			var that = $(this);
+			requestRankUserInfo(that, AddEnergy);
+		});
+		rankBox.on("touchend", ".invite", function (e) {
+			var that = $(this);
+			requestRankUserInfo(that, makeInvitePeople);
+		});
+
+		lotteryBox.find(".close").on("touchend", closeLotteryBox);
+
+		addEnergy.find(".confirmBtn").on("touchend", addEnergyToUser);
+	}
+
+	/**
+	 * 请求用户信息
+	 */
+	function requestRankUserInfo(ele, callback) {
+		if (callback) callback();
+	}
+
+	/**
+	 * 生成邀请页面
+	 */
+	function makeInvitePeople() {
+		icom.fadeIn(loadBox);
+		var url = dominUrl + "?energy=1&uid=" + choseUserInfo.userId;
+		var a = false, b = false, c = false;
+
+		shareBox.find(".toy")[0].src = choseUserInfo.toyUrl;
+		shareBox.find(".names").html(choseUserInfo.toyInfo.name);
+		shareBox.find(".name").html(choseUserInfo.toyInfo.name);
+
+		posterBox.find(".names").html(choseUserInfo.toyInfo.name);
+		posterBox.find(".name").html(choseUserInfo.toyInfo.name);
+		posterBox.find(".nikeName").html(choseUserInfo.userName);
+		posterBox.find(".tips")[0].src = "images/posterBox/" + choseUserInfo.toyInfo.eye + ".png";
+
+		API.imgtrance({ "img_url": choseUserInfo.userHead }, function (res) {
+			if (res.code == 0) {
+				posterBox.find(".head")[0].src = res.data.img_base;
+				a = true;
+				if (a && b && c) {
+					setTimeout(function () {
+						makePoster(posterBox, "jpg", showShareBox);
+					}, 1000);
+				}
+			}
+
+		});
+
+		makeMyToyImging(choseUserInfo, function (res) {
+			b = true;
+			posterBox.find(".toy")[0].src = res;
+			if (a && b && c) {
+				setTimeout(function () {
+					makePoster(posterBox, "jpg", showShareBox);
+				}, 1000);
+			}
+		});
+
+		API.imgtrance({ "img_url": "http://upload.be-xx.com/qrcode?s=" + encodeURIComponent(url) + "&color=000" }, function (res) {
+			if (res.code == 0) {
+				c = true;
+				posterBox.find(".code")[0].src = res.data.img_base;
+				if (a && b && c) {
+					setTimeout(function () {
+						makePoster(posterBox, "jpg", showShareBox);
+					}, 1000);
+				}
+			}
+		});
+	}
+
+	/**
+	 * 显示分享页面
+	 */
+	function showShareBox(src) {
+		shareBox.find(".poster")[0].src = src;
+		icom.fadeOut(loadBox);
+		icom.fadeOut(rankBox);
+		shareBox.show();
+	}
+
+	/**
+	 * 添加能量
+	 */
+	function AddEnergy() {
+		showAddEnergyBox();
+	}
+
+	/**
+	 * 显示添加能量的页面
+	 */
+	function showAddEnergyBox() {
+		icom.popOn(addEnergy);
+	}
+
+	/**
+	 * 给用户添加能量
+	 */
+	function addEnergyToUser() {
+		var code = $("#addEnergyCode").val();
+		if (code == "") icom.alert("请输入能量兑换码");
+		else {
+
+		}
+	}
+
+	/**
+	 * 显示提示页面
+	 * @param {} word 
+	 */
+	function showTipsBox(word) {
+		tipsBox.find("p").html(word);
+		icom.popOn(tipsBox);
+	}
+
+	/**
+	 * 关闭抽奖页面
+	 */
+	function closeLotteryBox() {
+		if (!lotteryFlag) {
+			icom.fadeIn(rankBox, 500, function () {
+				lotteryBox.hide();
+			})
+		}
+	}
+
+	/**
+	 * 刷新页面
+	 */
+	function reloadPage() {
+		if (os.weixin) {
+			location.replace(dominUrl + "?v=" + Math.random());
+		}
+		else {
+			showCodeBox();
+		}
+	}
+
+	/**
+	 * 显示code页面
+	 */
+	function showCodeBox() {
+		var url = location.href;
+		codeBox.find(".code")[0].src = "http://upload.be-xx.com/qrcode?s=" + encodeURIComponent(url) + "&color=000";
+		icom.fadeOut(rankBox);
+		icom.fadeIn(codeBox);
+	}
+
+	/**
+	 * 显示加能量的页面
+	 */
+	function showAddEnergy() {
+		icom.popOn(exchangeEnergy);
+	}
+
+	/**
+	 * 抽奖
+	 */
+	function lottery() {
+		showLotteryBox(2);
+	}
+
+	/**
+	 * 显示抽奖的页面
+	 */
+	function showLotteryBox(award) {
+		icom.fadeOut(rankBox);
+		lotteryBox.show();
+		lotteryBox.find(".bubbleBox").show();
+
+		lotteryFlag = true;
+
+		lotteryAnime(function () {
+			lotteryFlag = false;
+			if (award == 0) {
+				icom.alert("未中奖");
+				return;
+			}
+			if (award == 1) {
+				icom.fadeIn(lotteryBox.find(".coupon"));
+			}
+			else {
+				icom.fadeIn(lotteryBox.find(".toy"));
+			}
+		});
+	}
+
+	/**
+	 * 生成我的潘神形象
+	 */
+	function makeMyToyImg() {
+		userInfo.toyInfo.name = $("#toy_name").val();
+
+		if (userInfo.toyInfo.eye == "") {
+			icom.alert("请选择镜片颜色");
+			return;
+		}
+		if (userInfo.toyInfo.pants == "") {
+			icom.alert("请选择裤子颜色");
+			return;
+		}
+		if (userInfo.toyInfo.bg == "") {
+			icom.alert("请选择背景");
+			return;
+		}
+		if (userInfo.toyInfo.head == "") {
+			icom.alert("请选择头发颜色");
+			return;
+		}
+		if (userInfo.toyInfo.name == "") {
+			icom.alert("请输入潘神名称");
+			return;
+		}
+
+		icom.fadeIn(loadBox);
+
+
+		makeMyToyImging(function (base64) {
+			icom.base64_send(base64, function (src) {
+				icom.fadeOut(loadBox);
+				userInfo.toyUrl = src;
+				showRankBox();
+			})
+		})
+	}
+
+	/**
+	 * 生成中...
+	 */
+	function makeMyToyImging(info, callback) {
+		toyBox.find(".body")[0].src = "images/choseBox/" + info.choseColor + "/p.png";
+		toyBox.find(".pants")[0].src = "images/choseBox/" + info.choseColor + "/pants/" + info.toyInfo.pants + ".png";
+		toyBox.find(".head")[0].src = "images/choseBox/" + info.choseColor + "/head/" + info.toyInfo.head + ".png";
+		toyBox.find(".eye")[0].src = "images/choseBox/" + info.choseColor + "/eye/" + info.toyInfo.eye + ".png";
+		makePoster(toyBox, "png", callback);
+	}
+
+	/**
+	 * 修改潘神的形象
+	 */
+	function changeToyImg() {
+		var that = $(this);
+		var type = that.attr("data-type");
+		var val = that.attr("data-val");
+		var box = choseBox.find(".block" + type);
+
+		box.find(".btn").removeClass("act");
+		that.addClass("act");
+
+		if (toyWhite) {
+			toyWhite = false;
+			choseBox.find(".toy_w").hide();
+			choseBox.find(".toy_b").show();
+		}
+
+		switch (type) {
+			case "0":
+				changeToyEye(val);
+				break;
+			case "1":
+				changeToyPants(val);
+				break;
+			case "2":
+				changeToyBg(val);
+				break;
+			case "3":
+				changeToyHead(val);
+				break;
+		}
+	}
+
+	/**
+	 * 修改潘神的眼镜
+	 */
+	function changeToyEye(id) {
+		var eye = choseBox.find(".toy_e");
+		eye.show();
+		eye[0].src = "images/choseBox/" + userInfo.choseColor + "/eye/" + id + ".png";
+		userInfo.toyInfo.eye = id;
+	}
+
+	/**
+	 * 修改潘神的裤子
+	 */
+	function changeToyPants(id) {
+		var pants = choseBox.find(".toy_p");
+		pants.show();
+		pants[0].src = "images/choseBox/" + userInfo.choseColor + "/pants/" + id + ".png";
+		userInfo.toyInfo.pants = id;
+	}
+
+	/**
+	 * 修改潘神的背景
+	 */
+	function changeToyBg(id) {
+		var bg = choseBox.find(".bg");
+		bg.show();
+		bg[0].src = "images/choseBox/bg/" + id + ".png";
+		userInfo.toyInfo.bg = id;
+	}
+
+	/**
+	 * 修改潘神的头
+	 */
+	function changeToyHead(id) {
+		var head = choseBox.find(".toy_h");
+		head.show();
+		head[0].src = "images/choseBox/" + userInfo.choseColor + "/head/" + id + ".png";
+		userInfo.toyInfo.head = id;
+	}
+
+	/**
+	 * 显示制作潘神的页面
+	 */
+	function showChoseBox() {
+		var toy = choseBox.find(".toy_b");
+		var toyw = choseBox.find(".toy_w");
+		toy[0].src = "images/choseBox/" + userInfo.choseColor + "/p.png";
+		toyw[0].src = "images/choseBox/" + userInfo.choseColor + "/pb.png";
+		icom.fadeOut(resultBox);
+		choseBox.show();
+		penelInit();
+		penelScroll.refresh();
+	}
+
+	/**
+	 * 显示我的排行榜
+	 */
+	function showMyRankList() {
+		icom.fadeOut(resultBox);
+		rankBox.show();
+		rankBox.find(".lottery").show();
+		requestUidList(userInfo.userId);
+	}
+
+	/**
+	 * 显示排行榜页面
+	 */
+	function showRankBox() {
+		icom.fadeOut(choseBox);
+		rankBox.show();
+		rankBox.find(".lottery").show();
+		requestAllRankList();
+	}
+
+	/**
+	 * 去排行榜页面
+	 */
+	function gotoRankList(userId) {
+		icom.fadeOut(loadingBox);
+		rankBox.show();
+		rankBox.find(".makeToy").show();
+		if (userId) requestUidList(userId);
+		else requestAllRankList();
+	}
+
+	/**
+	 * 根据名字搜索排行榜
+	 */
+	function searchRankName() {
+		var name = $("#search").val();
+		if (name == "") icom.alert("请输入潘神昵称");
+		else requestNameList(name);
+	}
+
+	/**
+	 * 请求所有的排行榜
+	 */
+	function requestAllRankList() {
+
+	}
+
+	/**
+	 * 请求制定uid的排行榜
+	 */
+	function requestUidList(uid) {
+
+	}
+
+	/**
+	 * 请求昵称的排行榜
+	 */
+	function requestNameList(name) {
+
+	}
+
+	/**
+	 * 生成属性
+	 */
+	function makeAttr() {
+		if (userInfo.choseAttr.length == 0) icom.alert("至少选择一个属性");
+		else {
+			makeAttrAnime();
+		}
+	}
+
+	/**
+	 * 生成属性的动画
+	 */
+	function makeAttrAnime() {
+		var bubble = makeBox.find(".bubble");
+
+		bubble.transition({ x: "2.8rem", y: "-1rem", opacity: 0 }, 1500);
+
+		setTimeout(function () {
+			liquidAnime(function () {
+				icom.fadeOut(makeBox);
+				showMyChoseAttr(false, true);
+			})
+		}, 500);
+	}
+
+	/**
+	 * 选择属性
+	 */
+	function choseAttr() {
+		var that = $(this);
+		var val = that.attr("data-val");
+
+		if (!that.hasClass("act")) {
+			that.addClass("act");
+			userInfo.choseAttr.push(val);
+			if (userInfo.choseAttr.length == 1) {
+				userInfo.choseColor = attrColor[val].color;
+			}
+		}
+	}
+
+	/**
+	 * 获取验证码
+	 */
+	function getCode() {
+		var that = $(this);
+		var text = that.text();
+		var phone = $("#index_phone").val();
+
+		if (!icom.checkStr(phone)) {
+			icom.alert("请输入正确的手机号码");
+			return;
+		}
+
+		if (text == "发送验证码") {
+			codeTime(that);
+		}
+	}
+
+	/**
+	 * 发送二维码计时
+	 */
+	function codeTime(box) {
+		var time = 60;
+		box.text(time + "s");
+		var timer = setInterval(function () {
+			time--;
+			box.text(time + "s");
+			if (time == 0) {
+				clearInterval(timer);
+				box.text("发送验证码");
+			}
+		}, 1000);
+	}
+
+	/**
+	 * 提交手机信息
+	 */
+	function submitPhone() {
+		var phone = $("#index_phone").val();
+		var code = $("#index_code").val();
+
+		if (!icom.checkStr(phone)) {
+			icom.alert("请输入正确的手机号码");
+		}
+		else if (code == "") {
+			icom.alert("请输入验证码");
+		}
+		else {
+			showMakePage();
+		}
+	}
+
+	/**
+	 * 去隐私页面
+	 */
+	function gotoPrivacy() {
+		window.open("https://www.acuvue.com.cn/privacy-policy");
+	}
+
+	/**
+	 * 阅读隐私
+	 */
+	function readPrivacy() {
+		if (!readed) {
+			readed = true;
+			$(this).css({ opacity: 1 });
+		}
+		else {
+			readed = false;
+			$(this).css({ opacity: 0 });
+		}
+	}
+
+	/**
+	 * 显示规则页面
+	 */
+	function showRuleBox() {
+		icom.popOn(ruleBox);
+		ruleScroll.refresh();
+	}
+
+	/**
+	 * 获取用户基础信息
+	 */
+	function getUserInfo() {
+		API.Login(function (res) {
+			if (res.code == 1) {
+				location.replace(res.data.url);
+				return;
+			}
+
+			userInfo.userName = res.data.nickname;
+			userInfo.userHead = res.data.headimgurl;
+			userInfo.userId = res.data.id;
+			userInfo.userStatus = res.code;
+
+			// res.code = 3;
+			// res.product = {bubble:"魅力,好奇心"};
+			// res.code = 0;
+			// res.product = {
+			// 	bubble:"魅力,好奇心",
+			// 	img_url:"http://cdn.be-xx.com/test/79e77b44-82fc-4daf-ae12-fa276ab90935.png",
+			// 	path:'{eye:"gray",pants:"1",head:"1",bg:1,name:"ssss"}'
+			// };
+
+			if (res.code == 3 || res.code == 0) {
+				updateUserInfoAttr(userInfo, res.product);
+			}
+
+			if (res.code == 0) {
+				updateUserInfoToy(userInfo, res.product);
+			}
+		})
+	}
+
+	/**
+	 * 更新用户的属性信息
+	 */
+	function updateUserInfoAttr(info, data) {
+		var attr = { "美貌": "mm", "好奇心": "hqx", "撒娇": "sj", "乐观": "lg", "坚强": "jq", "魅力": "ml" };
+		var arr = data.bubble.split(",");
+		info.choseAttr = [];
+
+		for (var i = 0; i < arr.length; i++) {
+			info.choseAttr.push(attr[arr[i]]);
+		}
+
+		info.choseColor = attrColor[info.choseAttr[0]].color;
+
+	}
+
+	/**
+	 * 更新用户的玩具信息
+	 */
+	function updateUserInfoToy(info, data) {
+		info.toyUrl = data.img_url;
+		info.toyInfo = eval('(' + data.path + ')');
+	}
+
+	/**
+	 * 判断用户来源
+	 */
+	function judgeUserSource() {
+		var hmsr = icom.getQueryString("hmsr") || "default";
+		var energy = icom.getQueryString("energy");
+		var userId = icom.getQueryString("uid");
+
+		userInfo.hmsr = hmsr;
+
+		if (energy) {
+			gotoRankList(userId);
+			return;
+		}
+
+		judgeUserStatus();
+	}
+
+	/**
+	 * 判断用户状态
+	 */
+	function judgeUserStatus() {
+		switch (userInfo.userStatus) {
+			case 0:
+				icom.fadeOut(loadingBox);
+				showTipsBox("欢迎回到啵啵实验室<br>点击查看我的潘神排名<br>查看排名");
+				showMyChoseAttr(true);
+				break;
+			case 2:
+				showPhonePage();
+				break;
+			case 3:
+				icom.fadeOut(loadingBox);
+				showMyChoseAttr(false);
+				break;
+			case 4:
+				showMakePage();
+				break;
+		}
+	}
+
+	/**
+	 * 显示手机页面
+	 */
+	function showPhonePage() {
+		var loadBarBox = loadingBox.find(".loadBarBox");
+		var formBox = loadingBox.find(".formBox");
+		var startBtn = loadingBox.find(".btn");
+		var ruleBtn = loadingBox.find(".ruleBtn");
+
+		icom.fadeOut(loadBarBox);
+		icom.fadeIn(formBox);
+		icom.fadeIn(startBtn);
+		icom.fadeIn(ruleBtn);
+	}
+
+	/**
+	 * 显示制作页面
+	 */
+	function showMakePage() {
+		makeBox.show();
+		icom.fadeOut(loadingBox);
+	}
+
+	/**
+	 * 显示我选择的属性页面
+	 */
+	function showMyChoseAttr(make, ani) {
+		var word = resultBox.find(".word");
+		var bowl = resultBox.find(".bowl");
+		var powder = resultBox.find(".powder");
+		var spoon1 = resultBox.find(".spoon1");
+		var spoon2 = resultBox.find(".spoon2");
+
+		resultBox.show();
+
+		word[0].src = "images/resultBox/word/" + userInfo.choseAttr[0] + ".png";
+		bowl[0].src = "images/resultBox/bowl/" + userInfo.choseColor + ".png";
+		powder[0].src = "images/resultBox/powder/" + userInfo.choseColor + ".png";
+		spoon1[0].src = "images/resultBox/spoon1/" + userInfo.choseColor + ".png";
+		spoon2[0].src = "images/resultBox/spoon2/" + userInfo.choseColor + ".png";
+
+		if (ani) {
+			spoon1
+				.css({ opacity: 0, rotate: "-30deg" })
+				.transition({ opacity: 1, rotate: 0, delay: 500 }, 800);
+			spoon2
+				.css({ opacity: 0, rotate: "30deg" })
+				.transition({ opacity: 1, rotate: 0, delay: 500 }, 800);
+			powder
+				.css({ opacity: 0, y: "-0.5rem" })
+				.transition({ opacity: 1, y: 0, delay: 1000 }, 800);
+			bowl
+				.css({ opacity: 0 })
+				.transition({ opacity: 1, delay: 1500 }, 800);
+		}
+
+		if (make) resultBox.find(".showList").show();
+		else resultBox.find(".makeToy").show();
 	}
 
 	/**
 	 * 面板初始化
 	 */
-	function penelInit(){
+	function penelInit() {
 		var box = choseBox.find(".btns");
 
 		for (var i = 0; i < 4; i++) {
 			var num = i == 0 ? 3 : 5;
-			var block = $("<div>",{"class":"block"});
+			var block = $("<div>", { "class": "block block" + i });
 			var cont = "";
 			for (var j = 0; j < num; j++) {
-				cont += '<div class="btn" data-val="'+(j+1)+'"></div>'
+				cont += '<div class="btn" data-type="' + i + '" data-val="' + (j + 1) + '"></div>'
 			}
 			block.append(cont);
 			box.append(block);
@@ -145,60 +924,60 @@ $(document).ready(function () {
 	/**
 	 * 液体动画
 	 */
-	function liquidAnime(callback){
+	function liquidAnime(callback) {
 		var color1 = makeBox.find(".color1");
 		var color2 = makeBox.find(".color2");
 		var color3 = makeBox.find(".color3");
 
-		color1.transition({x:"1.3rem",y:0},1500);
-		color2.transition({x:"-1rem",y:0},1500);
-		color3.transition({x:"0.5rem",y:"-0.3rem"},1500,function(){
-			if(callback) callback();
+		color1.transition({ x: "1.3rem", y: 0 }, 1500);
+		color2.transition({ x: "-1rem", y: 0 }, 1500);
+		color3.transition({ x: "0.5rem", y: "-0.3rem" }, 1500, function () {
+			if (callback) callback();
 		});
 	}
 
 	/**
 	 * 抽奖的动画
 	 */
-	function lotteryAnime(callback){
+	function lotteryAnime(callback) {
 		var box = lotteryBox.find(".bubbleBox");
 		for (var i = 0; i < 12; i++) {
-			if(i < 4){
-				makebubble(box,{
-					width:imath.randomRange(15,28)/10,
-					left:imath.randomRange(2,4),
-					delay:imath.randomRange(0,2000),
-					time:imath.randomRange(3000,4000)
+			if (i < 4) {
+				makebubble(box, {
+					width: imath.randomRange(15, 28) / 10,
+					left: imath.randomRange(2, 4),
+					delay: imath.randomRange(0, 2000),
+					time: imath.randomRange(3000, 4000)
 				});
 			}
-			else{
-				makebubble(box,{
-					width:imath.randomRange(2,10)/10,
-					left:imath.randomRange(3,6),
-					delay:imath.randomRange(0,1000),
-					time:imath.randomRange(4000,5000)
+			else {
+				makebubble(box, {
+					width: imath.randomRange(2, 10) / 10,
+					left: imath.randomRange(3, 6),
+					delay: imath.randomRange(0, 1000),
+					time: imath.randomRange(4000, 5000)
 				});
 			}
 		}
 
-		makebubble(box,{width:3,left:0.5,delay:0,time:6500},callback);
+		makebubble(box, { width: 3, left: 0.5, delay: 0, time: 6500 }, callback);
 	}
 
 	/**
 	 * 生成泡泡
 	 */
-	function makebubble(box,opts,callback){
+	function makebubble(box, opts, callback) {
 		var bubble = $("<img>", {
 			"class": "bubble",
 			"src": "images/lotteryBox/b.png"
 		});
 		box.append(bubble);
 		bubble.css({
-			"width": opts.width+"rem",
-			"left": opts.left+"rem"
+			"width": opts.width + "rem",
+			"left": opts.left + "rem"
 		});
-		bubble.transition({y:"-14rem",delay:opts.delay},opts.time,function(){
-			if(callback) callback();
+		bubble.transition({ y: "-13rem", delay: opts.delay }, opts.time, "ease-in", function () {
+			if (callback) callback();
 		});
 	}
 
@@ -233,6 +1012,47 @@ $(document).ready(function () {
 	function limitClick() {
 		$(".limitBtn").addClass('noPointer');
 		setTimeout(function () { $(".limitBtn").removeClass('noPointer') }, 500);
+	}//end func
+
+	/**
+	 * 生成海报
+	 */
+	function makePoster(box, type, callback) {
+		var shareContent = box;
+		var canvas = document.createElement("canvas"); //创建一个canvas节点
+		var scale = 1; //定义任意放大倍数 支持小数
+		canvas.width = (shareContent.width() + shareContent.offset().left) * scale; //定义canvas 宽度 * 缩放
+		canvas.height = (shareContent.height() + shareContent.offset().top + $(window).scrollTop()) * scale; //定义canvas高度 *缩放
+		canvas.getContext("2d").scale(scale, scale); //获取context,设置scale 
+		var opts = {
+			scale: scale, // 添加的scale 参数
+			canvas: canvas, //自定义 canvas
+			logging: false, //日志开关
+			backgroundColor: "transparent",
+			width: shareContent.width(), //dom 原始宽度
+			height: shareContent.height() //dom 原始高度
+		};
+		html2canvas(shareContent[0], opts).then(function (canvas) {
+			//如果想要生成图片 引入canvas2Image.js
+			canvasTrfImg(canvas, type, callback);
+		});
+	}
+
+	/**
+	 * canvas转图片
+	 * @param {*} canvas 
+	 */
+	function canvasTrfImg(canvas, type, callback) {
+		var quality = 1;
+
+		if (type == 'png') {
+			var src = canvas.toDataURL('image/png');
+		}
+		else {
+			var src = canvas.toDataURL('image/jpeg', quality);
+		}
+
+		if (callback) callback(src);
 	}//end func
 
 	//----------------------------------------页面监测代码----------------------------------------
