@@ -815,8 +815,9 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	position: absolute;
 	top: 0;
 	left: 0.2rem;
-	width: 3rem;
+	width: 2.6rem;
 	height: 100%;
+	font-size: 0.24rem;
 }
 #rankBox .search .searchBtn{
 	position: absolute;
@@ -1190,7 +1191,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 }
 #posterBox .cont .name{
 	position: absolute;
-	top: 780px;
+	top: 776px;
 	left: 0;
 	width: 100%;
 	font-size: 35px;
@@ -1199,7 +1200,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 }
 #posterBox .cont .names{
 	position: absolute;
-	top: 782px;
+	top: 778px;
 	left: 0;
 	width: 100%;
 	font-size: 35px;

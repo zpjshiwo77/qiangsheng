@@ -99,7 +99,7 @@
             <img src="images/rankBox/bg.png" class="bg">
             <div class="cont">
                 <div class="search">
-                    <input type="text" id="search" placeholder="搜索潘神昵称">
+                    <input type="text" maxlength="6" id="search" placeholder="搜索潘神昵称">
                     <div class="searchBtn"></div>
                 </div>
 
@@ -119,8 +119,8 @@
                                     <div class="energy">0能量</div>
                                 </div>
                                 <div class="btns">
-                                    <div class="add"></div>
-                                    <div class="invite"></div>
+                                    <div class="add" data-val=""></div>
+                                    <div class="invite" data-val=""></div>
                                 </div>
                             </div> -->
                         </div>
@@ -252,7 +252,7 @@
                 <div class="formBox none">
                     <input type="text" id="index_phone" placeholder="请输入您的手机号码" maxlength="11">
                     <input type="text" id="index_code" maxlength="10">
-                    <div id="codeBtn">发送验证码</div>
+                    <div id="codeBtn" class="limitBtn">发送验证码</div>
                     <div class="readRule">
                         <div class="readed">√</div>
                         <div class="privacy"></div>

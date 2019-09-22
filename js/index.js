@@ -14,7 +14,7 @@ $(document).ready(function () {
 		userName: "测试",
 		userHead: "https://www.seventh77.com/view/food/img/head.jpg",
 		userId: "",
-		userStatus: 2,		//用户状态 0完成潘神，2未注册手机，3未制作潘神，4未选择属性
+		userStatus: 2,		//用户状态 0完成潘神，2未注册手机，17未制作潘神,选择了属性，3未选择属性
 		toyUrl: "http://cdn.be-xx.com/test/79e77b44-82fc-4daf-ae12-fa276ab90935.png",
 		choseAttr: [],
 		choseColor: "",
@@ -32,11 +32,13 @@ $(document).ready(function () {
 		userName: "测试",
 		userHead: "https://www.seventh77.com/view/food/img/head.jpg",
 		userId: "",
-		userStatus: 4,		//用户状态 0完成潘神，2未注册手机，3未制作潘神，4未选择属性
+		userStatus: 4,		//用户状态 0完成潘神，2未注册手机，17未制作潘神,选择了属性，3未选择属性
 		toyUrl: "http://cdn.be-xx.com/test/79e77b44-82fc-4daf-ae12-fa276ab90935.png",
 		choseAttr: ['mm'],
 		choseColor: "gray",
 		hmsr: "default",
+		toyId: "",
+		rankBox: null,
 		toyInfo: {
 			eye: "1",
 			pants: "1",
@@ -63,7 +65,11 @@ $(document).ready(function () {
 				bubbleInit($("#loadingBox .bottom"), 3);
 			}, 1500);
 		});
-		wxUser.init();
+		wxUser.init({
+			shareInfo: {
+				link: dominUrl + "?hmsr=wshare"
+			}
+		});
 		getUserInfo();
 	}//edn func
 
@@ -74,8 +80,8 @@ $(document).ready(function () {
 
 		loader.addCompletionListener(function () {
 			icom.fadeIn(articleBox);
-			// load_more();
-			pageInit();
+			load_more();
+			// pageInit();
 			loader = null;
 		});
 		loader.start();
@@ -124,6 +130,8 @@ $(document).ready(function () {
 	var exchangeEnergy = $("#exchangeEnergy");
 	var addEnergy = $("#addEnergy");
 	var codeBox = $("#codeBox");
+	var rankScrollBox = $("#rankScroll");
+	var rankSelfBox = $("#rankSelf");
 
 	var ruleScroll = new IScroll('#ruleScroll', {
 		bounce: false,
@@ -146,6 +154,11 @@ $(document).ready(function () {
 	var readed = false;
 	var toyWhite = true;
 	var lotteryFlag = false;
+	var makeAttrFlag = true;
+	var AllRankFlag = true;
+	var requestRankFlag = true;
+	var nowPage = 1;
+	var allPage = 1;
 
 	var attrColor = {
 		"ml": {
@@ -185,9 +198,9 @@ $(document).ready(function () {
 	 */
 	function pageInit() {
 		eventInit();
-		DevelopTest();
+		// DevelopTest();
 		monitor_handler();
-		// judgeUserSource();
+		judgeUserSource();
 	}//end func
 
 	/**
@@ -232,11 +245,12 @@ $(document).ready(function () {
 		rankBox.find(".makeToy").on("touchend", reloadPage);
 		rankBox.find(".allBtn").on("touchend", requestAllRankList);
 		rankBox.find(".searchBtn").on("touchend", searchRankName);
-		rankBox.on("touchend", ".add", function () {
+		rankBox.on("click", ".add", function () {
 			var that = $(this);
+			choseUserInfo.rankBox = that.parents(".block");
 			requestRankUserInfo(that, AddEnergy);
 		});
-		rankBox.on("touchend", ".invite", function (e) {
+		rankBox.on("click", ".invite", function (e) {
 			var that = $(this);
 			requestRankUserInfo(that, makeInvitePeople);
 		});
@@ -244,13 +258,31 @@ $(document).ready(function () {
 		lotteryBox.find(".close").on("touchend", closeLotteryBox);
 
 		addEnergy.find(".confirmBtn").on("touchend", addEnergyToUser);
+
+		rankScroll.on("scrollEnd",requestNextRankList);
 	}
 
 	/**
 	 * 请求用户信息
 	 */
 	function requestRankUserInfo(ele, callback) {
-		if (callback) callback();
+		var id = ele.attr("data-val");
+		API.getUserInfoFromToy({ product_id: id }, function (res) {
+			if (res.code == 0) {
+				var data = res.data;
+
+				choseUserInfo.toyId = id;
+				choseUserInfo.userName = data.userinfo.nickname;
+				choseUserInfo.userHead = data.userinfo.headimgurl;
+				choseUserInfo.userId = data.userinfo.id;
+
+				updateUserInfoToy(choseUserInfo, data);
+				updateUserInfoAttr(choseUserInfo, data);
+
+				if (callback) callback();
+			}
+			else icom.alert(res.message)
+		})
 	}
 
 	/**
@@ -258,7 +290,7 @@ $(document).ready(function () {
 	 */
 	function makeInvitePeople() {
 		icom.fadeIn(loadBox);
-		var url = dominUrl + "?energy=1&uid=" + choseUserInfo.userId;
+		var url = dominUrl + "?hmsr=imgshare&energy=1&uid=" + choseUserInfo.userId;
 		var a = false, b = false, c = false;
 
 		shareBox.find(".toy")[0].src = choseUserInfo.toyUrl;
@@ -320,7 +352,13 @@ $(document).ready(function () {
 	 * 添加能量
 	 */
 	function AddEnergy() {
-		showAddEnergyBox();
+		API.addEnergy({ product_id: choseUserInfo.toyId }, function (res) {
+			if (res.code == 0) {
+				updateRankUserEnergyInfo(choseUserInfo.rankBox, 1000);
+				showTipsBox("您已为【" + choseUserInfo.toyInfo.name + "】<br>成功注入能量！");
+			}
+			else showAddEnergyBox();
+		})
 	}
 
 	/**
@@ -331,13 +369,33 @@ $(document).ready(function () {
 	}
 
 	/**
+	 * 更新排行榜用户能量信息
+	 */
+	function updateRankUserEnergyInfo(box, eng) {
+		var energyBox = box.find(".energy");
+		var bar = box.find(".bar");
+		var energy = parseInt(energyBox.text());
+		var energyPcet = energy / 1000;
+		energyPcet = energyPcet > 90 ? 90 : energyPcet;
+		energy = energy + eng;
+		energyBox.html(energy + "能量");
+		bar.css({ x: energyPcet + "%" })
+	}
+
+	/**
 	 * 给用户添加能量
 	 */
 	function addEnergyToUser() {
 		var code = $("#addEnergyCode").val();
 		if (code == "") icom.alert("请输入能量兑换码");
 		else {
-
+			API.addEnergyCode({ product_id: choseUserInfo.toyId, code_num: code }, function (res) {
+				if (res.code == 0) {
+					updateRankUserEnergyInfo(choseUserInfo.rankBox, 5000);
+					showTipsBox("您已为【" + choseUserInfo.toyInfo.name + "】<br>成功注入能量！");
+				}
+				else icom.alert(res.message);
+			});
 		}
 	}
 
@@ -394,7 +452,10 @@ $(document).ready(function () {
 	 * 抽奖
 	 */
 	function lottery() {
-		showLotteryBox(2);
+		API.lottery(function (res) {
+			if (res.code == 0) showLotteryBox(res.data.gift_id);
+			else icom.alert(res.message);
+		})
 	}
 
 	/**
@@ -409,15 +470,14 @@ $(document).ready(function () {
 
 		lotteryAnime(function () {
 			lotteryFlag = false;
-			if (award == 0) {
-				icom.alert("未中奖");
-				return;
-			}
 			if (award == 1) {
 				icom.fadeIn(lotteryBox.find(".coupon"));
 			}
-			else {
+			else if (award == 2) {
 				icom.fadeIn(lotteryBox.find(".toy"));
+			}
+			else {
+				icom.alert("未中奖");
 			}
 		});
 	}
@@ -451,12 +511,25 @@ $(document).ready(function () {
 
 		icom.fadeIn(loadBox);
 
-
-		makeMyToyImging(function (base64) {
+		makeMyToyImging(userInfo, function (base64) {
 			icom.base64_send(base64, function (src) {
-				icom.fadeOut(loadBox);
-				userInfo.toyUrl = src;
-				showRankBox();
+				var toyInfo = JSON.stringify(userInfo.toyInfo);
+				var data = {
+					name: userInfo.toyInfo.name,
+					path: toyInfo,
+					user_headimg: userInfo.userHead,
+					user_nickname: userInfo.userName,
+					img_url: src
+				};
+				// console.log(data)
+				API.addUserToy(data, function (res) {
+					icom.fadeOut(loadBox);
+					if (res.code == 0) {
+						userInfo.toyUrl = src;
+						showRankBox();
+					}
+					else icom.alert(res.message);
+				});
 			})
 		})
 	}
@@ -601,33 +674,126 @@ $(document).ready(function () {
 	}
 
 	/**
-	 * 请求所有的排行榜
+	 * 请求下一页排行榜
 	 */
-	function requestAllRankList() {
-
+	function requestNextRankList(){
+		if(AllRankFlag && rankScroll.y == rankScroll.maxScrollY && requestRankFlag){
+			if(nowPage > allPage){
+				requestRankFlag = false;
+				icom.alert("排名到底部了");
+				return;
+			}
+			API.getRankList({page:nowPage},function(res){
+				if(res.code == 0) renderRankAll(res.data,false);
+				else icom.alert(res.message);
+			})
+		}
 	}
 
 	/**
-	 * 请求制定uid的排行榜
+	 * 请求所有的排行榜
+	 */
+	function requestAllRankList() {
+		API.getRankList({page:1},function(res){
+			if(res.code == 0) renderRankAll(res.data,true);
+			else icom.alert(res.message);
+		})
+	}
+
+	/**
+	 * 请求指定uid的排行榜
 	 */
 	function requestUidList(uid) {
-
+		API.getRankListFromUid({ uid: uid }, function (res) {
+			if (res.code == 0) renderRankSelf(res.data);
+			else icom.alert(res.message);
+		});
 	}
 
 	/**
 	 * 请求昵称的排行榜
 	 */
 	function requestNameList(name) {
+		API.getRankListFromName({ name: name }, function (res) {
+			if (res.code == 0) renderRankSelf(res.data);
+			else icom.alert(res.message);
+		});
+	}
 
+	/**
+	 * 渲染全部排行榜
+	 */
+	function renderRankAll(data,empty){
+		var box = $("#rankScroll .scroll");
+		var cont = makeRankBlock(data.data);
+
+		if(empty){
+			nowPage = 1;
+			box.empty();
+			rankScroll.scrollTo(0,0,100);
+			requestRankFlag = true;
+		}
+		allPage = data.total_page;
+		rankScrollBox.show();
+		rankSelfBox.hide();
+		box.append(cont);
+		AllRankFlag = true;
+		rankScroll.refresh();
+		nowPage++;
+	}
+
+	/**
+	 * 渲染自己的排行榜
+	 * @param {*} data 
+	 */
+	function renderRankSelf(data) {
+		var box = $("#rankSelf .scroll");
+		var cont = makeRankBlock(data);
+
+		rankScrollBox.hide();
+		rankSelfBox.show();
+		box.empty().append(cont);
+		AllRankFlag = false;
+	}
+
+	/**
+	 * 生成排行榜的列表
+	 */
+	function makeRankBlock(data) {
+		var cont = "";
+		for (var i = 0; i < data.length; i++) {
+			var toy = data[i];
+			var energy = toy.energy / 1000;
+			energy = energy > 90 ? 90 : energy;
+			cont += '<div class="block"><img src="' + toy.img_url + '" class="toy"><div class="name">NO.' + toy.rank + ' ' + toy.name + '</div><div class="barBox"><div class="mask full"><div class="bar" style="transform: translate(' + energy + '%,0);"></div></div><div class="energy">' + toy.energy + '能量</div></div><div class="btns"><div class="add" data-val="' + toy.id + '"></div><div class="invite" data-val="' + toy.id + '"></div></div></div>';
+		}
+		return cont;
 	}
 
 	/**
 	 * 生成属性
 	 */
 	function makeAttr() {
-		if (userInfo.choseAttr.length == 0) icom.alert("至少选择一个属性");
-		else {
-			makeAttrAnime();
+		if (makeAttrFlag) {
+			if (userInfo.choseAttr.length == 0) icom.alert("至少选择一个属性");
+			else {
+				makeAttrFlag = false;
+				var arr = userInfo.choseAttr;
+				var bubble = "";
+				var bubble_desc = attrColor[arr[0]].name + "--" + attrColor[arr[0]].colorName;
+				for (var i = 0; i < arr.length; i++) {
+					bubble += i == 0 ? "" : ",";
+					bubble += attrColor[arr[i]].name;
+				}
+				// console.log(bubble,bubble_desc);
+				API.addUserAttr({ bubble: bubble, bubble_desc: bubble_desc }, function (res) {
+					if (res) makeAttrAnime();
+					else {
+						icom.alert(res.message);
+						makeAttrFlag = true;
+					}
+				})
+			}
 		}
 	}
 
@@ -677,7 +843,10 @@ $(document).ready(function () {
 		}
 
 		if (text == "发送验证码") {
-			codeTime(that);
+			API.sendCode({ phone: phone }, function (res) {
+				if (res.code == 0) codeTime(that);
+				else icom.alert(res.message);
+			});
 		}
 	}
 
@@ -710,8 +879,14 @@ $(document).ready(function () {
 		else if (code == "") {
 			icom.alert("请输入验证码");
 		}
+		else if (!readed) {
+			icom.alert("请先同意隐私条款");
+		}
 		else {
-			showMakePage();
+			API.addPhone({ phone: phone, code: code }, function (res) {
+				if (res.code == 0) showMakePage();
+				else icom.alert(res.message);
+			})
 		}
 	}
 
@@ -768,12 +943,12 @@ $(document).ready(function () {
 			// 	path:'{eye:"gray",pants:"1",head:"1",bg:1,name:"ssss"}'
 			// };
 
-			if (res.code == 3 || res.code == 0) {
-				updateUserInfoAttr(userInfo, res.product);
+			if (res.code == 17 || res.code == 0) {
+				updateUserInfoAttr(userInfo, res.data.product);
 			}
 
 			if (res.code == 0) {
-				updateUserInfoToy(userInfo, res.product);
+				updateUserInfoToy(userInfo, res.data.product);
 			}
 		})
 	}
@@ -818,6 +993,7 @@ $(document).ready(function () {
 		}
 
 		judgeUserStatus();
+		API.addUserSource({ source: hmsr }, function () { });
 	}
 
 	/**
@@ -833,11 +1009,11 @@ $(document).ready(function () {
 			case 2:
 				showPhonePage();
 				break;
-			case 3:
+			case 17:
 				icom.fadeOut(loadingBox);
 				showMyChoseAttr(false);
 				break;
-			case 4:
+			case 3:
 				showMakePage();
 				break;
 		}
