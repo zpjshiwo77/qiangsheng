@@ -67,7 +67,10 @@ $(document).ready(function () {
 		});
 		wxUser.init({
 			shareInfo: {
-				link: dominUrl + "?hmsr=wshare"
+				link: dominUrl + "?hmsr=wshare",
+				title: "玩美啵啵一起来造，泡泡玛特潘神甜品系列盲盒等你来拿！",
+				friend:"玩美新次元，mix你的专属彩片，赢取泡泡玛特潘神甜品系列惊喜盲盒！",
+				timeline:"玩美啵啵一起来造，泡泡玛特潘神甜品系列盲盒等你来拿！"
 			}
 		});
 		// getUserInfo();

@@ -67,7 +67,10 @@ $(document).ready(function () {
 		});
 		wxUser.init({
 			shareInfo: {
-				link: dominUrl + "?hmsr=wshare"
+				link: dominUrl + "?hmsr=wshare",
+				title: "玩美啵啵一起来造，泡泡玛特潘神甜品系列盲盒等你来拿！",
+				friend:"玩美新次元，mix你的专属彩片，赢取泡泡玛特潘神甜品系列惊喜盲盒！",
+				timeline:"玩美啵啵一起来造，泡泡玛特潘神甜品系列盲盒等你来拿！"
 			}
 		});
 		getUserInfo();
@@ -424,6 +427,11 @@ $(document).ready(function () {
 		addEnergy.find(".confirmBtn").on("touchend", addEnergyToUser);
 
 		rankScroll.on("scrollEnd", requestNextRankList);
+
+		window.addEventListener("resize", function(){
+			if (os.screenProp < 0.54) articleBox.addClass("screen189");
+			if (os.screenProp > 0.64) articleBox.addClass("screen159");
+		});
 	}
 
 	/**
