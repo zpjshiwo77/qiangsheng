@@ -411,10 +411,12 @@ $(document).ready(function () {
 			var that = $(this);
 			choseUserInfo.rankBox = that.parents(".block");
 			requestRankUserInfo(that, AddEnergy);
+			imonitor.add({action:'touchstart',category:'default',label:'加能量涨排名'});
 		});
 		rankBox.on("click", ".invite", function (e) {
 			var that = $(this);
 			requestRankUserInfo(that, makeInvitePeople);
+			imonitor.add({action:'touchstart',category:'default',label:'邀请好友加能量'});
 		});
 
 		lotteryBox.find(".close").on("touchend", closeLotteryBox);
@@ -1397,6 +1399,15 @@ $(document).ready(function () {
 
 	//----------------------------------------页面监测代码----------------------------------------
 	function monitor_handler() {
-		//		imonitor.add({obj:$('a.btnTest'),action:'touchstart',category:'default',label:'测试按钮'});
+		imonitor.add({obj:$("#codeBtn"),action:'touchstart',category:'default',label:'发送验证码'});
+		imonitor.add({obj:$("#startBtn"),action:'touchstart',category:'default',label:'即可开启'});
+		imonitor.add({obj:makeBox.find(".btn"),action:'touchstart',category:'default',label:'生成我的彩片'});
+		imonitor.add({obj:resultBox.find(".makeToy"),action:'touchstart',category:'default',label:'玩造潘神'});
+		imonitor.add({obj:resultBox.find(".showList"),action:'touchstart',category:'default',label:'查看我的潘神排名'});
+		imonitor.add({obj:choseBox.find(".submitbtn"),action:'touchstart',category:'default',label:'解锁榜单，我要做冠军'});
+		imonitor.add({obj:rankBox.find(".addEnergy"),action:'touchstart',category:'default',label:'能量增值快速通道'});
+		imonitor.add({obj:rankBox.find(".lottery"),action:'touchstart',category:'default',label:'抽取神秘福利'});
+		imonitor.add({obj:rankBox.find(".makeToy"),action:'touchstart',category:'default',label:'排行榜-玩造潘神'});
+		imonitor.add({obj:$(".ruleBtn"),action:'touchstart',category:'default',label:'实验室攻略'});
 	}//end func
 });//end ready
