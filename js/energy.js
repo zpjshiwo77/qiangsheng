@@ -372,13 +372,14 @@ $(document).ready(function () {
 	 * 添加能量
 	 */
 	function AddEnergy() {
-		API.addEnergy({ product_id: choseUserInfo.toyId }, function (res) {
-			if (res.code == 0) {
-				updateRankUserEnergyInfo(choseUserInfo.rankBox, 1000);
-				showTipsBox("您已为【" + choseUserInfo.toyInfo.name + "】<br>成功注入能量！");
-			}
-			else showAddEnergyBox();
-		})
+		// API.addEnergy({ product_id: choseUserInfo.toyId }, function (res) {
+		// 	if (res.code == 0) {
+		// 		updateRankUserEnergyInfo(choseUserInfo.rankBox, 1000);
+		// 		showTipsBox("您已为【" + choseUserInfo.toyInfo.name + "】<br>成功注入能量！");
+		// 	}
+		// 	else showAddEnergyBox();
+		// })
+		showAddEnergyBox();
 	}
 
 	/**

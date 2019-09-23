@@ -670,7 +670,8 @@ $(document).ready(function () {
 		icom.fadeOut(choseBox);
 		rankBox.show();
 		rankBox.find(".lottery").show();
-		requestAllRankList();
+		// requestAllRankList();
+		requestUidList(userInfo.userId);
 	}
 
 	/**
@@ -1066,6 +1067,7 @@ $(document).ready(function () {
 	 * 显示我选择的属性页面
 	 */
 	function showMyChoseAttr(make, ani) {
+		var cont = resultBox.find(".cont");
 		var word = resultBox.find(".word");
 		var bowl = resultBox.find(".bowl");
 		var powder = resultBox.find(".powder");
@@ -1074,6 +1076,9 @@ $(document).ready(function () {
 
 		resultBox.show();
 
+		cont.css({
+			"background-image":"url(images/resultBox/" + userInfo.choseColor + ".png)"
+		});
 		word[0].src = "images/resultBox/word/" + userInfo.choseAttr[0] + ".png";
 		bowl[0].src = "images/resultBox/bowl/" + userInfo.choseColor + ".png";
 		powder[0].src = "images/resultBox/powder/" + userInfo.choseColor + ".png";
