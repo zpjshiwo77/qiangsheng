@@ -392,7 +392,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	left: 0;
 	width: 7.5rem;
 	height: 10rem;
-	margin-top: -5rem;
+	margin-top: -4.5rem;
 }
 
 #makeBox .cont .battle, #makeBox .cont .liquid, #makeBox .cont .light {
@@ -496,8 +496,8 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	left: 50%;
 	width: 6.44rem;
 	height: 9.12rem;
-	transform: translate(-50%, -50%);
-	background-image: url(../images/resultBox/kuang.png);
+	transform: translate(-50%, -47%);
+	background-image: url(../images/resultBox/gray.png);
 }
 
 #resultBox .btn {
@@ -801,7 +801,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	left: 0;
 	width: 7.5rem;
 	height: 10rem;
-	transform: translate(0, -50%);
+	transform: translate(0, -45%);
 }
 #rankBox .search{
 	position: absolute;
@@ -1085,7 +1085,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	left: 50%;
 	width: 6.44rem;
 	height: 10.2rem;
-	transform: translate(-50%,-50%);
+	transform: translate(-50%,-45%);
 }
 #shareBox .cont .kuang{
 	width: 6.44rem;
@@ -1237,7 +1237,12 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 }
 /* posterBox end */
 /*---------------------------------------- 15:9 ----------------------*/
-
+.screen159 #shareBox .cont{
+	transform: translate(-50%,-45%) scale(0.9,0.9);
+}
+.screen159 #rankBox .cont{
+	transform: translate(0,-45%) scale(0.9,0.9);
+}
 /*---------------------------------------- 18:9 ----------------------*/
 
 .screen189 #penelScroll .iScrollVerticalScrollbar {
