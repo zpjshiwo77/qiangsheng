@@ -76,7 +76,18 @@ $(document).ready(function () {
 	//----------------------------------------加载页面图片----------------------------------------
 	function load_handler() {
 		var loader = new PxLoader();
+		loader.addImage('images/common/bgm_off.png');
+		loader.addImage('images/common/bgm_on.png');
+		loader.addImage('images/common/close.png');
+		loader.addImage('images/common/turn_lock.png');
+		loader.addImage('images/common/turn_no.png');
 		loader.addImage('images/common/turn_phone.png');
+		loader.addImage('images/common/turn_unlock.png');
+		loader.addImage('images/common/turn_yes.png');
+		loader.addImage('images/public/bg.jpg');
+		loader.addImage('images/public/bubble.png');
+		loader.addImage('images/public/logo.png');
+		loader.addImage('images/public/ruleBtn.png');
 
 		loader.addCompletionListener(function () {
 			icom.fadeIn(articleBox);
@@ -89,7 +100,138 @@ $(document).ready(function () {
 
 	function load_more() {
 		var loader = new PxLoader();
-		loader.addImage('images/common/turn_phone.png');
+		loader.addImage('images/share.jpg');
+		loader.addImage('images/tipsBox/tips.png');
+		loader.addImage('images/shareBox/hand.png');
+		loader.addImage('images/shareBox/k.png');
+		loader.addImage('images/shareBox/tips.png');
+		loader.addImage('images/ruleBox/rule.png');
+		loader.addImage('images/ruleBox/word.jpg');
+		loader.addImage('images/resultBox/bg.png');
+		loader.addImage('images/resultBox/btn.png');
+		loader.addImage('images/resultBox/btn2.png');
+		loader.addImage('images/resultBox/gray.png');
+		loader.addImage('images/resultBox/green.png');
+		loader.addImage('images/resultBox/purple.png');
+		loader.addImage('images/resultBox/word/hqx.png');
+		loader.addImage('images/resultBox/word/jq.png');
+		loader.addImage('images/resultBox/word/lg.png');
+		loader.addImage('images/resultBox/word/ml.png');
+		loader.addImage('images/resultBox/word/mm.png');
+		loader.addImage('images/resultBox/word/sj.png');
+		loader.addImage('images/resultBox/spoon2/gray.png');
+		loader.addImage('images/resultBox/spoon2/green.png');
+		loader.addImage('images/resultBox/spoon2/purple.png');
+		loader.addImage('images/resultBox/spoon1/gray.png');
+		loader.addImage('images/resultBox/spoon1/green.png');
+		loader.addImage('images/resultBox/spoon1/purple.png');
+		loader.addImage('images/resultBox/powder/gray.png');
+		loader.addImage('images/resultBox/powder/green.png');
+		loader.addImage('images/resultBox/powder/purple.png');
+		loader.addImage('images/resultBox/bowl/gray.png');
+		loader.addImage('images/resultBox/bowl/green.png');
+		loader.addImage('images/resultBox/bowl/purple.png');
+		loader.addImage('images/rankBox/add.png');
+		loader.addImage('images/rankBox/b1.png');
+		loader.addImage('images/rankBox/b2.png');
+		loader.addImage('images/rankBox/b3.png');
+		loader.addImage('images/rankBox/b4.png');
+		loader.addImage('images/rankBox/bar.png');
+		loader.addImage('images/rankBox/bg.png');
+		loader.addImage('images/rankBox/cont.png');
+		loader.addImage('images/rankBox/invite.png');
+		loader.addImage('images/rankBox/mask.png');
+		loader.addImage('images/rankBox/name.png');
+		loader.addImage('images/rankBox/search.png');
+		loader.addImage('images/rankBox/stripe.png');
+		loader.addImage('images/posterBox/1.png');
+		loader.addImage('images/posterBox/2.png');
+		loader.addImage('images/posterBox/3.png');
+		loader.addImage('images/posterBox/bg.png');
+		loader.addImage('images/makeBox/battle.png');
+		loader.addImage('images/makeBox/bg.png');
+		loader.addImage('images/makeBox/c1.png');
+		loader.addImage('images/makeBox/c2.png');
+		loader.addImage('images/makeBox/c3.png');
+		loader.addImage('images/makeBox/hqx.png');
+		loader.addImage('images/makeBox/jq.png');
+		loader.addImage('images/makeBox/lg.png');
+		loader.addImage('images/makeBox/light.png');
+		loader.addImage('images/makeBox/mask.png');
+		loader.addImage('images/makeBox/ml.png');
+		loader.addImage('images/makeBox/mm.png');
+		loader.addImage('images/makeBox/sj.png');
+		loader.addImage('images/lotteryBox/a1.png');
+		loader.addImage('images/lotteryBox/a2.png');
+		loader.addImage('images/lotteryBox/b.png');
+		loader.addImage('images/lotteryBox/c.png');
+		loader.addImage('images/lotteryBox/close.png');
+		loader.addImage('images/lotteryBox/k.png');
+		loader.addImage('images/lotteryBox/t.png');
+		loader.addImage('images/loadingBox/k.png');
+		loader.addImage('images/loadingBox/mask.png');
+		loader.addImage('images/loadingBox/title.png');
+		loader.addImage('images/loadingBox/w.png');
+		loader.addImage('images/indexBox/btn.png');
+		loader.addImage('images/indexBox/form.png');
+		loader.addImage('images/codeBox/code.png');
+		loader.addImage('images/codeBox/k.png');
+		loader.addImage('images/codeBox/k2.png');
+		loader.addImage('images/choseBox/btn.png');
+		loader.addImage('images/choseBox/cont.png');
+		loader.addImage('images/choseBox/control.png');
+		loader.addImage('images/choseBox/d.png');
+		loader.addImage('images/choseBox/name.png');
+		loader.addImage('images/choseBox/purple/p.png');
+		loader.addImage('images/choseBox/purple/pb.png');
+		loader.addImage('images/choseBox/purple/pants/1.png');
+		loader.addImage('images/choseBox/purple/pants/2.png');
+		loader.addImage('images/choseBox/purple/pants/3.png');
+		loader.addImage('images/choseBox/purple/pants/4.png');
+		loader.addImage('images/choseBox/purple/pants/5.png');
+		loader.addImage('images/choseBox/purple/head/1.png');
+		loader.addImage('images/choseBox/purple/head/2.png');
+		loader.addImage('images/choseBox/purple/head/3.png');
+		loader.addImage('images/choseBox/purple/head/4.png');
+		loader.addImage('images/choseBox/purple/head/5.png');
+		loader.addImage('images/choseBox/purple/eye/1.png');
+		loader.addImage('images/choseBox/purple/eye/2.png');
+		loader.addImage('images/choseBox/purple/eye/3.png');
+		loader.addImage('images/choseBox/green/p.png');
+		loader.addImage('images/choseBox/green/pb.png');
+		loader.addImage('images/choseBox/green/pants/1.png');
+		loader.addImage('images/choseBox/green/pants/2.png');
+		loader.addImage('images/choseBox/green/pants/3.png');
+		loader.addImage('images/choseBox/green/pants/4.png');
+		loader.addImage('images/choseBox/green/pants/5.png');
+		loader.addImage('images/choseBox/green/head/1.png');
+		loader.addImage('images/choseBox/green/head/2.png');
+		loader.addImage('images/choseBox/green/head/3.png');
+		loader.addImage('images/choseBox/green/head/4.png');
+		loader.addImage('images/choseBox/green/head/5.png');
+		loader.addImage('images/choseBox/green/eye/1.png');
+		loader.addImage('images/choseBox/green/eye/2.png');
+		loader.addImage('images/choseBox/green/eye/3.png');
+		loader.addImage('images/choseBox/gray/p.png');
+		loader.addImage('images/choseBox/gray/pb.png');
+		loader.addImage('images/choseBox/gray/pants/1.png');
+		loader.addImage('images/choseBox/gray/pants/2.png');
+		loader.addImage('images/choseBox/gray/pants/3.png');
+		loader.addImage('images/choseBox/gray/pants/4.png');
+		loader.addImage('images/choseBox/gray/pants/5.png');
+		loader.addImage('images/choseBox/gray/head/1.png');
+		loader.addImage('images/choseBox/gray/head/2.png');
+		loader.addImage('images/choseBox/gray/head/3.png');
+		loader.addImage('images/choseBox/gray/head/4.png');
+		loader.addImage('images/choseBox/gray/head/5.png');
+		loader.addImage('images/choseBox/gray/eye/1.png');
+		loader.addImage('images/choseBox/gray/eye/2.png');
+		loader.addImage('images/choseBox/gray/eye/3.png');
+		loader.addImage('images/choseBox/bg/1.png');
+		loader.addImage('images/choseBox/bg/2.png');
+		loader.addImage('images/choseBox/bg/3.png');
+		loader.addImage('images/choseBox/bg/4.png');
+		loader.addImage('images/choseBox/bg/5.png');
 
 		// 实际加载进度
 		loader.addProgressListener(function (e) {
@@ -1010,12 +1152,12 @@ $(document).ready(function () {
 
 		API.addUserSource({ source: hmsr }, function () { });
 		// if (energy) {
-			gotoRankList(userId);
-			return;
+		gotoRankList(userId);
+		return;
 		// }
 
 		judgeUserStatus();
-		
+
 	}
 
 	/**
