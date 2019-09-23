@@ -634,7 +634,7 @@ function importCom() {
 	com.base64_send = function (base64, callback, secretkey) {
 		if (base64) {
 			secretkey = secretkey || 'test';
-			$.post('http://tool.be-xx.com/cdn/base64', {
+			$.post('https://tool.be-xx.com/cdn/base64', {
 				data: base64,
 				key: secretkey
 			}, function (resp) {

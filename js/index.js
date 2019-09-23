@@ -201,6 +201,7 @@ $(document).ready(function () {
 		// DevelopTest();
 		monitor_handler();
 		judgeUserSource();
+		IOSInput();
 	}//end func
 
 	/**
@@ -216,6 +217,25 @@ $(document).ready(function () {
 		// liquidAnime();
 		// showChoseBox();
 		makeInvitePeople();
+	}
+
+	/**
+	 * 处理ios输入框的问题
+	 */
+	function IOSInput() {
+		if (os.ios) {
+			var itimer;
+			document.body.addEventListener('focusin', function () {
+				setTimeout(function () {
+					clearTimeout(itimer);
+				}, 200);
+			})
+			document.body.addEventListener('focusout', function () {
+				itimer = setTimeout(function () {
+					$(document).scrollTop(0)
+				}, 300);
+			})
+		}
 	}
 
 	/**
@@ -259,7 +279,7 @@ $(document).ready(function () {
 
 		addEnergy.find(".confirmBtn").on("touchend", addEnergyToUser);
 
-		rankScroll.on("scrollEnd",requestNextRankList);
+		rankScroll.on("scrollEnd", requestNextRankList);
 	}
 
 	/**
@@ -676,15 +696,15 @@ $(document).ready(function () {
 	/**
 	 * 请求下一页排行榜
 	 */
-	function requestNextRankList(){
-		if(AllRankFlag && rankScroll.y == rankScroll.maxScrollY && requestRankFlag){
-			if(nowPage > allPage){
+	function requestNextRankList() {
+		if (AllRankFlag && rankScroll.y == rankScroll.maxScrollY && requestRankFlag) {
+			if (nowPage > allPage) {
 				requestRankFlag = false;
 				icom.alert("排名到底部了");
 				return;
 			}
-			API.getRankList({page:nowPage},function(res){
-				if(res.code == 0) renderRankAll(res.data,false);
+			API.getRankList({ page: nowPage }, function (res) {
+				if (res.code == 0) renderRankAll(res.data, false);
 				else icom.alert(res.message);
 			})
 		}
@@ -694,8 +714,8 @@ $(document).ready(function () {
 	 * 请求所有的排行榜
 	 */
 	function requestAllRankList() {
-		API.getRankList({page:1},function(res){
-			if(res.code == 0) renderRankAll(res.data,true);
+		API.getRankList({ page: 1 }, function (res) {
+			if (res.code == 0) renderRankAll(res.data, true);
 			else icom.alert(res.message);
 		})
 	}
@@ -723,14 +743,14 @@ $(document).ready(function () {
 	/**
 	 * 渲染全部排行榜
 	 */
-	function renderRankAll(data,empty){
+	function renderRankAll(data, empty) {
 		var box = $("#rankScroll .scroll");
 		var cont = makeRankBlock(data.data);
 
-		if(empty){
+		if (empty) {
 			nowPage = 1;
 			box.empty();
-			rankScroll.scrollTo(0,0,100);
+			rankScroll.scrollTo(0, 0, 100);
 			requestRankFlag = true;
 		}
 		allPage = data.total_page;

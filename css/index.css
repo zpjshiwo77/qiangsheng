@@ -1159,7 +1159,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 }
 #posterBox .mlogo {
 	position: absolute;
-	top: 40px;
+	top: 60px;
 	left: 50%;
 	width: 609px;
 	height: 58px;
