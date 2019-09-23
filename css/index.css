@@ -14,7 +14,7 @@ html, body, article {
 article {
 	background: url("../images/public/bg.jpg") no-repeat;
 	background-size: cover;
-	background-position: center;
+	background-position: top center;
 }
 
 .none {
@@ -51,7 +51,7 @@ section {
 	z-index: 3;
 	background: url("../images/public/bg.jpg") no-repeat;
 	background-size: cover;
-	background-position: center;
+	background-position: top center;
 }
 
 aside {
@@ -1247,4 +1247,10 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 
 .screen189 #penelScroll .iScrollVerticalScrollbar {
 	display: none;
+}
+.screen189 #shareBox .cont{
+	transform: translate(-50%,-50%);
+}
+.screen189 #rankBox .cont{
+	transform: translate(0,-50%);
 }
