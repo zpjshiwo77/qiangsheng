@@ -467,7 +467,7 @@ $(document).ready(function () {
 	 */
 	function makeInvitePeople() {
 		icom.fadeIn(loadBox);
-		var url = dominUrl + "?hmsr=imgshare&energy=1&uid=" + choseUserInfo.userId;
+		var url = "https://acuvue.beats-digital.com/tmall/?hmsr=imgshare&energy=1&uid=" + choseUserInfo.userId;
 		var a = false, b = false, c = false;
 
 		shareBox.find(".toy")[0].src = choseUserInfo.toyUrl;
