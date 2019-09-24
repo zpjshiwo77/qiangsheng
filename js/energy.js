@@ -68,9 +68,9 @@ $(document).ready(function () {
 		wxUser.init({
 			shareInfo: {
 				link: dominUrl + "?hmsr=wshare",
-				title: "玩美啵啵一起来造，泡泡玛特潘神甜品系列盲盒等你来拿！",
-				friend:"玩美新次元，mix你的专属彩片，赢取泡泡玛特潘神甜品系列惊喜盲盒！",
-				timeline:"玩美啵啵一起来造，泡泡玛特潘神甜品系列盲盒等你来拿！"
+				title: "啵啵实验室X泡泡玛特邀你参加潘神DIY大赛",
+				friend:"DIY你的专属潘神，即有机会冲刺逆天冠军奖！",
+				timeline:"啵啵实验室X泡泡玛特举办潘神DIY大赛，甜品全系列等你斩获！"
 			}
 		});
 		// getUserInfo();
@@ -427,6 +427,16 @@ $(document).ready(function () {
 		addEnergy.find(".confirmBtn").on("touchend", addEnergyToUser);
 
 		rankScroll.on("scrollEnd", requestNextRankList);
+
+		shareBox.find(".closeBtn").on("touchend",hideShareBox);
+	}
+
+	/**
+	 * 隐藏排行榜页面
+	 */
+	function hideShareBox(){
+		icom.fadeOut(shareBox);
+		icom.fadeIn(rankBox);
 	}
 
 	/**

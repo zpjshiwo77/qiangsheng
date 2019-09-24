@@ -187,7 +187,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	left: 0;
 	width: 7.5rem;
 	height: 9.6rem;
-	margin-top: -4.7rem;
+	margin-top: -4.2rem;
 }
 
 #loadingBox .cont .titleBox {
@@ -1086,6 +1086,20 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	width: 6.44rem;
 	height: 10.2rem;
 	transform: translate(-50%,-45%);
+}
+#shareBox .closeBtn{
+	position: absolute;
+	top: 50%;
+	right: 0.5rem;
+	width: 1rem;
+	height: 1rem;
+	text-align: center;
+	margin-top: -5.15rem;
+	z-index: 19;
+}
+#shareBox .closeBtn img{
+	width: 0.6rem;
+	margin-top: 0.2rem;
 }
 #shareBox .cont .kuang{
 	width: 6.44rem;
