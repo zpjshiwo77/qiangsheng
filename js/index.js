@@ -69,8 +69,8 @@ $(document).ready(function () {
 			shareInfo: {
 				link: dominUrl + "?hmsr=wshare",
 				title: "啵啵实验室X泡泡玛特邀你参加潘神DIY大赛",
-				friend:"DIY你的专属潘神，即有机会冲刺逆天冠军奖！",
-				timeline:"啵啵实验室X泡泡玛特举办潘神DIY大赛，甜品全系列等你斩获！"
+				friend: "DIY你的专属潘神，即有机会冲刺逆天冠军奖！",
+				timeline: "啵啵实验室X泡泡玛特举办潘神DIY大赛，甜品全系列等你斩获！"
 			}
 		});
 		getUserInfo();
@@ -414,12 +414,12 @@ $(document).ready(function () {
 			var that = $(this);
 			choseUserInfo.rankBox = that.parents(".block");
 			requestRankUserInfo(that, AddEnergy);
-			imonitor.add({action:'touchstart',category:'default',label:'加能量涨排名'});
+			imonitor.add({ action: 'touchstart', category: 'default', label: '加能量涨排名' });
 		});
 		rankBox.on("click", ".invite", function (e) {
 			var that = $(this);
 			requestRankUserInfo(that, makeInvitePeople);
-			imonitor.add({action:'touchstart',category:'default',label:'邀请好友加能量'});
+			imonitor.add({ action: 'touchstart', category: 'default', label: '邀请好友加能量' });
 		});
 
 		lotteryBox.find(".close").on("touchend", closeLotteryBox);
@@ -428,9 +428,9 @@ $(document).ready(function () {
 
 		rankScroll.on("scrollEnd", requestNextRankList);
 
-		shareBox.find(".closeBtn").on("touchend",hideShareBox);
+		shareBox.find(".closeBtn").on("touchend", hideShareBox);
 
-		window.addEventListener("resize", function(){
+		window.addEventListener("resize", function () {
 			if (os.screenProp < 0.54) articleBox.addClass("screen189");
 			if (os.screenProp > 0.64) articleBox.addClass("screen159");
 		});
@@ -439,7 +439,7 @@ $(document).ready(function () {
 	/**
 	 * 隐藏排行榜页面
 	 */
-	function hideShareBox(){
+	function hideShareBox() {
 		icom.fadeOut(shareBox);
 		icom.fadeIn(rankBox);
 	}
@@ -486,6 +486,8 @@ $(document).ready(function () {
 
 		API.imgtrance({ "img_url": choseUserInfo.userHead }, function (res) {
 			if (res.code == 0) {
+				// res.data.img_base.replace(/=+$/,'');
+
 				posterBox.find(".head")[0].src = res.data.img_base;
 				a = true;
 				if (a && b && c) {
@@ -510,6 +512,8 @@ $(document).ready(function () {
 		API.imgtrance({ "img_url": "http://upload.be-xx.com/qrcode?s=" + encodeURIComponent(url) + "&color=000" }, function (res) {
 			if (res.code == 0) {
 				c = true;
+				// res.data.img_base.replace(/=+$/,'');
+
 				posterBox.find(".code")[0].src = res.data.img_base;
 				if (a && b && c) {
 					setTimeout(function () {
@@ -724,7 +728,10 @@ $(document).ready(function () {
 		toyBox.find(".pants")[0].src = "images/choseBox/" + info.choseColor + "/pants/" + info.toyInfo.pants + ".png";
 		toyBox.find(".head")[0].src = "images/choseBox/" + info.choseColor + "/head/" + info.toyInfo.head + ".png";
 		toyBox.find(".eye")[0].src = "images/choseBox/" + info.choseColor + "/eye/" + info.toyInfo.eye + ".png";
-		makePoster(toyBox, "png", callback);
+
+		setTimeout(function () {
+			makePoster(toyBox, "png", callback);
+		}, 300);
 	}
 
 	/**
@@ -1420,15 +1427,15 @@ $(document).ready(function () {
 
 	//----------------------------------------页面监测代码----------------------------------------
 	function monitor_handler() {
-		imonitor.add({obj:$("#codeBtn"),action:'touchstart',category:'default',label:'发送验证码'});
-		imonitor.add({obj:$("#startBtn"),action:'touchstart',category:'default',label:'即可开启'});
-		imonitor.add({obj:makeBox.find(".btn"),action:'touchstart',category:'default',label:'生成我的彩片'});
-		imonitor.add({obj:resultBox.find(".makeToy"),action:'touchstart',category:'default',label:'玩造潘神'});
-		imonitor.add({obj:resultBox.find(".showList"),action:'touchstart',category:'default',label:'查看我的潘神排名'});
-		imonitor.add({obj:choseBox.find(".submitbtn"),action:'touchstart',category:'default',label:'解锁榜单，我要做冠军'});
-		imonitor.add({obj:rankBox.find(".addEnergy"),action:'touchstart',category:'default',label:'能量增值快速通道'});
-		imonitor.add({obj:rankBox.find(".lottery"),action:'touchstart',category:'default',label:'抽取神秘福利'});
-		imonitor.add({obj:rankBox.find(".makeToy"),action:'touchstart',category:'default',label:'排行榜-玩造潘神'});
-		imonitor.add({obj:$(".ruleBtn"),action:'touchstart',category:'default',label:'实验室攻略'});
+		imonitor.add({ obj: $("#codeBtn"), action: 'touchstart', category: 'default', label: '发送验证码' });
+		imonitor.add({ obj: $("#startBtn"), action: 'touchstart', category: 'default', label: '即可开启' });
+		imonitor.add({ obj: makeBox.find(".btn"), action: 'touchstart', category: 'default', label: '生成我的彩片' });
+		imonitor.add({ obj: resultBox.find(".makeToy"), action: 'touchstart', category: 'default', label: '玩造潘神' });
+		imonitor.add({ obj: resultBox.find(".showList"), action: 'touchstart', category: 'default', label: '查看我的潘神排名' });
+		imonitor.add({ obj: choseBox.find(".submitbtn"), action: 'touchstart', category: 'default', label: '解锁榜单，我要做冠军' });
+		imonitor.add({ obj: rankBox.find(".addEnergy"), action: 'touchstart', category: 'default', label: '能量增值快速通道' });
+		imonitor.add({ obj: rankBox.find(".lottery"), action: 'touchstart', category: 'default', label: '抽取神秘福利' });
+		imonitor.add({ obj: rankBox.find(".makeToy"), action: 'touchstart', category: 'default', label: '排行榜-玩造潘神' });
+		imonitor.add({ obj: $(".ruleBtn"), action: 'touchstart', category: 'default', label: '实验室攻略' });
 	}//end func
 });//end ready
