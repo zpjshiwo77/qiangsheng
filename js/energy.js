@@ -91,6 +91,7 @@ $(document).ready(function () {
 		loader.addImage('images/public/bubble.png');
 		loader.addImage('images/public/logo.png');
 		loader.addImage('images/public/ruleBtn.png');
+		loader.addImage('images/public/btn.png');
 
 		loader.addCompletionListener(function () {
 			icom.fadeIn(articleBox);
@@ -429,6 +430,16 @@ $(document).ready(function () {
 		rankScroll.on("scrollEnd", requestNextRankList);
 
 		shareBox.find(".closeBtn").on("touchend",hideShareBox);
+
+		icom.clipboard($(".copyBtn1"),"￥PjMsYNdO7QU￥",showCopySuccess);
+		icom.clipboard($(".copyBtn2"),"￥PjMsYNdO7QU￥",showCopySuccess);
+	}
+
+	/**
+	 * 显示拷贝成功
+	 */
+	function showCopySuccess(){
+		showTipsBox("复制成功<br>赶快打开淘宝查看吧");
 	}
 
 	/**

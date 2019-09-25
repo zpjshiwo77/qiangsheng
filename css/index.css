@@ -559,6 +559,12 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 
 /* resultBox end */
 
+#lotteryBox .copyBtn2{
+	width: 5.04rem;
+	height: 1.11rem;
+	margin: 0 auto 0.15rem;
+	background-image: url(../images/public/btn.png);
+}
 #lotteryBox .cont {
 	position: absolute;
 	top: 50%;
@@ -975,8 +981,10 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 }
 /* rankBox end */
 
-#exchangeEnergy{
-
+#exchangeEnergy .copyBtn1{
+	width: 5.04rem;
+	height: 1.11rem;
+	margin: 5.5rem auto 0;
 }
 #exchangeEnergy .cont{
 	position: absolute;
@@ -1045,6 +1053,11 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	line-height: 1.2;
 	text-align: center;
 	padding-top: 2.55rem;
+}
+#addEnergy .copyBtn1{
+	width: 5.04rem;
+	height: 1.11rem;
+	margin: 2.25rem auto 0;
 }
 #addEnergy .cont .close{
 	position: absolute;
