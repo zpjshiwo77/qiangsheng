@@ -109,7 +109,7 @@ $(document).ready(function () {
 		loader.addImage('images/shareBox/k.png');
 		loader.addImage('images/shareBox/tips.png');
 		loader.addImage('images/ruleBox/rule.png');
-		loader.addImage('images/ruleBox/word.jpg');
+		loader.addImage('images/ruleBox/rule.jpg');
 		loader.addImage('images/resultBox/bg.png');
 		loader.addImage('images/resultBox/btn.png');
 		loader.addImage('images/resultBox/btn2.png');
@@ -308,32 +308,32 @@ $(document).ready(function () {
 	var attrColor = {
 		"ml": {
 			color: "gray",
-			name: "魅力",
+			name: "浪漫灰",
 			colorName: "粉灰"
 		},
 		"jq": {
 			color: "gray",
-			name: "坚强",
+			name: "温柔棕",
 			colorName: "粉灰"
 		},
 		"lg": {
 			color: "green",
-			name: "乐观",
+			name: "俏皮灰",
 			colorName: "粉绿"
 		},
 		"hqx": {
 			color: "green",
-			name: "好奇心",
+			name: "元气绿",
 			colorName: "粉绿"
 		},
 		"sj": {
 			color: "purple",
-			name: "撒娇",
+			name: "轻甜粉",
 			colorName: "粉紫"
 		},
 		"mm": {
 			color: "purple",
-			name: "美貌",
+			name: "梦幻紫",
 			colorName: "粉紫"
 		}
 	};
@@ -691,7 +691,7 @@ $(document).ready(function () {
 			return;
 		}
 		if (userInfo.toyInfo.name == "") {
-			icom.alert("请输入潘神名称");
+			icom.alert("快来给你的专属潘神起个名字哦");
 			return;
 		}
 
@@ -1147,7 +1147,7 @@ $(document).ready(function () {
 	 * 更新用户的属性信息
 	 */
 	function updateUserInfoAttr(info, data) {
-		var attr = { "美貌": "mm", "好奇心": "hqx", "撒娇": "sj", "乐观": "lg", "坚强": "jq", "魅力": "ml" };
+		var attr = { "梦幻紫": "mm", "元气绿": "hqx", "轻甜粉": "sj", "俏皮灰": "lg", "温柔棕": "jq", "浪漫灰": "ml" };
 		var arr = data.bubble.split(",");
 		info.choseAttr = [];
 
