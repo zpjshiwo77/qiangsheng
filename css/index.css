@@ -462,7 +462,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 
 #makeBox .cont .bubbleBox .bubble.sj {
 	/* transform: translate(1.1rem, 0.2rem); */
-	transform: translate(2.9rem, -0.5rem);
+	transform: translate(2.9rem, 0);
 }
 
 #makeBox .cont .bubbleBox .bubble.hqx {
@@ -1303,4 +1303,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 }
 .screen189 #shareBox .closeBtn{
 	margin-top: -5.15rem;
+}
+.screen189 #makeBox .cont .bubbleBox .bubble.sj{
+	transform: translate(2.9rem, -0.5rem);
 }
