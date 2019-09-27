@@ -397,9 +397,9 @@ $(document).ready(function () {
 		// lotteryAnime();
 		// liquidAnime();
 		// showChoseBox();
-		// makeInvitePeople();
+		makeInvitePeople();
 		// comesoonBox.show();
-		makeBox.show();
+		// makeBox.show();
 	}
 
 	/**
@@ -527,30 +527,30 @@ $(document).ready(function () {
 		shareBox.find(".names").html(choseUserInfo.toyInfo.name);
 		shareBox.find(".name").html(choseUserInfo.toyInfo.name);
 
-		posterBox.find(".names").html(choseUserInfo.toyInfo.name);
-		posterBox.find(".name").html(choseUserInfo.toyInfo.name);
-		posterBox.find(".nikeName").html(choseUserInfo.userName);
-		posterBox.find(".tips")[0].src = "images/posterBox/" + choseUserInfo.toyInfo.eye + ".png";
+		// posterBox.find(".names").html(choseUserInfo.toyInfo.name);
+		// posterBox.find(".name").html(choseUserInfo.toyInfo.name);
+		// posterBox.find(".nikeName").html(choseUserInfo.userName);
+		// posterBox.find(".tips")[0].src = "images/posterBox/" + choseUserInfo.toyInfo.eye + ".png";
 
-		API.imgtrance({ "img_url": choseUserInfo.userHead }, function (res) {
-			if (res.code == 0) {
-				// res.data.img_base.replace(/=+$/,'');
+		// API.imgtrance({ "img_url": choseUserInfo.userHead }, function (res) {
+		// 	if (res.code == 0) {
+		// 		// res.data.img_base.replace(/=+$/,'');
 
-				posterBox.find(".head")[0].src = res.data.img_base;
-				a = true;
-				if (a && b && c) {
-					setTimeout(function () {
-						makePoster(posterBox, "jpg", showShareBox);
-					}, 1000);
-				}
-			}
+		// 		posterBox.find(".head")[0].src = res.data.img_base;
+		// 		a = true;
+		// 		if (a && b && c) {
+		// 			setTimeout(function () {
+		// 				makePoster(posterBox, "jpg", showShareBox);
+		// 			}, 1000);
+		// 		}
+		// 	}
 
-		});
+		// });
 
 		makeMyToyImging(choseUserInfo, function (res) {
 			b = true;
 			posterBox.find(".toy")[0].src = res;
-			if (a && b && c) {
+			if (b && c) {
 				setTimeout(function () {
 					makePoster(posterBox, "jpg", showShareBox);
 				}, 1000);
@@ -563,7 +563,7 @@ $(document).ready(function () {
 				// res.data.img_base.replace(/=+$/,'');
 
 				posterBox.find(".code")[0].src = res.data.img_base;
-				if (a && b && c) {
+				if (b && c) {
 					setTimeout(function () {
 						makePoster(posterBox, "jpg", showShareBox);
 					}, 1000);

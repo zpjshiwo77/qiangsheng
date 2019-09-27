@@ -1215,6 +1215,21 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	transform: scale(0.4,0.4);
 	transform-origin: top left; */
 }
+#posterBox .toy{
+	position: absolute;
+	top: 415px;
+	left: 105px;
+	width: 105px;
+}
+#posterBox .code{
+	position: absolute;
+	bottom: 56px;
+	left: 70px;
+	width: 145px;
+	height: 145px;
+	background-color: #fff;
+	border: 10px solid #fff;
+}
 #posterBox .mlogo {
 	position: absolute;
 	top: 60px;
