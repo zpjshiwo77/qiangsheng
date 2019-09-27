@@ -192,4 +192,16 @@ function importAPI () {
         });
 	}//end func
 
+	/**
+     * 天猫领券
+     * @param {*} onSuccess 回调函数
+     */
+	_self.tmallgetcoupon = function(onSuccess){
+		_Ajax({
+            API:"tmallgetcoupon",
+            data:{},
+            onSuccess:onSuccess
+        });
+	}//end func
+
 }//end import

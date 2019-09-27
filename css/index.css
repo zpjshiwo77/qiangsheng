@@ -837,13 +837,20 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	top: 50%;
 	left: 0;
 	width: 7.5rem;
-	height: 10rem;
+	height: 10.5rem;
 	transform: translate(0, -45%);
+}
+#rankBox .title{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 3.3rem;
+	margin-left: -1.65rem;
 }
 #rankBox .search{
 	position: absolute;
-	top: 0;
-	left: 0.5rem;
+	top: 0.05rem;
+	left: 0.1rem;
 	width: 3.49rem;
 	height: 0.45rem;
 	background-image: url(../images/rankBox/search.png);
@@ -892,7 +899,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 
 #rankBox .rankcont{
 	position: absolute;
-	top: 0.9rem;
+	top: 1.4rem;
 	left: 50%;
 	width: 6.44rem;
 	height: 8.16rem;
@@ -907,6 +914,14 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	height: 0.6rem;
 	z-index: 9;
 }
+#rankBox .rankcont .myselfRank{
+	position: absolute;
+	top: 1.6rem;
+	left: 0.2rem;
+	width: 5.5rem;
+	height: 1.9rem;
+	z-index: 2;
+}
 #rankBox .rankcont .rankList{
 	position: absolute;
 	top: 1.6rem;
@@ -919,7 +934,11 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	width: 100%;
 	height: auto;
 }
-#rankBox .rankcont .rankList .scroll .block{
+#rankBox .rankcont .rankList.self .scroll{
+	margin-top: 2rem;
+	padding-bottom: 2rem;
+}
+#rankBox .rankcont .block{
 	width: 5.5rem;
 	height: 1.9rem;
 	margin-left: 0.4rem;
@@ -928,13 +947,13 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	border-radius: 0.1rem;
 	margin-bottom: 0.1rem;
 }
-#rankBox .rankcont .rankList .scroll .block .toy{
+#rankBox .rankcont .block .toy{
 	position: absolute;
 	top: 0.1rem;
 	left: 0.3rem;
 	height: 1.7rem;
 }
-#rankBox .rankcont .rankList .scroll .block .name{
+#rankBox .rankcont .block .name{
 	position: absolute;
 	top: 0rem;
 	left: 1.65rem;
@@ -946,7 +965,16 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	text-align: center;
 	background-image: url(../images/rankBox/name.png);
 }
-#rankBox .rankcont .rankList .scroll .block .barBox{
+#rankBox .rankcont .block .name.sp{
+	position: absolute;
+	top: -0.1rem;
+	left: 1.35rem;
+	width: 3.77rem;
+	height: 1.12rem;
+	line-height: 0;
+	padding-top: 0.46rem;
+}
+#rankBox .rankcont .block .barBox{
 	position: absolute;
 	top: 0.9rem;
 	left: 1.4rem;
@@ -954,11 +982,11 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	height: 0.29rem;
 	background-image: url(../images/rankBox/bar.png);
 }
-#rankBox .rankcont .rankList .scroll .block .mask{
+#rankBox .rankcont .block .mask{
 	-webkit-mask: url(../images/rankBox/mask.png);
 	-webkit-mask-size: 100%;
 }
-#rankBox .rankcont .rankList .scroll .block .mask .bar{
+#rankBox .rankcont .block .mask .bar{
 	position: absolute;
 	top: 0;
 	left: -100%;
@@ -966,7 +994,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	height: 0.29rem;
 	background-image: url(../images/rankBox/stripe.png);
 }
-#rankBox .rankcont .rankList .scroll .block .barBox .energy{
+#rankBox .rankcont .block .barBox .energy{
 	position: absolute;
 	right: 0.3rem;
 	top: 0;
@@ -977,7 +1005,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	text-align: right;
 	line-height: 0.27rem;
 }
-#rankBox .rankcont .rankList .scroll .block .btns{
+#rankBox .rankcont .block .btns{
 	position: absolute;
 	top: 1.25rem;
 	left: 1.2rem;
@@ -985,15 +1013,15 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	height: 0.59rem;
 	text-align: center;
 }
-#rankBox .rankcont .rankList .scroll .block .btns div{
+#rankBox .rankcont .block .btns div{
 	display: inline-block;
 	width: 1.97rem;
 	height: 0.59rem;
 }
-#rankBox .rankcont .rankList .scroll .block .btns .add{
+#rankBox .rankcont .block .btns .add{
 	background-image: url(../images/rankBox/add.png);
 }
-#rankBox .rankcont .rankList .scroll .block .btns .invite{
+#rankBox .rankcont .block .btns .invite{
 	background-image: url(../images/rankBox/invite.png);
 }
 #rankSelf .block{

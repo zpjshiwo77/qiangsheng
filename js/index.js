@@ -379,9 +379,9 @@ $(document).ready(function () {
 	 */
 	function pageInit() {
 		eventInit();
-		DevelopTest();
+		// DevelopTest();
 		monitor_handler();
-		// judgeUserSource();
+		judgeUserSource();
 		IOSInput();
 	}//end func
 
@@ -396,7 +396,7 @@ $(document).ready(function () {
 		// rankScroll.refresh();
 		// showLotteryBox(1);
 		// liquidAnime();
-		showChoseBox();
+		// showChoseBox();
 		// makeInvitePeople();
 		// comesoonBox.show();
 		// makeBox.show();
@@ -475,6 +475,14 @@ $(document).ready(function () {
 
 		icom.clipboard($(".copyBtn1"),"￥PjMsYNdO7QU￥",showCopySuccess);
 		icom.clipboard($(".copyBtn2"),"￥PjMsYNdO7QU￥",showCopySuccess);
+		$(".copyBtn2").on("touchend",tmallgetcoupon);
+	}
+
+	/**
+	 * 天猫领券
+	 */
+	function tmallgetcoupon(){
+		API.tmallgetcoupon(function(){});
 	}
 
 	/**
@@ -890,6 +898,7 @@ $(document).ready(function () {
 		icom.fadeOut(resultBox);
 		rankBox.show();
 		rankBox.find(".lottery").show();
+		requestAllRankList();
 		requestUidList(userInfo.userId);
 	}
 
@@ -900,7 +909,7 @@ $(document).ready(function () {
 		icom.fadeOut(choseBox);
 		rankBox.show();
 		rankBox.find(".lottery").show();
-		// requestAllRankList();
+		requestAllRankList();
 		requestUidList(userInfo.userId);
 	}
 
@@ -912,7 +921,7 @@ $(document).ready(function () {
 		rankBox.show();
 		rankBox.find(".makeToy").show();
 		if (userId) requestUidList(userId);
-		else requestAllRankList();
+		requestAllRankList();
 	}
 
 	/**
@@ -956,7 +965,7 @@ $(document).ready(function () {
 	 */
 	function requestUidList(uid) {
 		API.getRankListFromUid({ uid: uid }, function (res) {
-			if (res.code == 0) renderRankSelf(res.data);
+			if (res.code == 0) renderMyselfRank(res.data);
 			else icom.alert(res.message);
 		});
 	}
@@ -1008,15 +1017,30 @@ $(document).ready(function () {
 	}
 
 	/**
+	 * 渲染我自己的排行榜
+	 */
+	function renderMyselfRank(data){
+		var box = $(".myselfRank");
+		var cont = makeRankBlock([data],true);
+
+		box.empty().append(cont);
+	}
+
+	/**
 	 * 生成排行榜的列表
 	 */
-	function makeRankBlock(data) {
+	function makeRankBlock(data,bool) {
 		var cont = "";
 		for (var i = 0; i < data.length; i++) {
 			var toy = data[i];
 			var energy = toy.energy / 1000;
 			energy = energy > 90 ? 90 : energy;
-			cont += '<div class="block"><img src="' + toy.img_url + '" class="toy"><div class="name">NO.' + toy.rank + ' ' + toy.name + '</div><div class="barBox"><div class="mask full"><div class="bar" style="transform: translate(' + energy + '%,0);"></div></div><div class="energy">' + toy.energy + '能量</div></div><div class="btns"><div class="add" data-val="' + toy.id + '"></div><div class="invite" data-val="' + toy.id + '"></div></div></div>';
+			if(bool){
+				cont += '<div class="block"><img src="' + toy.img_url + '" class="toy"><div class="name sp">当前排名第' + toy.rank + '名<br>' + toy.name + '</div><div class="barBox"><div class="mask full"><div class="bar" style="transform: translate(' + energy + '%,0);"></div></div><div class="energy">' + toy.energy + '能量</div></div><div class="btns"><div class="add" data-val="' + toy.id + '"></div><div class="invite" data-val="' + toy.id + '"></div></div></div>';
+			}
+			else{
+				cont += '<div class="block"><img src="' + toy.img_url + '" class="toy"><div class="name" style="top:0.2rem;">NO.' + toy.rank + ' ' + toy.name + '</div><div class="barBox" style="top:1.2rem;"><div class="mask full"><div class="bar" style="transform: translate(' + energy + '%,0);"></div></div><div class="energy">' + toy.energy + '能量</div></div></div>';
+			}
 		}
 		return cont;
 	}
