@@ -57,15 +57,23 @@ $(document).ready(function () {
 		requestAnimationFrame(function () {
 			if (os.screenProp < 0.54) articleBox.addClass("screen189");
 			if (os.screenProp > 0.64) articleBox.addClass("screen159");
-			load_handler();
-			sound_handler();
-			bubbleInit($("#loadingBox .left"), 6);
-			setTimeout(function () {
-				bubbleInit($("#loadingBox .right"), 5);
-			}, 1000)
-			setTimeout(function () {
-				bubbleInit($("#loadingBox .bottom"), 3);
-			}, 1500);
+			if (new Date > new Date("2019/10/9")) {
+				getUserInfo();
+				load_handler();
+				sound_handler();
+				bubbleInit($("#loadingBox .left"), 6);
+				setTimeout(function () {
+					bubbleInit($("#loadingBox .right"), 5);
+				}, 1000)
+				setTimeout(function () {
+					bubbleInit($("#loadingBox .bottom"), 3);
+				}, 1500);
+			}
+			else {
+				articleBox.show();
+				loadingBox.hide();
+				$("#comesoonBox").show();
+			}
 		});
 		wxUser.init({
 			shareInfo: {
@@ -75,7 +83,6 @@ $(document).ready(function () {
 				timeline: "啵啵实验室X泡泡玛特举办潘神DIY大赛，甜品全系列等你斩获！"
 			}
 		});
-		getUserInfo();
 	}//edn func
 
 	function sound_handler() {
