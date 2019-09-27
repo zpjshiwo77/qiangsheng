@@ -262,7 +262,6 @@ $(document).ready(function () {
 		});
 
 		loader.addCompletionListener(function () {
-			icom.fadeIn(articleBox);
 			load_timer(50);//模拟加载进度
 			loader = null;
 		});
