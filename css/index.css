@@ -70,11 +70,11 @@ img {
 
 .logo {
 	position: absolute;
-	top: 0.4rem;
+	top: 0.3rem;
 	left: 50%;
-	width: 6.09rem;
-	height: 0.58rem;
-	margin-left: -3.045rem;
+	width: 5.72rem;
+	height: 0.72rem;
+	margin-left: -2.86rem;
 	z-index: 9;
 }
 
@@ -1268,6 +1268,15 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	height: 105px;
 }
 /* posterBox end */
+
+#comesoonBox img{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 6.43rem;
+	transform: translate(-50%, -50%);
+}
+/* comesoonBox end */
 /*---------------------------------------- 15:9 ----------------------*/
 .screen159 #loadingBox .cont{
 	margin-top: -4.2rem;
