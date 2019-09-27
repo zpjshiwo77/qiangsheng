@@ -69,8 +69,8 @@ $(document).ready(function () {
 			shareInfo: {
 				link: dominUrl + "?hmsr=wshare",
 				title: "啵啵实验室X泡泡玛特邀你参加潘神DIY大赛",
-				friend:"DIY你的专属潘神，即有机会冲刺逆天冠军奖！",
-				timeline:"啵啵实验室X泡泡玛特举办潘神DIY大赛，甜品全系列等你斩获！"
+				friend: "DIY你的专属潘神，即有机会冲刺逆天冠军奖！",
+				timeline: "啵啵实验室X泡泡玛特举办潘神DIY大赛，甜品全系列等你斩获！"
 			}
 		});
 		// getUserInfo();
@@ -88,10 +88,14 @@ $(document).ready(function () {
 		loader.addImage('images/common/turn_unlock.png');
 		loader.addImage('images/common/turn_yes.png');
 		loader.addImage('images/public/bg.jpg');
+		loader.addImage('images/public/btn.png');
 		loader.addImage('images/public/bubble.png');
 		loader.addImage('images/public/logo.png');
 		loader.addImage('images/public/ruleBtn.png');
-		loader.addImage('images/public/btn.png');
+		loader.addImage('images/loadingBox/k.png');
+		loader.addImage('images/loadingBox/mask.png');
+		loader.addImage('images/loadingBox/title.png');
+		loader.addImage('images/loadingBox/w.png');
 
 		loader.addCompletionListener(function () {
 			icom.fadeIn(articleBox);
@@ -105,12 +109,16 @@ $(document).ready(function () {
 	function load_more() {
 		var loader = new PxLoader();
 		loader.addImage('images/share.jpg');
+		loader.addImage('images/tipsBox/btns.png');
+		loader.addImage('images/tipsBox/comesoon.png');
 		loader.addImage('images/tipsBox/tips.png');
+		loader.addImage('images/shareBox/close.png');
 		loader.addImage('images/shareBox/hand.png');
 		loader.addImage('images/shareBox/k.png');
 		loader.addImage('images/shareBox/tips.png');
-		loader.addImage('images/ruleBox/rule.png');
 		loader.addImage('images/ruleBox/rule.jpg');
+		loader.addImage('images/ruleBox/rule.png');
+		loader.addImage('images/ruleBox/word.jpg');
 		loader.addImage('images/resultBox/bg.png');
 		loader.addImage('images/resultBox/btn.png');
 		loader.addImage('images/resultBox/btn2.png');
@@ -148,15 +156,18 @@ $(document).ready(function () {
 		loader.addImage('images/rankBox/name.png');
 		loader.addImage('images/rankBox/search.png');
 		loader.addImage('images/rankBox/stripe.png');
+		loader.addImage('images/rankBox/title.png');
 		loader.addImage('images/posterBox/1.png');
 		loader.addImage('images/posterBox/2.png');
 		loader.addImage('images/posterBox/3.png');
+		loader.addImage('images/posterBox/bg.jpg');
 		loader.addImage('images/posterBox/bg.png');
 		loader.addImage('images/makeBox/battle.png');
 		loader.addImage('images/makeBox/bg.png');
 		loader.addImage('images/makeBox/c1.png');
 		loader.addImage('images/makeBox/c2.png');
 		loader.addImage('images/makeBox/c3.png');
+		loader.addImage('images/makeBox/hand.png');
 		loader.addImage('images/makeBox/hqx.png');
 		loader.addImage('images/makeBox/jq.png');
 		loader.addImage('images/makeBox/lg.png');
@@ -165,6 +176,7 @@ $(document).ready(function () {
 		loader.addImage('images/makeBox/ml.png');
 		loader.addImage('images/makeBox/mm.png');
 		loader.addImage('images/makeBox/sj.png');
+		loader.addImage('images/makeBox/title.png');
 		loader.addImage('images/lotteryBox/a1.png');
 		loader.addImage('images/lotteryBox/a2.png');
 		loader.addImage('images/lotteryBox/b.png');
@@ -172,10 +184,6 @@ $(document).ready(function () {
 		loader.addImage('images/lotteryBox/close.png');
 		loader.addImage('images/lotteryBox/k.png');
 		loader.addImage('images/lotteryBox/t.png');
-		loader.addImage('images/loadingBox/k.png');
-		loader.addImage('images/loadingBox/mask.png');
-		loader.addImage('images/loadingBox/title.png');
-		loader.addImage('images/loadingBox/w.png');
 		loader.addImage('images/indexBox/btn.png');
 		loader.addImage('images/indexBox/form.png');
 		loader.addImage('images/codeBox/code.png');
@@ -185,6 +193,7 @@ $(document).ready(function () {
 		loader.addImage('images/choseBox/cont.png');
 		loader.addImage('images/choseBox/control.png');
 		loader.addImage('images/choseBox/d.png');
+		loader.addImage('images/choseBox/light.png');
 		loader.addImage('images/choseBox/name.png');
 		loader.addImage('images/choseBox/purple/p.png');
 		loader.addImage('images/choseBox/purple/pb.png');
@@ -193,14 +202,17 @@ $(document).ready(function () {
 		loader.addImage('images/choseBox/purple/pants/3.png');
 		loader.addImage('images/choseBox/purple/pants/4.png');
 		loader.addImage('images/choseBox/purple/pants/5.png');
+		loader.addImage('images/choseBox/purple/pants/w.png');
 		loader.addImage('images/choseBox/purple/head/1.png');
 		loader.addImage('images/choseBox/purple/head/2.png');
 		loader.addImage('images/choseBox/purple/head/3.png');
 		loader.addImage('images/choseBox/purple/head/4.png');
 		loader.addImage('images/choseBox/purple/head/5.png');
+		loader.addImage('images/choseBox/purple/head/w.png');
 		loader.addImage('images/choseBox/purple/eye/1.png');
 		loader.addImage('images/choseBox/purple/eye/2.png');
 		loader.addImage('images/choseBox/purple/eye/3.png');
+		loader.addImage('images/choseBox/purple/eye/w.png');
 		loader.addImage('images/choseBox/green/p.png');
 		loader.addImage('images/choseBox/green/pb.png');
 		loader.addImage('images/choseBox/green/pants/1.png');
@@ -208,14 +220,17 @@ $(document).ready(function () {
 		loader.addImage('images/choseBox/green/pants/3.png');
 		loader.addImage('images/choseBox/green/pants/4.png');
 		loader.addImage('images/choseBox/green/pants/5.png');
+		loader.addImage('images/choseBox/green/pants/w.png');
 		loader.addImage('images/choseBox/green/head/1.png');
 		loader.addImage('images/choseBox/green/head/2.png');
 		loader.addImage('images/choseBox/green/head/3.png');
 		loader.addImage('images/choseBox/green/head/4.png');
 		loader.addImage('images/choseBox/green/head/5.png');
+		loader.addImage('images/choseBox/green/head/w.png');
 		loader.addImage('images/choseBox/green/eye/1.png');
 		loader.addImage('images/choseBox/green/eye/2.png');
 		loader.addImage('images/choseBox/green/eye/3.png');
+		loader.addImage('images/choseBox/green/eye/w.png');
 		loader.addImage('images/choseBox/gray/p.png');
 		loader.addImage('images/choseBox/gray/pb.png');
 		loader.addImage('images/choseBox/gray/pants/1.png');
@@ -223,14 +238,17 @@ $(document).ready(function () {
 		loader.addImage('images/choseBox/gray/pants/3.png');
 		loader.addImage('images/choseBox/gray/pants/4.png');
 		loader.addImage('images/choseBox/gray/pants/5.png');
+		loader.addImage('images/choseBox/gray/pants/w.png');
 		loader.addImage('images/choseBox/gray/head/1.png');
 		loader.addImage('images/choseBox/gray/head/2.png');
 		loader.addImage('images/choseBox/gray/head/3.png');
 		loader.addImage('images/choseBox/gray/head/4.png');
 		loader.addImage('images/choseBox/gray/head/5.png');
+		loader.addImage('images/choseBox/gray/head/w.png');
 		loader.addImage('images/choseBox/gray/eye/1.png');
 		loader.addImage('images/choseBox/gray/eye/2.png');
 		loader.addImage('images/choseBox/gray/eye/3.png');
+		loader.addImage('images/choseBox/gray/eye/w.png');
 		loader.addImage('images/choseBox/bg/1.png');
 		loader.addImage('images/choseBox/bg/2.png');
 		loader.addImage('images/choseBox/bg/3.png');
@@ -278,6 +296,7 @@ $(document).ready(function () {
 	var codeBox = $("#codeBox");
 	var rankScrollBox = $("#rankScroll");
 	var rankSelfBox = $("#rankSelf");
+	var confirmBox = $("#confirmBox");
 
 	var ruleScroll = new IScroll('#ruleScroll', {
 		bounce: false,
@@ -415,37 +434,50 @@ $(document).ready(function () {
 			var that = $(this);
 			choseUserInfo.rankBox = that.parents(".block");
 			requestRankUserInfo(that, AddEnergy);
-			imonitor.add({action:'touchstart',category:'default',label:'加能量涨排名'});
+			imonitor.add({ action: 'touchstart', category: 'default', label: '加能量涨排名' });
 		});
 		rankBox.on("click", ".invite", function (e) {
 			var that = $(this);
 			requestRankUserInfo(that, makeInvitePeople);
-			imonitor.add({action:'touchstart',category:'default',label:'邀请好友加能量'});
+			imonitor.add({ action: 'touchstart', category: 'default', label: '邀请好友加能量' });
 		});
 
 		lotteryBox.find(".close").on("touchend", closeLotteryBox);
 
-		addEnergy.find(".confirmBtn").on("touchend", addEnergyToUser);
+		addEnergy.find(".confirmBtn").on("touchend", showConfirmBox);
+		confirmBox.find(".ok").on("touchend", addEnergyToUser);
+		confirmBox.find(".no").on("touchend", function () {
+			icom.fadeOut(confirmBox);
+			icom.fadeOut(addEnergy);
+		});
 
 		rankScroll.on("scrollEnd", requestNextRankList);
 
-		shareBox.find(".closeBtn").on("touchend",hideShareBox);
+		shareBox.find(".closeBtn").on("touchend", hideShareBox);
 
-		icom.clipboard($(".copyBtn1"),"￥PjMsYNdO7QU￥",showCopySuccess);
-		icom.clipboard($(".copyBtn2"),"￥PjMsYNdO7QU￥",showCopySuccess);
+		icom.clipboard($(".copyBtn1"), "￥PjMsYNdO7QU￥", showCopySuccess);
+		icom.clipboard($(".copyBtn2"), "￥PjMsYNdO7QU￥", showCopySuccess);
+	}
+
+	/**
+	 * 显示确定页面
+	 */
+	function showConfirmBox() {
+		confirmBox.find("p").html("确认为【" + choseUserInfo.toyInfo.name + "】注入能量吗？");
+		icom.popOn(confirmBox);
 	}
 
 	/**
 	 * 显示拷贝成功
 	 */
-	function showCopySuccess(){
+	function showCopySuccess() {
 		showTipsBox("复制成功<br>赶快打开淘宝查看吧");
 	}
 
 	/**
 	 * 隐藏排行榜页面
 	 */
-	function hideShareBox(){
+	function hideShareBox() {
 		icom.fadeOut(shareBox);
 		icom.fadeIn(rankBox);
 	}
@@ -582,6 +614,7 @@ $(document).ready(function () {
 				if (res.code == 0) {
 					updateRankUserEnergyInfo(choseUserInfo.rankBox, 5000);
 					showTipsBox("您已为【" + choseUserInfo.toyInfo.name + "】<br>成功注入能量！");
+					icom.fadeOut(confirmBox);
 				}
 				else icom.alert(res.message);
 			});
@@ -845,12 +878,15 @@ $(document).ready(function () {
 	/**
 	 * 去排行榜页面
 	 */
-	function gotoRankList(userId) {
+	function gotoRankList() {
 		icom.fadeOut(loadingBox);
 		rankBox.show();
 		rankBox.find(".makeToy").show();
-		if (userId) requestUidList(userId);
-		else requestAllRankList();
+
+		rankBox.find(".myselfRank").hide();
+		rankBox.find(".search").show();
+		$("#rankScroll").removeClass("self");
+		requestAllRankList();
 	}
 
 	/**
@@ -1177,13 +1213,7 @@ $(document).ready(function () {
 		userInfo.hmsr = hmsr;
 
 		API.addUserSource({ source: hmsr }, function () { });
-		// if (energy) {
-		gotoRankList(userId);
-		return;
-		// }
-
-		judgeUserStatus();
-
+		gotoRankList();
 	}
 
 	/**
@@ -1423,15 +1453,15 @@ $(document).ready(function () {
 
 	//----------------------------------------页面监测代码----------------------------------------
 	function monitor_handler() {
-		imonitor.add({obj:$("#codeBtn"),action:'touchstart',category:'default',label:'发送验证码'});
-		imonitor.add({obj:$("#startBtn"),action:'touchstart',category:'default',label:'即可开启'});
-		imonitor.add({obj:makeBox.find(".btn"),action:'touchstart',category:'default',label:'生成我的彩片'});
-		imonitor.add({obj:resultBox.find(".makeToy"),action:'touchstart',category:'default',label:'玩造潘神'});
-		imonitor.add({obj:resultBox.find(".showList"),action:'touchstart',category:'default',label:'查看我的潘神排名'});
-		imonitor.add({obj:choseBox.find(".submitbtn"),action:'touchstart',category:'default',label:'解锁榜单，我要做冠军'});
-		imonitor.add({obj:rankBox.find(".addEnergy"),action:'touchstart',category:'default',label:'能量增值快速通道'});
-		imonitor.add({obj:rankBox.find(".lottery"),action:'touchstart',category:'default',label:'抽取神秘福利'});
-		imonitor.add({obj:rankBox.find(".makeToy"),action:'touchstart',category:'default',label:'排行榜-玩造潘神'});
-		imonitor.add({obj:$(".ruleBtn"),action:'touchstart',category:'default',label:'实验室攻略'});
+		imonitor.add({ obj: $("#codeBtn"), action: 'touchstart', category: 'default', label: '发送验证码' });
+		imonitor.add({ obj: $("#startBtn"), action: 'touchstart', category: 'default', label: '即可开启' });
+		imonitor.add({ obj: makeBox.find(".btn"), action: 'touchstart', category: 'default', label: '生成我的彩片' });
+		imonitor.add({ obj: resultBox.find(".makeToy"), action: 'touchstart', category: 'default', label: '玩造潘神' });
+		imonitor.add({ obj: resultBox.find(".showList"), action: 'touchstart', category: 'default', label: '查看我的潘神排名' });
+		imonitor.add({ obj: choseBox.find(".submitbtn"), action: 'touchstart', category: 'default', label: '解锁榜单，我要做冠军' });
+		imonitor.add({ obj: rankBox.find(".addEnergy"), action: 'touchstart', category: 'default', label: '能量增值快速通道' });
+		imonitor.add({ obj: rankBox.find(".lottery"), action: 'touchstart', category: 'default', label: '抽取神秘福利' });
+		imonitor.add({ obj: rankBox.find(".makeToy"), action: 'touchstart', category: 'default', label: '排行榜-玩造潘神' });
+		imonitor.add({ obj: $(".ruleBtn"), action: 'touchstart', category: 'default', label: '实验室攻略' });
 	}//end func
 });//end ready

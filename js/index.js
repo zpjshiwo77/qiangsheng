@@ -75,11 +75,11 @@ $(document).ready(function () {
 				timeline: "啵啵实验室X泡泡玛特举办潘神DIY大赛，甜品全系列等你斩获！"
 			}
 		});
-		// getUserInfo();
+		getUserInfo();
 	}//edn func
 
-	function sound_handler(){
-		if(os.weixin){
+	function sound_handler() {
+		if (os.weixin) {
 			var wsb = window;
 			if (wsb.WeixinJSBridge) {
 				try {
@@ -92,21 +92,21 @@ $(document).ready(function () {
 			else {
 				document.addEventListener("WeixinJSBridgeReady", sound_Init, false);
 			}
-		}else{
+		} else {
 			sound_Init();
 		}
-		
+
 	}//edn func
 
 	/**
 	 * 声音初始化
 	 */
-	function sound_Init(){
+	function sound_Init() {
 		document.removeEventListener("WeixinJSBridgeReady", sound_Init);
 		Voice = iaudio.on([{
-			src:"audio/po.mp3",
-			autoplay:false,
-			loop:0
+			src: "audio/po.mp3",
+			autoplay: false,
+			loop: 0
 		}]);
 	}
 
@@ -122,10 +122,14 @@ $(document).ready(function () {
 		loader.addImage('images/common/turn_unlock.png');
 		loader.addImage('images/common/turn_yes.png');
 		loader.addImage('images/public/bg.jpg');
+		loader.addImage('images/public/btn.png');
 		loader.addImage('images/public/bubble.png');
 		loader.addImage('images/public/logo.png');
 		loader.addImage('images/public/ruleBtn.png');
-		loader.addImage('images/public/btn.png');
+		loader.addImage('images/loadingBox/k.png');
+		loader.addImage('images/loadingBox/mask.png');
+		loader.addImage('images/loadingBox/title.png');
+		loader.addImage('images/loadingBox/w.png');
 
 		loader.addCompletionListener(function () {
 			icom.fadeIn(articleBox);
@@ -139,12 +143,16 @@ $(document).ready(function () {
 	function load_more() {
 		var loader = new PxLoader();
 		loader.addImage('images/share.jpg');
+		loader.addImage('images/tipsBox/btns.png');
+		loader.addImage('images/tipsBox/comesoon.png');
 		loader.addImage('images/tipsBox/tips.png');
+		loader.addImage('images/shareBox/close.png');
 		loader.addImage('images/shareBox/hand.png');
 		loader.addImage('images/shareBox/k.png');
 		loader.addImage('images/shareBox/tips.png');
-		loader.addImage('images/ruleBox/rule.png');
 		loader.addImage('images/ruleBox/rule.jpg');
+		loader.addImage('images/ruleBox/rule.png');
+		loader.addImage('images/ruleBox/word.jpg');
 		loader.addImage('images/resultBox/bg.png');
 		loader.addImage('images/resultBox/btn.png');
 		loader.addImage('images/resultBox/btn2.png');
@@ -182,15 +190,18 @@ $(document).ready(function () {
 		loader.addImage('images/rankBox/name.png');
 		loader.addImage('images/rankBox/search.png');
 		loader.addImage('images/rankBox/stripe.png');
+		loader.addImage('images/rankBox/title.png');
 		loader.addImage('images/posterBox/1.png');
 		loader.addImage('images/posterBox/2.png');
 		loader.addImage('images/posterBox/3.png');
+		loader.addImage('images/posterBox/bg.jpg');
 		loader.addImage('images/posterBox/bg.png');
 		loader.addImage('images/makeBox/battle.png');
 		loader.addImage('images/makeBox/bg.png');
 		loader.addImage('images/makeBox/c1.png');
 		loader.addImage('images/makeBox/c2.png');
 		loader.addImage('images/makeBox/c3.png');
+		loader.addImage('images/makeBox/hand.png');
 		loader.addImage('images/makeBox/hqx.png');
 		loader.addImage('images/makeBox/jq.png');
 		loader.addImage('images/makeBox/lg.png');
@@ -199,6 +210,7 @@ $(document).ready(function () {
 		loader.addImage('images/makeBox/ml.png');
 		loader.addImage('images/makeBox/mm.png');
 		loader.addImage('images/makeBox/sj.png');
+		loader.addImage('images/makeBox/title.png');
 		loader.addImage('images/lotteryBox/a1.png');
 		loader.addImage('images/lotteryBox/a2.png');
 		loader.addImage('images/lotteryBox/b.png');
@@ -206,10 +218,6 @@ $(document).ready(function () {
 		loader.addImage('images/lotteryBox/close.png');
 		loader.addImage('images/lotteryBox/k.png');
 		loader.addImage('images/lotteryBox/t.png');
-		loader.addImage('images/loadingBox/k.png');
-		loader.addImage('images/loadingBox/mask.png');
-		loader.addImage('images/loadingBox/title.png');
-		loader.addImage('images/loadingBox/w.png');
 		loader.addImage('images/indexBox/btn.png');
 		loader.addImage('images/indexBox/form.png');
 		loader.addImage('images/codeBox/code.png');
@@ -219,6 +227,7 @@ $(document).ready(function () {
 		loader.addImage('images/choseBox/cont.png');
 		loader.addImage('images/choseBox/control.png');
 		loader.addImage('images/choseBox/d.png');
+		loader.addImage('images/choseBox/light.png');
 		loader.addImage('images/choseBox/name.png');
 		loader.addImage('images/choseBox/purple/p.png');
 		loader.addImage('images/choseBox/purple/pb.png');
@@ -227,14 +236,17 @@ $(document).ready(function () {
 		loader.addImage('images/choseBox/purple/pants/3.png');
 		loader.addImage('images/choseBox/purple/pants/4.png');
 		loader.addImage('images/choseBox/purple/pants/5.png');
+		loader.addImage('images/choseBox/purple/pants/w.png');
 		loader.addImage('images/choseBox/purple/head/1.png');
 		loader.addImage('images/choseBox/purple/head/2.png');
 		loader.addImage('images/choseBox/purple/head/3.png');
 		loader.addImage('images/choseBox/purple/head/4.png');
 		loader.addImage('images/choseBox/purple/head/5.png');
+		loader.addImage('images/choseBox/purple/head/w.png');
 		loader.addImage('images/choseBox/purple/eye/1.png');
 		loader.addImage('images/choseBox/purple/eye/2.png');
 		loader.addImage('images/choseBox/purple/eye/3.png');
+		loader.addImage('images/choseBox/purple/eye/w.png');
 		loader.addImage('images/choseBox/green/p.png');
 		loader.addImage('images/choseBox/green/pb.png');
 		loader.addImage('images/choseBox/green/pants/1.png');
@@ -242,14 +254,17 @@ $(document).ready(function () {
 		loader.addImage('images/choseBox/green/pants/3.png');
 		loader.addImage('images/choseBox/green/pants/4.png');
 		loader.addImage('images/choseBox/green/pants/5.png');
+		loader.addImage('images/choseBox/green/pants/w.png');
 		loader.addImage('images/choseBox/green/head/1.png');
 		loader.addImage('images/choseBox/green/head/2.png');
 		loader.addImage('images/choseBox/green/head/3.png');
 		loader.addImage('images/choseBox/green/head/4.png');
 		loader.addImage('images/choseBox/green/head/5.png');
+		loader.addImage('images/choseBox/green/head/w.png');
 		loader.addImage('images/choseBox/green/eye/1.png');
 		loader.addImage('images/choseBox/green/eye/2.png');
 		loader.addImage('images/choseBox/green/eye/3.png');
+		loader.addImage('images/choseBox/green/eye/w.png');
 		loader.addImage('images/choseBox/gray/p.png');
 		loader.addImage('images/choseBox/gray/pb.png');
 		loader.addImage('images/choseBox/gray/pants/1.png');
@@ -257,14 +272,17 @@ $(document).ready(function () {
 		loader.addImage('images/choseBox/gray/pants/3.png');
 		loader.addImage('images/choseBox/gray/pants/4.png');
 		loader.addImage('images/choseBox/gray/pants/5.png');
+		loader.addImage('images/choseBox/gray/pants/w.png');
 		loader.addImage('images/choseBox/gray/head/1.png');
 		loader.addImage('images/choseBox/gray/head/2.png');
 		loader.addImage('images/choseBox/gray/head/3.png');
 		loader.addImage('images/choseBox/gray/head/4.png');
 		loader.addImage('images/choseBox/gray/head/5.png');
+		loader.addImage('images/choseBox/gray/head/w.png');
 		loader.addImage('images/choseBox/gray/eye/1.png');
 		loader.addImage('images/choseBox/gray/eye/2.png');
 		loader.addImage('images/choseBox/gray/eye/3.png');
+		loader.addImage('images/choseBox/gray/eye/w.png');
 		loader.addImage('images/choseBox/bg/1.png');
 		loader.addImage('images/choseBox/bg/2.png');
 		loader.addImage('images/choseBox/bg/3.png');
@@ -473,22 +491,22 @@ $(document).ready(function () {
 			if (os.screenProp > 0.64) articleBox.addClass("screen159");
 		});
 
-		icom.clipboard($(".copyBtn1"),"￥PjMsYNdO7QU￥",showCopySuccess);
-		icom.clipboard($(".copyBtn2"),"￥PjMsYNdO7QU￥",showCopySuccess);
-		$(".copyBtn2").on("touchend",tmallgetcoupon);
+		icom.clipboard($(".copyBtn1"), "￥PjMsYNdO7QU￥", showCopySuccess);
+		icom.clipboard($(".copyBtn2"), "￥PjMsYNdO7QU￥", showCopySuccess);
+		$(".copyBtn2").on("touchend", tmallgetcoupon);
 	}
 
 	/**
 	 * 天猫领券
 	 */
-	function tmallgetcoupon(){
-		API.tmallgetcoupon(function(){});
+	function tmallgetcoupon() {
+		API.tmallgetcoupon(function () { });
 	}
 
 	/**
 	 * 显示拷贝成功
 	 */
-	function showCopySuccess(){
+	function showCopySuccess() {
 		showTipsBox("复制成功<br>赶快打开淘宝查看吧");
 	}
 
@@ -1019,9 +1037,9 @@ $(document).ready(function () {
 	/**
 	 * 渲染我自己的排行榜
 	 */
-	function renderMyselfRank(data){
+	function renderMyselfRank(data) {
 		var box = $(".myselfRank");
-		var cont = makeRankBlock([data],true);
+		var cont = makeRankBlock([data], true);
 
 		box.empty().append(cont);
 	}
@@ -1029,16 +1047,16 @@ $(document).ready(function () {
 	/**
 	 * 生成排行榜的列表
 	 */
-	function makeRankBlock(data,bool) {
+	function makeRankBlock(data, bool) {
 		var cont = "";
 		for (var i = 0; i < data.length; i++) {
 			var toy = data[i];
 			var energy = toy.energy / 1000;
 			energy = energy > 90 ? 90 : energy;
-			if(bool){
+			if (bool) {
 				cont += '<div class="block"><img src="' + toy.img_url + '" class="toy"><div class="name sp">当前排名第' + toy.rank + '名<br>' + toy.name + '</div><div class="barBox"><div class="mask full"><div class="bar" style="transform: translate(' + energy + '%,0);"></div></div><div class="energy">' + toy.energy + '能量</div></div><div class="btns"><div class="add" data-val="' + toy.id + '"></div><div class="invite" data-val="' + toy.id + '"></div></div></div>';
 			}
-			else{
+			else {
 				cont += '<div class="block"><img src="' + toy.img_url + '" class="toy"><div class="name" style="top:0.2rem;">NO.' + toy.rank + ' ' + toy.name + '</div><div class="barBox" style="top:1.2rem;"><div class="mask full"><div class="bar" style="transform: translate(' + energy + '%,0);"></div></div><div class="energy">' + toy.energy + '能量</div></div></div>';
 			}
 		}
@@ -1105,8 +1123,8 @@ $(document).ready(function () {
 			Voice.po.play();
 
 			var hand = makeBox.find(".hand");
-			if(hand.hasClass("hide")){
-				hand.transition({opacity:1},function(){
+			if (hand.hasClass("hide")) {
+				hand.transition({ opacity: 1 }, function () {
 					hand.removeClass("hide");
 				})
 			}
@@ -1192,8 +1210,8 @@ $(document).ready(function () {
 	 * 显示规则页面
 	 */
 	function showRuleBox() {
-		ruleScroll.scrollTo(0,0,0);
-		ruleBox.find(".word")[0].src="images/ruleBox/rule.jpg";
+		ruleScroll.scrollTo(0, 0, 0);
+		ruleBox.find(".word")[0].src = "images/ruleBox/rule.jpg";
 		icom.popOn(ruleBox);
 		ruleScroll.refresh();
 	}
@@ -1202,8 +1220,8 @@ $(document).ready(function () {
 	 * 去隐私页面
 	 */
 	function gotoPrivacy() {
-		ruleScroll.scrollTo(0,0,0);
-		ruleBox.find(".word")[0].src="images/ruleBox/word.jpg";
+		ruleScroll.scrollTo(0, 0, 0);
+		ruleBox.find(".word")[0].src = "images/ruleBox/word.jpg";
 		icom.popOn(ruleBox);
 		ruleScroll.refresh();
 	}
