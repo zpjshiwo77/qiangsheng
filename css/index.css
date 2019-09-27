@@ -1056,7 +1056,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	top: 50%;
 	left: 50%;
 	width: 6.44rem;
-	height: 9.17rem;
+	height: 9.77rem;
 	transform: translate(-50%, -50%);
 	background-image: url(../images/codeBox/k2.png);
 }
@@ -1064,7 +1064,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	display: block;
 	width: 5rem;
 	height: 0.66rem;
-	margin: 2.7rem auto 0.2rem;
+	margin: 2.85rem auto 0.2rem;
 	font-size: 0.31rem;
 	text-align: center;
 }
@@ -1083,7 +1083,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 #addEnergy .copyBtn1{
 	width: 5.04rem;
 	height: 1.11rem;
-	margin: 2.25rem auto 0;
+	margin: 2.9rem auto 0;
 }
 #addEnergy .cont .close{
 	position: absolute;
