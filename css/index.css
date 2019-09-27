@@ -307,14 +307,16 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 
 #loadingBox .cont .formBox .readed {
 	position: absolute;
-	top: 0;
+	top: -0.1rem;
 	left: 0;
 	width: 50%;
 	height: 0.45rem;
 	color: #ca3867;
 	cursor: pointer;
-	padding: 0 0 0 0.93rem;
+	padding: 0 0 0 0.85rem;
 	opacity: 0;
+	font-size: 0.35rem;
+	font-weight: bold;
 }
 #loadingBox .cont .formBox .privacy {
 	position: absolute;
@@ -329,9 +331,9 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	position: absolute;
 	bottom: 0rem;
 	left: 50%;
-	width: 4.79rem;
-	height: 1.17rem;
-	margin-left: -2.395rem;
+	width: 4.03rem;
+	height: 1.01rem;
+	margin-left: -2.015rem;
 	background-image: url(../images/indexBox/btn.png);
 }
 
