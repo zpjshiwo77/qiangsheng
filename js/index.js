@@ -9,6 +9,7 @@ $(document).ready(function () {
 	var loadPer = $("#loadingBox .bar");
 	var hrefs = window.location.href.split('?');
 	var dominUrl = hrefs[0].substr(0, hrefs[0].lastIndexOf('/') + 1);
+	var Voice;
 
 	var userInfo = {
 		userName: "测试",
@@ -57,6 +58,7 @@ $(document).ready(function () {
 			if (os.screenProp < 0.54) articleBox.addClass("screen189");
 			if (os.screenProp > 0.64) articleBox.addClass("screen159");
 			load_handler();
+			sound_handler();
 			bubbleInit($("#loadingBox .left"), 6);
 			setTimeout(function () {
 				bubbleInit($("#loadingBox .right"), 5);
@@ -73,8 +75,40 @@ $(document).ready(function () {
 				timeline: "啵啵实验室X泡泡玛特举办潘神DIY大赛，甜品全系列等你斩获！"
 			}
 		});
-		getUserInfo();
+		// getUserInfo();
 	}//edn func
+
+	function sound_handler(){
+		if(os.weixin){
+			var wsb = window;
+			if (wsb.WeixinJSBridge) {
+				try {
+					wsb.WeixinJSBridge.invoke("getNetworkType", {}, sound_Init);
+				}
+				catch (e) {
+					wx.ready(sound_Init);
+				}
+			}
+			else {
+				document.addEventListener("WeixinJSBridgeReady", sound_Init, false);
+			}
+		}else{
+			sound_Init();
+		}
+		
+	}//edn func
+
+	/**
+	 * 声音初始化
+	 */
+	function sound_Init(){
+		document.removeEventListener("WeixinJSBridgeReady", sound_Init);
+		Voice = iaudio.on([{
+			src:"audio/po.mp3",
+			autoplay:false,
+			loop:0
+		}]);
+	}
 
 	//----------------------------------------加载页面图片----------------------------------------
 	function load_handler() {
@@ -278,6 +312,7 @@ $(document).ready(function () {
 	var codeBox = $("#codeBox");
 	var rankScrollBox = $("#rankScroll");
 	var rankSelfBox = $("#rankSelf");
+	var comesoonBox = $("#comesoonBox");
 
 	var ruleScroll = new IScroll('#ruleScroll', {
 		bounce: false,
@@ -344,9 +379,9 @@ $(document).ready(function () {
 	 */
 	function pageInit() {
 		eventInit();
-		// DevelopTest();
+		DevelopTest();
 		monitor_handler();
-		judgeUserSource();
+		// judgeUserSource();
 		IOSInput();
 	}//end func
 
@@ -362,7 +397,9 @@ $(document).ready(function () {
 		// lotteryAnime();
 		// liquidAnime();
 		// showChoseBox();
-		makeInvitePeople();
+		// makeInvitePeople();
+		// comesoonBox.show();
+		makeBox.show();
 	}
 
 	/**
@@ -1004,7 +1041,7 @@ $(document).ready(function () {
 	function makeAttrAnime() {
 		var bubble = makeBox.find(".bubble");
 
-		bubble.transition({ x: "2.8rem", y: "-1rem", opacity: 0 }, 1500);
+		bubble.transition({ x: "2.8rem", y: "0rem", opacity: 0 }, 1500);
 
 		setTimeout(function () {
 			liquidAnime(function () {
@@ -1026,6 +1063,15 @@ $(document).ready(function () {
 			userInfo.choseAttr.push(val);
 			if (userInfo.choseAttr.length == 1) {
 				userInfo.choseColor = attrColor[val].color;
+			}
+
+			Voice.po.play();
+
+			var hand = makeBox.find(".hand");
+			if(hand.hasClass("hide")){
+				hand.transition({opacity:1},function(){
+					hand.removeClass("hide");
+				})
 			}
 		}
 	}
@@ -1092,13 +1138,6 @@ $(document).ready(function () {
 	}
 
 	/**
-	 * 去隐私页面
-	 */
-	function gotoPrivacy() {
-		window.open("https://www.acuvue.com.cn/privacy-policy");
-	}
-
-	/**
 	 * 阅读隐私
 	 */
 	function readPrivacy() {
@@ -1116,6 +1155,18 @@ $(document).ready(function () {
 	 * 显示规则页面
 	 */
 	function showRuleBox() {
+		ruleScroll.scrollTo(0,0,0);
+		ruleBox.find(".word")[0].src="images/ruleBox/rule.jpg";
+		icom.popOn(ruleBox);
+		ruleScroll.refresh();
+	}
+
+	/**
+	 * 去隐私页面
+	 */
+	function gotoPrivacy() {
+		ruleScroll.scrollTo(0,0,0);
+		ruleBox.find(".word")[0].src="images/ruleBox/word.jpg";
 		icom.popOn(ruleBox);
 		ruleScroll.refresh();
 	}
