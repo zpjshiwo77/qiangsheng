@@ -764,7 +764,7 @@ $(document).ready(function () {
 			return;
 		}
 		if (userInfo.toyInfo.name == "") {
-			icom.alert("快来给你的专属潘神起个名字哦");
+			icom.alert("快来给你的专属潘神起个昵称哦");
 			return;
 		}
 
