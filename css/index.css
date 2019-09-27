@@ -744,7 +744,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	color: #fff;
 }
 
-#choseBox .cont .bg {
+#choseBox .cont .bg, #choseBox .cont .light{
 	position: absolute;
 	top: 1.27rem;
 	left: 0.26rem;

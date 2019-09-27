@@ -394,9 +394,9 @@ $(document).ready(function () {
 
 		// penelScroll.refresh();
 		// rankScroll.refresh();
-		showLotteryBox(1);
+		// showLotteryBox(1);
 		// liquidAnime();
-		// showChoseBox();
+		showChoseBox();
 		// makeInvitePeople();
 		// comesoonBox.show();
 		// makeBox.show();
@@ -790,14 +790,20 @@ $(document).ready(function () {
 		var type = that.attr("data-type");
 		var val = that.attr("data-val");
 		var box = choseBox.find(".block" + type);
+		var eye = choseBox.find(".toy_e");
+		var pants = choseBox.find(".toy_p");
+		var head = choseBox.find(".toy_h");
 
 		box.find(".btn").removeClass("act");
 		that.addClass("act");
 
-		if (toyWhite) {
+		if (toyWhite && type != "0") {
 			toyWhite = false;
 			choseBox.find(".toy_w").hide();
 			choseBox.find(".toy_b").show();
+			eye.show();
+			pants.show();
+			head.show();
 		}
 
 		switch (type) {
@@ -821,6 +827,7 @@ $(document).ready(function () {
 	 */
 	function changeToyEye(id) {
 		var eye = choseBox.find(".toy_e");
+		choseBox.find(".light").show();
 		eye.show();
 		eye[0].src = "images/choseBox/" + userInfo.choseColor + "/eye/" + id + ".png";
 		userInfo.toyInfo.eye = id;
@@ -862,8 +869,14 @@ $(document).ready(function () {
 	function showChoseBox() {
 		var toy = choseBox.find(".toy_b");
 		var toyw = choseBox.find(".toy_w");
+		var eye = choseBox.find(".toy_e");
+		var pants = choseBox.find(".toy_p");
+		var head = choseBox.find(".toy_h");
 		toy[0].src = "images/choseBox/" + userInfo.choseColor + "/p.png";
 		toyw[0].src = "images/choseBox/" + userInfo.choseColor + "/pb.png";
+		eye[0].src = "images/choseBox/" + userInfo.choseColor + "/eye/w.png";
+		pants[0].src = "images/choseBox/" + userInfo.choseColor + "/pants/w.png";
+		head[0].src = "images/choseBox/" + userInfo.choseColor + "/head/w.png";
 		icom.fadeOut(resultBox);
 		choseBox.show();
 		penelInit();
