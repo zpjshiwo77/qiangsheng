@@ -394,10 +394,10 @@ $(document).ready(function () {
 
 		// penelScroll.refresh();
 		// rankScroll.refresh();
-		// lotteryAnime();
+		showLotteryBox(1);
 		// liquidAnime();
 		// showChoseBox();
-		makeInvitePeople();
+		// makeInvitePeople();
 		// comesoonBox.show();
 		// makeBox.show();
 	}
@@ -1378,8 +1378,8 @@ $(document).ready(function () {
 				makebubble(box, {
 					width: imath.randomRange(15, 28) / 10,
 					left: imath.randomRange(2, 4),
-					delay: imath.randomRange(0, 2000),
-					time: imath.randomRange(3000, 4000)
+					delay: imath.randomRange(0, 1000),
+					time: imath.randomRange(1500, 2000)
 				});
 			}
 			else {
@@ -1387,12 +1387,12 @@ $(document).ready(function () {
 					width: imath.randomRange(2, 10) / 10,
 					left: imath.randomRange(3, 6),
 					delay: imath.randomRange(0, 1000),
-					time: imath.randomRange(4000, 5000)
+					time: imath.randomRange(1500, 2500)
 				});
 			}
 		}
 
-		makebubble(box, { width: 3, left: 0.5, delay: 0, time: 6500 }, callback);
+		makebubble(box, { width: 3, left: 0.5, delay: 0, time: 3500 }, callback);
 	}
 
 	/**
