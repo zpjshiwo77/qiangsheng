@@ -456,6 +456,11 @@ $(document).ready(function () {
 
 		icom.clipboard($(".copyBtn1"), "￥PjMsYNdO7QU￥", showCopySuccess);
 		icom.clipboard($(".copyBtn2"), "￥PjMsYNdO7QU￥", showCopySuccess);
+
+		codeBox.find(".closeBtn").on("touchend",function(){
+			icom.fadeOut(codeBox);
+			icom.fadeIn(rankBox);
+		})
 	}
 
 	/**

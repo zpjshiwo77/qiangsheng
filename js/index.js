@@ -1309,7 +1309,7 @@ $(document).ready(function () {
 		switch (userInfo.userStatus) {
 			case 0:
 				icom.fadeOut(loadingBox);
-				showTipsBox("欢迎回到啵啵实验室<br>点击查看我的潘神排名<br>查看排名");
+				showTipsBox("欢迎回到啵啵实验室<br>点击看看我的潘神排名<br>查看排名");
 				showMyChoseAttr(true);
 				break;
 			case 2:
