@@ -57,7 +57,7 @@ $(document).ready(function () {
 		requestAnimationFrame(function () {
 			if (os.screenProp < 0.54) articleBox.addClass("screen189");
 			if (os.screenProp > 0.64) articleBox.addClass("screen159");
-			if (new Date > new Date("2019/10/9")) {
+			// if (new Date > new Date("2019/10/9")) {
 				getUserInfo();
 				load_handler();
 				sound_handler();
@@ -68,12 +68,12 @@ $(document).ready(function () {
 				setTimeout(function () {
 					bubbleInit($("#loadingBox .bottom"), 3);
 				}, 1500);
-			}
-			else {
-				articleBox.show();
-				loadingBox.hide();
-				$("#comesoonBox").show();
-			}
+			// }
+			// else {
+			// 	articleBox.show();
+			// 	loadingBox.hide();
+			// 	$("#comesoonBox").show();
+			// }
 		});
 		wxUser.init({
 			shareInfo: {
