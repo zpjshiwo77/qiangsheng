@@ -514,7 +514,7 @@ $(document).ready(function () {
 	 */
 	function makeInvitePeople() {
 		icom.fadeIn(loadBox);
-		var url = "https://acuvue.beats-digital.com/tmall/?hmsr=imgshare&energy=1&uid=" + choseUserInfo.userId;
+		var url = "https://bubblepop.beats-digital.com/tmall/?hmsr=imgshare&energy=1&uid=" + choseUserInfo.userId;
 		var a = false, b = false, c = false;
 
 		shareBox.find(".toy")[0].src = choseUserInfo.toyUrl;
@@ -661,7 +661,7 @@ $(document).ready(function () {
 	 * 显示code页面
 	 */
 	function showCodeBox() {
-		var url = "https://acuvue.beats-digital.com/tmall/?hmsr=transfer&hmpl=&hmcu=&hmkw=&hmci=";
+		var url = "https://bubblepop.beats-digital.com/tmall/?hmsr=transfer&hmpl=&hmcu=&hmkw=&hmci=";
 		codeBox.find(".code")[0].src = "http://upload.be-xx.com/qrcode?s=" + encodeURIComponent(url) + "&color=000";
 		icom.fadeOut(rankBox);
 		icom.fadeIn(codeBox);
