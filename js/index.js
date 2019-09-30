@@ -58,7 +58,7 @@ $(document).ready(function () {
 			if (os.screenProp < 0.54) articleBox.addClass("screen189");
 			if (os.screenProp > 0.64) articleBox.addClass("screen159");
 			// if (new Date > new Date("2019/10/9")) {
-			// getUserInfo();
+			getUserInfo();
 			load_handler();
 			sound_handler();
 			bubbleInit($("#loadingBox .left"), 6);
