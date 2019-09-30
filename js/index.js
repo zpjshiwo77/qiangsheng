@@ -58,7 +58,7 @@ $(document).ready(function () {
 			if (os.screenProp < 0.54) articleBox.addClass("screen189");
 			if (os.screenProp > 0.64) articleBox.addClass("screen159");
 			// if (new Date > new Date("2019/10/9")) {
-			getUserInfo();
+			// getUserInfo();
 			load_handler();
 			sound_handler();
 			bubbleInit($("#loadingBox .left"), 6);
@@ -114,6 +114,10 @@ $(document).ready(function () {
 			src: "audio/po.mp3",
 			autoplay: false,
 			loop: 0
+		},{
+			src: "audio/award.mp3",
+			autoplay: false,
+			loop: 0
 		}]);
 	}
 
@@ -153,6 +157,7 @@ $(document).ready(function () {
 		loader.addImage('images/tipsBox/btns.png');
 		loader.addImage('images/tipsBox/comesoon.png');
 		loader.addImage('images/tipsBox/tips.png');
+		loader.addImage('images/tipsBox/end.png');
 		loader.addImage('images/shareBox/close.png');
 		loader.addImage('images/shareBox/hand.png');
 		loader.addImage('images/shareBox/k.png');
@@ -189,6 +194,7 @@ $(document).ready(function () {
 		loader.addImage('images/rankBox/b2.png');
 		loader.addImage('images/rankBox/b3.png');
 		loader.addImage('images/rankBox/b4.png');
+		loader.addImage('images/rankBox/b5.png');
 		loader.addImage('images/rankBox/bar.png');
 		loader.addImage('images/rankBox/bg.png');
 		loader.addImage('images/rankBox/cont.png');
@@ -337,6 +343,7 @@ $(document).ready(function () {
 	var rankScrollBox = $("#rankScroll");
 	var rankSelfBox = $("#rankSelf");
 	var comesoonBox = $("#comesoonBox");
+	var endBox = $("#endBox");
 
 	var ruleScroll = new IScroll('#ruleScroll', {
 		bounce: false,
@@ -498,6 +505,8 @@ $(document).ready(function () {
 		icom.clipboard($(".copyBtn1"), "￥PjMsYNdO7QU￥", showCopySuccess);
 		icom.clipboard($(".copyBtn2"), "￥PjMsYNdO7QU￥", showCopySuccess);
 		$(".copyBtn2").on("touchend", tmallgetcoupon);
+
+		endBox.find(".showMylistBtn").on("touchend", endShowMylist);
 	}
 
 	/**
@@ -752,6 +761,7 @@ $(document).ready(function () {
 			else {
 				icom.alert("未中奖");
 			}
+			Voice.award.play();
 		});
 	}
 
@@ -929,6 +939,19 @@ $(document).ready(function () {
 		icom.fadeOut(resultBox);
 		rankBox.show();
 		rankBox.find(".lottery").show();
+		requestAllRankList();
+		requestUidList(userInfo.userId);
+	}
+
+	/**
+	 * 结束页面显示我的排行榜
+	 */
+	function endShowMylist(){
+		icom.fadeOut(endBox);
+		rankBox.show();
+		rankBox.find(".btnBox").hide();
+		rankBox.find(".copyBtn1").show();
+		rankBox.find(".myselfRank").addClass("sp");
 		requestAllRankList();
 		requestUidList(userInfo.userId);
 	}
@@ -1308,11 +1331,18 @@ $(document).ready(function () {
 		userInfo.hmsr = hmsr;
 
 		API.addUserSource({ source: hmsr }, function () { });
+
+		if (new Date > new Date("2019/12/1")) {
+			endBox.show();
+			icom.fadeOut(loadingBox);
+			return;
+		}
+
 		if (energy) {
 			gotoRankList(userId);
 			return;
 		}
-
+		
 		judgeUserStatus();
 	}
 
