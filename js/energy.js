@@ -650,7 +650,7 @@ $(document).ready(function () {
 	 */
 	function reloadPage() {
 		if (os.weixin) {
-			location.replace(dominUrl + "?v=" + Math.random());
+			location.replace("https://bubblepop.beats-digital.com/tmall/?v=" + Math.random());
 		}
 		else {
 			showCodeBox();

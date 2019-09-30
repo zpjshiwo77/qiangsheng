@@ -478,7 +478,12 @@ $(document).ready(function () {
 		rankBox.find(".addEnergy").on("touchend", showAddEnergy);
 		rankBox.find(".lottery").on("touchend", lottery);
 		rankBox.find(".makeToy").on("touchend", reloadPage);
-		rankBox.find(".allBtn").on("touchend", requestAllRankList);
+		rankBox.find(".allBtn").on("touchend", function(){
+			requestAllRankList();
+			var uid = icom.getQueryString("uid");
+			if(uid) requestUidList(uid);
+			else requestUidList(userInfo.userId);
+		});
 		rankBox.find(".searchBtn").on("touchend", searchRankName);
 		rankBox.on("click", ".add", function () {
 			var that = $(this);
