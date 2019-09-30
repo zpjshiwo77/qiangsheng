@@ -58,16 +58,16 @@ $(document).ready(function () {
 			if (os.screenProp < 0.54) articleBox.addClass("screen189");
 			if (os.screenProp > 0.64) articleBox.addClass("screen159");
 			// if (new Date > new Date("2019/10/9")) {
-				getUserInfo();
-				load_handler();
-				sound_handler();
-				bubbleInit($("#loadingBox .left"), 6);
-				setTimeout(function () {
-					bubbleInit($("#loadingBox .right"), 5);
-				}, 1000)
-				setTimeout(function () {
-					bubbleInit($("#loadingBox .bottom"), 3);
-				}, 1500);
+			getUserInfo();
+			load_handler();
+			sound_handler();
+			bubbleInit($("#loadingBox .left"), 6);
+			setTimeout(function () {
+				bubbleInit($("#loadingBox .right"), 5);
+			}, 1000)
+			setTimeout(function () {
+				bubbleInit($("#loadingBox .bottom"), 3);
+			}, 1500);
 			// }
 			// else {
 			// 	articleBox.show();
@@ -407,6 +407,7 @@ $(document).ready(function () {
 		monitor_handler();
 		judgeUserSource();
 		IOSInput();
+		pageAutoSize();
 	}//end func
 
 	/**
@@ -492,14 +493,20 @@ $(document).ready(function () {
 
 		shareBox.find(".closeBtn").on("touchend", hideShareBox);
 
-		window.addEventListener("resize", function () {
-			if (os.screenProp < 0.54) articleBox.addClass("screen189");
-			if (os.screenProp > 0.64) articleBox.addClass("screen159");
-		});
+		window.addEventListener("resize", pageAutoSize);
 
 		icom.clipboard($(".copyBtn1"), "￥PjMsYNdO7QU￥", showCopySuccess);
 		icom.clipboard($(".copyBtn2"), "￥PjMsYNdO7QU￥", showCopySuccess);
 		$(".copyBtn2").on("touchend", tmallgetcoupon);
+	}
+
+	/**
+	 * 页面适配
+	 */
+	function pageAutoSize() {
+		os.screenProp = window.innerWidth / window.innerHeight;
+		if (os.screenProp < 0.54) articleBox.addClass("screen189");
+		if (os.screenProp > 0.64) articleBox.addClass("screen159");
 	}
 
 	/**

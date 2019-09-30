@@ -3,7 +3,7 @@ var API = new importAPI();
 function importAPI () {
 	var _self = this;
 
-	var requestDomain = "https://acuvue.beats-digital.com/ac/";
+	var requestDomain = "https://bubblepop.beats-digital.com/ac/";
 	var loadBox=$('aside.loadBox');
 
 	function _Ajax(opts){
