@@ -507,8 +507,8 @@ $(document).ready(function () {
 
 		window.addEventListener("resize", pageAutoSize);
 
-		icom.clipboard($(".copyBtn1"), "￥PjMsYNdO7QU￥", showCopySuccess);
-		icom.clipboard($(".copyBtn2"), "￥PjMsYNdO7QU￥", showCopySuccess);
+		icom.clipboard($(".copyBtn1"), "¢afryYLVi5qc¢", showCopySuccess);
+		icom.clipboard($(".copyBtn2"), "￥kK1cYLV7xyy￥", showCopySuccess);
 		$(".copyBtn2").on("touchend", tmallgetcoupon);
 
 		endBox.find(".showMylistBtn").on("touchend", endShowMylist);

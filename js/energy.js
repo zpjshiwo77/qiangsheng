@@ -454,8 +454,8 @@ $(document).ready(function () {
 
 		shareBox.find(".closeBtn").on("touchend", hideShareBox);
 
-		icom.clipboard($(".copyBtn1"), "￥PjMsYNdO7QU￥", showCopySuccess);
-		icom.clipboard($(".copyBtn2"), "￥PjMsYNdO7QU￥", showCopySuccess);
+		icom.clipboard($(".copyBtn1"), "¢afryYLVi5qc¢", showCopySuccess);
+		icom.clipboard($(".copyBtn2"), "￥kK1cYLV7xyy￥", showCopySuccess);
 
 		codeBox.find(".closeBtn").on("touchend",function(){
 			icom.fadeOut(codeBox);
