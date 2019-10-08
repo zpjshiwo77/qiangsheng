@@ -741,8 +741,27 @@ $(document).ready(function () {
 	function lottery() {
 		API.lottery(function (res) {
 			if (res.code == 0) showLotteryBox(res.data.gift_id);
-			else icom.alert(res.message);
+			else showLotteryRes(res.data.gift_id);
 		})
+	}
+
+	/**
+	 * 显示抽奖结果
+	 */
+	function showLotteryRes(award){
+		icom.fadeOut(rankBox);
+		lotteryBox.show();
+
+		if (award == 1) {
+			icom.fadeIn(lotteryBox.find(".coupon"));
+		}
+		else if (award == 2) {
+			icom.fadeIn(lotteryBox.find(".toy"));
+		}
+		else {
+			icom.alert("未中奖");
+		}
+		Voice.award.play();
 	}
 
 	/**
