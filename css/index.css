@@ -12,7 +12,7 @@ html, body, article {
 }
 
 article {
-	background: url("../images/public/bg.jpg") no-repeat;
+	background: url("https://upload.cdn.be-xx.com/bubblepop/tmall/images/public/bg.jpg") no-repeat;
 	background-size: cover;
 	background-position: top center;
 }
@@ -49,7 +49,7 @@ section {
 	top: 0;
 	left: 0;
 	z-index: 3;
-	background: url("../images/public/bg.jpg") no-repeat;
+	background: url("https://upload.cdn.be-xx.com/bubblepop/tmall/images/public/bg.jpg") no-repeat;
 	background-size: cover;
 	background-position: top center;
 }
@@ -101,7 +101,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	right: 0.7rem;
 	width: 1.19rem;
 	height: 1.01rem;
-	background-image: url(../images/public/ruleBtn.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/public/ruleBtn.png);
 	z-index: 9;
 }
 /* public end */
@@ -266,7 +266,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 }
 
 #loadingBox .cont .loadBarBox .mask {
-	-webkit-mask: url(../images/loadingBox/mask.png);
+	-webkit-mask: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/loadingBox/mask.png);
 	-webkit-mask-size: 100%;
 }
 
@@ -282,7 +282,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	width: 4.9rem;
 	height: 1.94rem;
 	margin-left: -2.45rem;
-	background-image: url(../images/indexBox/form.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/indexBox/form.png);
 }
 
 #loadingBox .cont .formBox input {
@@ -350,7 +350,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	width: 4.03rem;
 	height: 1.01rem;
 	margin-left: -2.015rem;
-	background-image: url(../images/indexBox/btn.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/indexBox/btn.png);
 }
 
 /* loadingBox end */
@@ -362,7 +362,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	width: 6.75rem;
 	height: 10.33rem;
 	transform: translate(-50%, -50%);
-	background-image: url(../images/ruleBox/rule.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/ruleBox/rule.png);
 }
 
 #ruleBox .cont .scrollBox {
@@ -444,7 +444,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 }
 
 #makeBox .cont .liquid {
-	-webkit-mask: url(../images/makeBox/mask.png);
+	-webkit-mask: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/makeBox/mask.png);
 	-webkit-mask-size: 100%;
 }
 
@@ -475,7 +475,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 }
 
 #makeBox .cont .bubbleBox .bubble .bubbleImg {
-	background-image: url(../images/public/bubble.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/public/bubble.png);
 }
 #makeBox .cont .bubbleBox .bubble.act .bubbleImg {
 	-webkit-animation: updowning 2s ease infinite;
@@ -528,7 +528,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	width: 6.44rem;
 	height: 9.12rem;
 	transform: translate(-50%, -47%);
-	background-image: url(../images/resultBox/gray.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/gray.png);
 }
 
 #resultBox .btn {
@@ -538,11 +538,11 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	width: 5.61rem;
 	height: 1.02rem;
 	margin-top: 4.8rem;
-	background-image: url(../images/resultBox/btn.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/btn.png);
 }
 
 #resultBox .showList {
-	background-image: url(../images/resultBox/btn2.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/btn2.png);
 }
 
 #resultBox .word {
@@ -589,7 +589,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	width: 5.04rem;
 	height: 1.11rem;
 	margin: 0 auto 0.15rem;
-	background-image: url(../images/public/btn.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/public/btn.png);
 }
 #lotteryBox .cont {
 	position: absolute;
@@ -598,7 +598,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	width: 6.43rem;
 	height: 9.11rem;
 	transform: translate(-50%, -50%);
-	background-image: url(../images/lotteryBox/k.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/lotteryBox/k.png);
 }
 
 #lotteryBox .close {
@@ -607,7 +607,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	left: 50%;
 	width: 1rem;
 	height: 1rem;
-	background-image: url(../images/lotteryBox/close.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/lotteryBox/close.png);
 	transform: translate(-50%, 4.7rem);
 }
 
@@ -662,7 +662,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	width: 3.45rem;
 	height: 0.92rem;
 	margin: 0 auto;
-	background-image: url(../images/lotteryBox/c.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/lotteryBox/c.png);
 	font-size: 0.22rem;
 	line-height: 1.5;
 	padding-top: 0.1rem;
@@ -689,7 +689,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	width: 6.28rem;
 	height: 8.69rem;
 	transform: translate(-50%, -50%);
-	background-image: url(../images/tipsBox/tips.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/tipsBox/tips.png);
 }
 
 #tipsBox .cont p {
@@ -720,7 +720,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	width: 6.28rem;
 	height: 8.69rem;
 	transform: translate(-50%, -50%);
-	background-image: url(../images/tipsBox/tips.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/tipsBox/tips.png);
 }
 
 #confirmBox .cont p {
@@ -737,7 +737,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	width: 4.36rem;
 	height: 0.59rem;
 	margin: 0.3rem auto;
-	background-image: url(../images/tipsBox/btns.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/tipsBox/btns.png);
 }
 #confirmBox .cont .btns .btn{
 	width: 50%;
@@ -762,7 +762,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	width: 6.44rem;
 	height: 9.12rem;
 	margin-left: -3.22rem;
-	background-image: url(../images/choseBox/cont.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/cont.png);
 }
 
 #choseBox .cont .name {
@@ -772,7 +772,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	margin-left: -1.91rem;
 	width: 3.82rem;
 	height: 0.72rem;
-	background-image: url(../images/choseBox/name.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/name.png);
 }
 
 #choseBox .cont .name input {
@@ -816,7 +816,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	left: 1.27rem;
 	width: 3.96rem;
 	height: 0.84rem;
-	background-image: url(../images/choseBox/btn.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/btn.png);
 }
 
 #choseBox .penel {
@@ -897,7 +897,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	left: 0.1rem;
 	width: 3.49rem;
 	height: 0.45rem;
-	background-image: url(../images/rankBox/search.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/search.png);
 }
 #rankBox .search #search{
 	position: absolute;
@@ -922,7 +922,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	width: 5.05rem;
 	height: 1.15rem;
 	margin-left: -2.5rem;
-	background-image: url(../images/rankBox/b5.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/b5.png);
 }
 #rankBox .btnBox{
 	position: absolute;
@@ -939,15 +939,15 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 }
 #rankBox .btnBox .addEnergy{
 	left: 0;
-	background-image: url(../images/rankBox/b1.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/b1.png);
 }
 #rankBox .btnBox .lottery{
 	right: 0;
-	background-image: url(../images/rankBox/b3.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/b3.png);
 }
 #rankBox .btnBox .makeToy{
 	right: 0;
-	background-image: url(../images/rankBox/b4.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/b4.png);
 }
 
 #rankBox .rankcont{
@@ -957,7 +957,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	width: 6.44rem;
 	height: 8.16rem;
 	margin-left: -3.22rem;
-	background-image: url(../images/rankBox/cont.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/cont.png);
 }
 #rankBox .rankcont .allBtn{
 	position: absolute;
@@ -1034,7 +1034,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	color: #ca3867;
 	line-height: 0.92rem;
 	text-align: center;
-	background-image: url(../images/rankBox/name.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/name.png);
 }
 #rankBox .rankcont .block .name.sp{
 	position: absolute;
@@ -1051,10 +1051,10 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	left: 1.4rem;
 	width: 3.69rem;
 	height: 0.29rem;
-	background-image: url(../images/rankBox/bar.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/bar.png);
 }
 #rankBox .rankcont .block .mask{
-	-webkit-mask: url(../images/rankBox/mask.png);
+	-webkit-mask: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/mask.png);
 	-webkit-mask-size: 100%;
 }
 #rankBox .rankcont .block .mask .bar{
@@ -1063,7 +1063,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	left: -100%;
 	width: 3.9rem;
 	height: 0.29rem;
-	background-image: url(../images/rankBox/stripe.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/stripe.png);
 }
 #rankBox .rankcont .block .barBox .energy{
 	position: absolute;
@@ -1090,10 +1090,10 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	height: 0.59rem;
 }
 #rankBox .rankcont .block .btns .add{
-	background-image: url(../images/rankBox/add.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/add.png);
 }
 #rankBox .rankcont .block .btns .invite{
-	background-image: url(../images/rankBox/invite.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/invite.png);
 }
 #rankSelf .block{
 	margin-left: 0.27rem!important;
@@ -1118,7 +1118,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	width: 6.44rem;
 	height: 9.17rem;
 	transform: translate(-50%, -50%);
-	background-image: url(../images/codeBox/k.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/codeBox/k.png);
 }
 #exchangeEnergy #EXenergyCode{
 	display: block;
@@ -1157,7 +1157,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	width: 6.44rem;
 	height: 9.77rem;
 	transform: translate(-50%, -50%);
-	background-image: url(../images/codeBox/k2.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/codeBox/k2.png);
 }
 #addEnergy #addEnergyCode{
 	display: block;
@@ -1218,7 +1218,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	width: 6.44rem;
 	height: 7.9rem;
 	transform: translate(-50%, -50%);
-	background-image: url(../images/codeBox/code.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/codeBox/code.png);
 }
 #codeBox .cont .code{
 	display: block;
@@ -1261,7 +1261,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 #shareBox .cont .kuang{
 	width: 6.44rem;
 	height: 8.89rem;
-	background-image: url(../images/shareBox/k.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/shareBox/k.png);
 	position: relative;
 }
 #shareBox .cont .toy{
@@ -1438,7 +1438,7 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 	left: 50%;
 	width: 6.44rem;
 	height: 7.9rem;
-	background-image: url(../images/tipsBox/end.png);
+	background-image: url(https://upload.cdn.be-xx.com/bubblepop/tmall/images/tipsBox/end.png);
 	transform: translate(-50%, -50%);
 }
 #endBox .cont .showMylistBtn{

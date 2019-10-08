@@ -79,23 +79,23 @@ $(document).ready(function () {
 	//----------------------------------------加载页面图片----------------------------------------
 	function load_handler() {
 		var loader = new PxLoader();
-		loader.addImage('images/common/bgm_off.png');
-		loader.addImage('images/common/bgm_on.png');
-		loader.addImage('images/common/close.png');
-		loader.addImage('images/common/turn_lock.png');
-		loader.addImage('images/common/turn_no.png');
-		loader.addImage('images/common/turn_phone.png');
-		loader.addImage('images/common/turn_unlock.png');
-		loader.addImage('images/common/turn_yes.png');
-		loader.addImage('images/public/bg.jpg');
-		loader.addImage('images/public/btn.png');
-		loader.addImage('images/public/bubble.png');
-		loader.addImage('images/public/logo.png');
-		loader.addImage('images/public/ruleBtn.png');
-		loader.addImage('images/loadingBox/k.png');
-		loader.addImage('images/loadingBox/mask.png');
-		loader.addImage('images/loadingBox/title.png');
-		loader.addImage('images/loadingBox/w.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/common/bgm_off.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/common/bgm_on.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/common/close.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/common/turn_lock.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/common/turn_no.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/common/turn_phone.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/common/turn_unlock.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/common/turn_yes.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/public/bg.jpg');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/public/btn.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/public/bubble.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/public/logo.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/public/ruleBtn.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/loadingBox/k.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/loadingBox/mask.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/loadingBox/title.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/loadingBox/w.png');
 
 		loader.addCompletionListener(function () {
 			icom.fadeIn(articleBox);
@@ -108,152 +108,152 @@ $(document).ready(function () {
 
 	function load_more() {
 		var loader = new PxLoader();
-		loader.addImage('images/share.jpg');
-		loader.addImage('images/tipsBox/btns.png');
-		loader.addImage('images/tipsBox/comesoon.png');
-		loader.addImage('images/tipsBox/tips.png');
-		loader.addImage('images/shareBox/close.png');
-		loader.addImage('images/shareBox/hand.png');
-		loader.addImage('images/shareBox/k.png');
-		loader.addImage('images/shareBox/tips.png');
-		loader.addImage('images/ruleBox/rule.jpg');
-		loader.addImage('images/ruleBox/rule.png');
-		loader.addImage('images/ruleBox/word.jpg');
-		loader.addImage('images/resultBox/bg.png');
-		loader.addImage('images/resultBox/btn.png');
-		loader.addImage('images/resultBox/btn2.png');
-		loader.addImage('images/resultBox/gray.png');
-		loader.addImage('images/resultBox/green.png');
-		loader.addImage('images/resultBox/purple.png');
-		loader.addImage('images/resultBox/word/hqx.png');
-		loader.addImage('images/resultBox/word/jq.png');
-		loader.addImage('images/resultBox/word/lg.png');
-		loader.addImage('images/resultBox/word/ml.png');
-		loader.addImage('images/resultBox/word/mm.png');
-		loader.addImage('images/resultBox/word/sj.png');
-		loader.addImage('images/resultBox/spoon2/gray.png');
-		loader.addImage('images/resultBox/spoon2/green.png');
-		loader.addImage('images/resultBox/spoon2/purple.png');
-		loader.addImage('images/resultBox/spoon1/gray.png');
-		loader.addImage('images/resultBox/spoon1/green.png');
-		loader.addImage('images/resultBox/spoon1/purple.png');
-		loader.addImage('images/resultBox/powder/gray.png');
-		loader.addImage('images/resultBox/powder/green.png');
-		loader.addImage('images/resultBox/powder/purple.png');
-		loader.addImage('images/resultBox/bowl/gray.png');
-		loader.addImage('images/resultBox/bowl/green.png');
-		loader.addImage('images/resultBox/bowl/purple.png');
-		loader.addImage('images/rankBox/add.png');
-		loader.addImage('images/rankBox/b1.png');
-		loader.addImage('images/rankBox/b2.png');
-		loader.addImage('images/rankBox/b3.png');
-		loader.addImage('images/rankBox/b4.png');
-		loader.addImage('images/rankBox/bar.png');
-		loader.addImage('images/rankBox/bg.png');
-		loader.addImage('images/rankBox/cont.png');
-		loader.addImage('images/rankBox/invite.png');
-		loader.addImage('images/rankBox/mask.png');
-		loader.addImage('images/rankBox/name.png');
-		loader.addImage('images/rankBox/search.png');
-		loader.addImage('images/rankBox/stripe.png');
-		loader.addImage('images/rankBox/title.png');
-		loader.addImage('images/posterBox/1.png');
-		loader.addImage('images/posterBox/2.png');
-		loader.addImage('images/posterBox/3.png');
-		loader.addImage('images/posterBox/bg.jpg');
-		loader.addImage('images/posterBox/bg.png');
-		loader.addImage('images/makeBox/battle.png');
-		loader.addImage('images/makeBox/bg.png');
-		loader.addImage('images/makeBox/c1.png');
-		loader.addImage('images/makeBox/c2.png');
-		loader.addImage('images/makeBox/c3.png');
-		loader.addImage('images/makeBox/hand.png');
-		loader.addImage('images/makeBox/hqx.png');
-		loader.addImage('images/makeBox/jq.png');
-		loader.addImage('images/makeBox/lg.png');
-		loader.addImage('images/makeBox/light.png');
-		loader.addImage('images/makeBox/mask.png');
-		loader.addImage('images/makeBox/ml.png');
-		loader.addImage('images/makeBox/mm.png');
-		loader.addImage('images/makeBox/sj.png');
-		loader.addImage('images/makeBox/title.png');
-		loader.addImage('images/lotteryBox/a1.png');
-		loader.addImage('images/lotteryBox/a2.png');
-		loader.addImage('images/lotteryBox/b.png');
-		loader.addImage('images/lotteryBox/c.png');
-		loader.addImage('images/lotteryBox/close.png');
-		loader.addImage('images/lotteryBox/k.png');
-		loader.addImage('images/lotteryBox/t.png');
-		loader.addImage('images/indexBox/btn.png');
-		loader.addImage('images/indexBox/form.png');
-		loader.addImage('images/codeBox/code.png');
-		loader.addImage('images/codeBox/k.png');
-		loader.addImage('images/codeBox/k2.png');
-		loader.addImage('images/choseBox/btn.png');
-		loader.addImage('images/choseBox/cont.png');
-		loader.addImage('images/choseBox/control.png');
-		loader.addImage('images/choseBox/d.png');
-		loader.addImage('images/choseBox/light.png');
-		loader.addImage('images/choseBox/name.png');
-		loader.addImage('images/choseBox/purple/p.png');
-		loader.addImage('images/choseBox/purple/pb.png');
-		loader.addImage('images/choseBox/purple/pants/1.png');
-		loader.addImage('images/choseBox/purple/pants/2.png');
-		loader.addImage('images/choseBox/purple/pants/3.png');
-		loader.addImage('images/choseBox/purple/pants/4.png');
-		loader.addImage('images/choseBox/purple/pants/5.png');
-		loader.addImage('images/choseBox/purple/pants/w.png');
-		loader.addImage('images/choseBox/purple/head/1.png');
-		loader.addImage('images/choseBox/purple/head/2.png');
-		loader.addImage('images/choseBox/purple/head/3.png');
-		loader.addImage('images/choseBox/purple/head/4.png');
-		loader.addImage('images/choseBox/purple/head/5.png');
-		loader.addImage('images/choseBox/purple/head/w.png');
-		loader.addImage('images/choseBox/purple/eye/1.png');
-		loader.addImage('images/choseBox/purple/eye/2.png');
-		loader.addImage('images/choseBox/purple/eye/3.png');
-		loader.addImage('images/choseBox/purple/eye/w.png');
-		loader.addImage('images/choseBox/green/p.png');
-		loader.addImage('images/choseBox/green/pb.png');
-		loader.addImage('images/choseBox/green/pants/1.png');
-		loader.addImage('images/choseBox/green/pants/2.png');
-		loader.addImage('images/choseBox/green/pants/3.png');
-		loader.addImage('images/choseBox/green/pants/4.png');
-		loader.addImage('images/choseBox/green/pants/5.png');
-		loader.addImage('images/choseBox/green/pants/w.png');
-		loader.addImage('images/choseBox/green/head/1.png');
-		loader.addImage('images/choseBox/green/head/2.png');
-		loader.addImage('images/choseBox/green/head/3.png');
-		loader.addImage('images/choseBox/green/head/4.png');
-		loader.addImage('images/choseBox/green/head/5.png');
-		loader.addImage('images/choseBox/green/head/w.png');
-		loader.addImage('images/choseBox/green/eye/1.png');
-		loader.addImage('images/choseBox/green/eye/2.png');
-		loader.addImage('images/choseBox/green/eye/3.png');
-		loader.addImage('images/choseBox/green/eye/w.png');
-		loader.addImage('images/choseBox/gray/p.png');
-		loader.addImage('images/choseBox/gray/pb.png');
-		loader.addImage('images/choseBox/gray/pants/1.png');
-		loader.addImage('images/choseBox/gray/pants/2.png');
-		loader.addImage('images/choseBox/gray/pants/3.png');
-		loader.addImage('images/choseBox/gray/pants/4.png');
-		loader.addImage('images/choseBox/gray/pants/5.png');
-		loader.addImage('images/choseBox/gray/pants/w.png');
-		loader.addImage('images/choseBox/gray/head/1.png');
-		loader.addImage('images/choseBox/gray/head/2.png');
-		loader.addImage('images/choseBox/gray/head/3.png');
-		loader.addImage('images/choseBox/gray/head/4.png');
-		loader.addImage('images/choseBox/gray/head/5.png');
-		loader.addImage('images/choseBox/gray/head/w.png');
-		loader.addImage('images/choseBox/gray/eye/1.png');
-		loader.addImage('images/choseBox/gray/eye/2.png');
-		loader.addImage('images/choseBox/gray/eye/3.png');
-		loader.addImage('images/choseBox/gray/eye/w.png');
-		loader.addImage('images/choseBox/bg/1.png');
-		loader.addImage('images/choseBox/bg/2.png');
-		loader.addImage('images/choseBox/bg/3.png');
-		loader.addImage('images/choseBox/bg/4.png');
-		loader.addImage('images/choseBox/bg/5.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/share.jpg');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/tipsBox/btns.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/tipsBox/comesoon.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/tipsBox/tips.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/shareBox/close.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/shareBox/hand.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/shareBox/k.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/shareBox/tips.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/ruleBox/rule.jpg');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/ruleBox/rule.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/ruleBox/word.jpg');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/bg.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/btn.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/btn2.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/gray.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/green.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/purple.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/word/hqx.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/word/jq.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/word/lg.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/word/ml.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/word/mm.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/word/sj.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/spoon2/gray.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/spoon2/green.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/spoon2/purple.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/spoon1/gray.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/spoon1/green.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/spoon1/purple.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/powder/gray.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/powder/green.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/powder/purple.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/bowl/gray.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/bowl/green.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/bowl/purple.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/add.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/b1.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/b2.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/b3.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/b4.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/bar.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/bg.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/cont.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/invite.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/mask.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/name.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/search.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/stripe.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/rankBox/title.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/posterBox/1.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/posterBox/2.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/posterBox/3.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/posterBox/bg.jpg');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/posterBox/bg.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/makeBox/battle.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/makeBox/bg.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/makeBox/c1.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/makeBox/c2.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/makeBox/c3.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/makeBox/hand.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/makeBox/hqx.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/makeBox/jq.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/makeBox/lg.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/makeBox/light.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/makeBox/mask.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/makeBox/ml.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/makeBox/mm.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/makeBox/sj.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/makeBox/title.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/lotteryBox/a1.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/lotteryBox/a2.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/lotteryBox/b.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/lotteryBox/c.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/lotteryBox/close.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/lotteryBox/k.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/lotteryBox/t.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/indexBox/btn.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/indexBox/form.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/codeBox/code.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/codeBox/k.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/codeBox/k2.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/btn.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/cont.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/control.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/d.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/light.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/name.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/purple/p.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/purple/pb.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/purple/pants/1.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/purple/pants/2.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/purple/pants/3.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/purple/pants/4.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/purple/pants/5.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/purple/pants/w.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/purple/head/1.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/purple/head/2.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/purple/head/3.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/purple/head/4.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/purple/head/5.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/purple/head/w.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/purple/eye/1.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/purple/eye/2.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/purple/eye/3.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/purple/eye/w.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/green/p.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/green/pb.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/green/pants/1.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/green/pants/2.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/green/pants/3.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/green/pants/4.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/green/pants/5.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/green/pants/w.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/green/head/1.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/green/head/2.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/green/head/3.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/green/head/4.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/green/head/5.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/green/head/w.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/green/eye/1.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/green/eye/2.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/green/eye/3.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/green/eye/w.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/gray/p.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/gray/pb.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/gray/pants/1.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/gray/pants/2.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/gray/pants/3.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/gray/pants/4.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/gray/pants/5.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/gray/pants/w.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/gray/head/1.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/gray/head/2.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/gray/head/3.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/gray/head/4.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/gray/head/5.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/gray/head/w.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/gray/eye/1.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/gray/eye/2.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/gray/eye/3.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/gray/eye/w.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/bg/1.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/bg/2.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/bg/3.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/bg/4.png');
+		loader.addImage('https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/bg/5.png');
 
 		// 实际加载进度
 		loader.addProgressListener(function (e) {
@@ -524,7 +524,7 @@ $(document).ready(function () {
 		posterBox.find(".names").html(choseUserInfo.toyInfo.name);
 		posterBox.find(".name").html(choseUserInfo.toyInfo.name);
 		posterBox.find(".nikeName").html(choseUserInfo.userName);
-		posterBox.find(".tips")[0].src = "images/posterBox/" + choseUserInfo.toyInfo.eye + ".png";
+		posterBox.find(".tips")[0].src = "https://upload.cdn.be-xx.com/bubblepop/tmall/images/posterBox/" + choseUserInfo.toyInfo.eye + ".png";
 
 		API.imgtrance({ "img_url": choseUserInfo.userHead }, function (res) {
 			if (res.code == 0) {
@@ -764,10 +764,10 @@ $(document).ready(function () {
 	 * 生成中...
 	 */
 	function makeMyToyImging(info, callback) {
-		toyBox.find(".body")[0].src = "images/choseBox/" + info.choseColor + "/p.png";
-		toyBox.find(".pants")[0].src = "images/choseBox/" + info.choseColor + "/pants/" + info.toyInfo.pants + ".png";
-		toyBox.find(".head")[0].src = "images/choseBox/" + info.choseColor + "/head/" + info.toyInfo.head + ".png";
-		toyBox.find(".eye")[0].src = "images/choseBox/" + info.choseColor + "/eye/" + info.toyInfo.eye + ".png";
+		toyBox.find(".body")[0].src = "https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/" + info.choseColor + "/p.png";
+		toyBox.find(".pants")[0].src = "https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/" + info.choseColor + "/pants/" + info.toyInfo.pants + ".png";
+		toyBox.find(".head")[0].src = "https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/" + info.choseColor + "/head/" + info.toyInfo.head + ".png";
+		toyBox.find(".eye")[0].src = "https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/" + info.choseColor + "/eye/" + info.toyInfo.eye + ".png";
 		makePoster(toyBox, "png", callback);
 	}
 
@@ -811,7 +811,7 @@ $(document).ready(function () {
 	function changeToyEye(id) {
 		var eye = choseBox.find(".toy_e");
 		eye.show();
-		eye[0].src = "images/choseBox/" + userInfo.choseColor + "/eye/" + id + ".png";
+		eye[0].src = "https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/" + userInfo.choseColor + "/eye/" + id + ".png";
 		userInfo.toyInfo.eye = id;
 	}
 
@@ -821,7 +821,7 @@ $(document).ready(function () {
 	function changeToyPants(id) {
 		var pants = choseBox.find(".toy_p");
 		pants.show();
-		pants[0].src = "images/choseBox/" + userInfo.choseColor + "/pants/" + id + ".png";
+		pants[0].src = "https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/" + userInfo.choseColor + "/pants/" + id + ".png";
 		userInfo.toyInfo.pants = id;
 	}
 
@@ -831,7 +831,7 @@ $(document).ready(function () {
 	function changeToyBg(id) {
 		var bg = choseBox.find(".bg");
 		bg.show();
-		bg[0].src = "images/choseBox/bg/" + id + ".png";
+		bg[0].src = "https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/bg/" + id + ".png";
 		userInfo.toyInfo.bg = id;
 	}
 
@@ -841,7 +841,7 @@ $(document).ready(function () {
 	function changeToyHead(id) {
 		var head = choseBox.find(".toy_h");
 		head.show();
-		head[0].src = "images/choseBox/" + userInfo.choseColor + "/head/" + id + ".png";
+		head[0].src = "https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/" + userInfo.choseColor + "/head/" + id + ".png";
 		userInfo.toyInfo.head = id;
 	}
 
@@ -851,8 +851,8 @@ $(document).ready(function () {
 	function showChoseBox() {
 		var toy = choseBox.find(".toy_b");
 		var toyw = choseBox.find(".toy_w");
-		toy[0].src = "images/choseBox/" + userInfo.choseColor + "/p.png";
-		toyw[0].src = "images/choseBox/" + userInfo.choseColor + "/pb.png";
+		toy[0].src = "https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/" + userInfo.choseColor + "/p.png";
+		toyw[0].src = "https://upload.cdn.be-xx.com/bubblepop/tmall/images/choseBox/" + userInfo.choseColor + "/pb.png";
 		icom.fadeOut(resultBox);
 		choseBox.show();
 		penelInit();
@@ -1278,11 +1278,11 @@ $(document).ready(function () {
 
 		resultBox.show();
 
-		word[0].src = "images/resultBox/word/" + userInfo.choseAttr[0] + ".png";
-		bowl[0].src = "images/resultBox/bowl/" + userInfo.choseColor + ".png";
-		powder[0].src = "images/resultBox/powder/" + userInfo.choseColor + ".png";
-		spoon1[0].src = "images/resultBox/spoon1/" + userInfo.choseColor + ".png";
-		spoon2[0].src = "images/resultBox/spoon2/" + userInfo.choseColor + ".png";
+		word[0].src = "https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/word/" + userInfo.choseAttr[0] + ".png";
+		bowl[0].src = "https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/bowl/" + userInfo.choseColor + ".png";
+		powder[0].src = "https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/powder/" + userInfo.choseColor + ".png";
+		spoon1[0].src = "https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/spoon1/" + userInfo.choseColor + ".png";
+		spoon2[0].src = "https://upload.cdn.be-xx.com/bubblepop/tmall/images/resultBox/spoon2/" + userInfo.choseColor + ".png";
 
 		if (ani) {
 			spoon1
@@ -1369,7 +1369,7 @@ $(document).ready(function () {
 	function makebubble(box, opts, callback) {
 		var bubble = $("<img>", {
 			"class": "bubble",
-			"src": "images/lotteryBox/b.png"
+			"src": "https://upload.cdn.be-xx.com/bubblepop/tmall/images/lotteryBox/b.png"
 		});
 		box.append(bubble);
 		bubble.css({
@@ -1388,7 +1388,7 @@ $(document).ready(function () {
 		for (var i = 0; i < num; i++) {
 			var bubble = $("<img>", {
 				"class": "bubble riseing" + i,
-				"src": "images/public/bubble.png"
+				"src": "https://upload.cdn.be-xx.com/bubblepop/tmall/images/public/bubble.png"
 			});
 			if (i == 0) {
 				bubble.css({
