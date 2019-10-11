@@ -1112,7 +1112,7 @@ $(document).ready(function () {
 		for (var i = 0; i < data.length; i++) {
 			var toy = data[i];
 			var energy = toy.energy / 1000;
-			energy = energy > 90 ? 90 : energy;
+			energy = energy > 85 ? 85 : energy;
 			if (bool) {
 				cont += '<div class="block"><img src="' + toy.img_url + '" class="toy"><div class="name sp">当前排名第' + toy.rank + '名<br>' + toy.name + '</div><div class="barBox"><div class="mask full"><div class="bar" style="transform: translate(' + energy + '%,0);"></div></div><div class="energy">' + toy.energy + '能量</div></div><div class="btns"><div class="add" data-val="' + toy.id + '"></div><div class="invite" data-val="' + toy.id + '"></div></div></div>';
 			}

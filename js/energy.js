@@ -993,7 +993,7 @@ $(document).ready(function () {
 		for (var i = 0; i < data.length; i++) {
 			var toy = data[i];
 			var energy = toy.energy / 1000;
-			energy = energy > 90 ? 90 : energy;
+			energy = energy > 85 ? 85 : energy;
 			cont += '<div class="block"><img src="' + toy.img_url + '" class="toy"><div class="name">NO.' + toy.rank + ' ' + toy.name + '</div><div class="barBox"><div class="mask full"><div class="bar" style="transform: translate(' + energy + '%,0);"></div></div><div class="energy">' + toy.energy + '能量</div></div><div class="btns"><div style="" class="add" data-val="' + toy.id + '"></div></div></div>';
 		}
 		return cont;
